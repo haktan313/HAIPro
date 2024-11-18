@@ -1,0 +1,23 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "HAIPro",
+	"Description": "",
+	"Category": "Advance AIModule",
+	"CreatedBy": "Haktan Cagri Kodat",
+	"CreatedByURL": "https://www.linkedin.com/in/haktan-%C3%A7a%C4%9Fr%C4%B1-kodat-3b01b7297/",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"EngineVersion": "5.2.0",
+	"CanContainContent": true,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "HAIPro",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
