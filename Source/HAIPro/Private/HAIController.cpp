@@ -77,6 +77,11 @@ void AHAIController::OnPerceptionUpdated(const TArray<AActor*>& UpdatedActors)
 {
 	for(AActor* sensedActor : UpdatedActors)//Loop for each actor sensed by the AI controller
 	{
+		if(targetsTag.Num() == 0)//If the AI character has no target tag
+		{
+			HandleSense(sensedActor);
+			targetActor = sensedActor;
+		}
 		for(FName tag : targetsTag)//Loop for each target tag of the AI character
 		{
 			if(sensedActor->ActorHasTag(tag))//Check if the sensed actor has the target tag
