@@ -15,7 +15,7 @@ This plugin offers an Advanced AI management model with features like token-base
 - [Architecture](#architecture)
      - [HAI Base Component](#hai-base-component)
      - [HToken System](#htoken-system)
-     - [HAI Controller (with Crowd Following Component)](#ai-controller-with-crowd-following-component)
+     - [HAI Controller (with Crowd Following Component)](#hai-controller-with-crowd-following-component)
      - [Tasks](#tasks)
      - [Decorator & Service](#decorator--service)
      - [EQS](#eqs)
@@ -62,6 +62,8 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
          - **7.Patrol Spline**:
 
 
+
+
 - ### HToken System:![token](https://github.com/user-attachments/assets/24ef2bf3-604f-4902-be53-fcb18d784fff)
      - ## HToken System Component Functions
           - **1.Took Token from Target**:
@@ -71,11 +73,15 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
           - **2.Token Map**:
 
 
+
+
 ![Ekran görüntüsü 2024-11-19 151958](https://github.com/user-attachments/assets/9aec9ff3-a641-4c8b-a138-bf87a6a5f47a)
 ![Ekran görüntüsü 2024-11-19 152520](https://github.com/user-attachments/assets/c697867e-8900-49b0-b660-fac3edc1655c)
 - ### HAI Controller (with Crowd Following Component)
   - AI Controller manages NPC behavior with AI Perception for sight, hearing, and damage detection, while using Crowd Following for dynamic pathfinding and collision avoidance in crowded scenes. It also controls OnPossessState transitions for flexible behavior management.
   - You can adjust the values of the senses sight, hearing and damage in the HAI Base Component.
+
+
 
 
 - ### Tasks:
@@ -100,6 +106,8 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 
    - **9.Set State Active**: Sets the NPC's OnPossessState to Active after the specified duration provided in the task.
 
+     
+
 - ### Decorator & Service:
 
 ![Ekran görüntüsü 2024-11-19 161948](https://github.com/user-attachments/assets/af767b27-84e0-40e4-a4a4-ceebd6c4d73f)
@@ -114,6 +122,8 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
      
    - **5.Blackboard Value for "CanDoAction"**: Indicates whether the NPC is permitted to perform a specific action. This value must be true for the action to execute; otherwise, it is blocked.
 
+     
+
 - ### EQS:
 
 ![Ekran görüntüsü 2024-11-19 154930](https://github.com/user-attachments/assets/e48ed425-5a14-4ccf-ac2f-e448374f6cfb) ![Ekran görüntüsü 2024-11-19 155426](https://github.com/user-attachments/assets/b0a18cb1-44f2-449d-b25d-5a7537f0d395)
@@ -123,6 +133,8 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
    - **FindIdealRange_Example**: Finds the best position around the querier for optimal range based on visibility and distance to the target.
 
    - **Strafe_Example**: Generates positions around the target actor for strafing, ensuring effective and strategic movement.
+
+
 
 
 - ### Behavior Tree & Blackboard:
