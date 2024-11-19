@@ -47,6 +47,8 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 
 - **EQS**:
 
+![Ekran görüntüsü 2024-11-19 154930](https://github.com/user-attachments/assets/e48ed425-5a14-4ccf-ac2f-e448374f6cfb)
+
 
 - **Behavior Tree & Blackboard**:
 
