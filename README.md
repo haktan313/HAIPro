@@ -92,6 +92,12 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 
 ![Ekran görüntüsü 2024-11-19 154930](https://github.com/user-attachments/assets/e48ed425-5a14-4ccf-ac2f-e448374f6cfb) ![Ekran görüntüsü 2024-11-19 155426](https://github.com/user-attachments/assets/b0a18cb1-44f2-449d-b25d-5a7537f0d395)
 
+   - **HEnvQueryContext_TargetActor**: A custom EQS context that provides the target actor's location for queries, allowing the NPC (querier) to use this location as a reference in EQS evaluations.
+
+   - **FindIdealRange_Example**: Finds the best position around the querier for optimal range based on visibility and distance to the target.
+
+   - **Strafe_Example**: Generates positions around the target actor for strafing, ensuring effective and strategic movement.
+
 
 - ### Behavior Tree & Blackboard:
 
