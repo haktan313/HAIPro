@@ -14,8 +14,8 @@ This plugin offers an Advanced AI management model with features like token-base
 - [Features](#features)
 - [Architecture](#architecture)
      - [HAI Base Component](#hai-base-component)
-     - [Token System](#token-system)
-     - [HAI Controller (Crowd Following Component)](#ai-controller-crowd-following-component)
+     - [HToken System](#htoken-system)
+     - [HAI Controller (with Crowd Following Component)](#ai-controller-with-crowd-following-component)
      - [Tasks](#tasks)
      - [Decorator & Service](#decorator--service)
      - [EQS](#eqs)
@@ -73,7 +73,7 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 
 ![Ekran görüntüsü 2024-11-19 151958](https://github.com/user-attachments/assets/9aec9ff3-a641-4c8b-a138-bf87a6a5f47a)
 ![Ekran görüntüsü 2024-11-19 152520](https://github.com/user-attachments/assets/c697867e-8900-49b0-b660-fac3edc1655c)
-- ### HAI Controller (Crowd Following Component)
+- ### HAI Controller (with Crowd Following Component)
   - AI Controller manages NPC behavior with AI Perception for sight, hearing, and damage detection, while using Crowd Following for dynamic pathfinding and collision avoidance in crowded scenes. It also controls OnPossessState transitions for flexible behavior management.
   - You can adjust the values of the senses sight, hearing and damage in the HAI Base Component.
 
