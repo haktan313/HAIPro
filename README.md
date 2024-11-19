@@ -43,16 +43,7 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 
 
 - ### HAI Base Component:![aibase](https://github.com/user-attachments/assets/03bb5dd0-c482-40d8-9d74-f8ac236ebe58)
-
-
-- ### Token System:![token](https://github.com/user-attachments/assets/24ef2bf3-604f-4902-be53-fcb18d784fff)
-
-
-![Ekran görüntüsü 2024-11-19 151958](https://github.com/user-attachments/assets/9aec9ff3-a641-4c8b-a138-bf87a6a5f47a)
-![Ekran görüntüsü 2024-11-19 152520](https://github.com/user-attachments/assets/c697867e-8900-49b0-b660-fac3edc1655c)
-- ### HAI Controller (Crowd Following Component)
-   - **About AI Controller**: AI Controller manages NPC behavior with AI Perception for sight, hearing, and damage detection, while using Crowd Following for dynamic pathfinding and collision avoidance in crowded scenes. It also controls OnPossessState transitions for flexible behavior management.
-   - ## HAI Controller Events and Functions
+     - ## HAI Base Component Events and Functions
         - **1.On Do Action**:
         - **2.Call On Action End**:
         - **3.Bind Event to On Do Action**:
@@ -61,6 +52,24 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
         - **6.Start Behavior Trree**:
         - **7.Set Movement State Walk**:
         - **8.Set Movement State Fly**:
+    - ## HAI Varaibles
+         - **1.Behavior Tree**:
+         - **2.Targets Tag**:
+         - **3.Walk Speed**:
+         - **4.Run Speed**:
+         - **5.Normal Fly Speed**:
+         - **6.Fast Fly Speed**:
+         - **7.Patrol Spline**:
+
+
+- ### Token System:![token](https://github.com/user-attachments/assets/24ef2bf3-604f-4902-be53-fcb18d784fff)
+
+
+![Ekran görüntüsü 2024-11-19 151958](https://github.com/user-attachments/assets/9aec9ff3-a641-4c8b-a138-bf87a6a5f47a)
+![Ekran görüntüsü 2024-11-19 152520](https://github.com/user-attachments/assets/c697867e-8900-49b0-b660-fac3edc1655c)
+- ### HAI Controller (Crowd Following Component)
+  - AI Controller manages NPC behavior with AI Perception for sight, hearing, and damage detection, while using Crowd Following for dynamic pathfinding and collision avoidance in crowded scenes. It also controls OnPossessState transitions for flexible behavior management.
+
 
 - ### Tasks:
 
