@@ -13,13 +13,13 @@ This plugin offers an Advanced AI management model with features like token-base
 - [Installation Instructions](#installation-instructions)
 - [Features](#features)
 - [Architecture](#architecture)
+     - [HAI Base Component](#hai-base-component)
+     - [Token System](#token-system)
      - [AI Controller (Crowd Following Component)](#ai-controller-crowd-following-component)
      - [Tasks](#tasks)
      - [Decorator & Service](#decorator--service)
      - [EQS](#eqs)
      - [Behavior Tree & Blackboard](#behavior-tree--blackboard)
-     - [HAI Base Component](#hai-base-component)
-     - [Token System](#token-system)
 
 
 ## Supported Versions
