@@ -2,7 +2,7 @@
 # HAIPro Plugin Documentation
 ![plugin](https://github.com/user-attachments/assets/740a6c0b-39e3-4314-9375-934a9759ca05)
 
-##Introduction 
+## Introduction 
 This plugin offers an Advanced AI management model with features like token-based task prioritization for NPCs, integration with an Advanced AIController using the CrowdFollowing component, and flexible multi-action support through the DoAction task within the Behavior Tree.
 
 -In future updates, this system will be integrated with H3DPathfinding, which I developed in Unreal Engine.
@@ -40,6 +40,13 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 - **Tasks**:
 
 ![Ekran görüntüsü 2024-11-19 154736](https://github.com/user-attachments/assets/a2964214-900f-48ae-94e4-4765d30840f7)
+
+   -**1.Set Focus**:
+   -**2.Clear Focus**:
+   -**3.Set Movement State**:
+   -**4.Find Next Patrol Node**:
+   -**5.Find Rnadom Point On NavMesh**:
+   -**6.Set State Passive**:
 
 - **Decorator & Service**:
 
