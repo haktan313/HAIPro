@@ -37,7 +37,7 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 ![Ekran görüntüsü 2024-11-19 152520](https://github.com/user-attachments/assets/c697867e-8900-49b0-b660-fac3edc1655c)
 - **AI Controller**(Crowd Following Component):
 
-- **Tasks**:
+- **Tasks**:![Ekran görüntüsü 2024-11-19 154736](https://github.com/user-attachments/assets/a2964214-900f-48ae-94e4-4765d30840f7)
 
 - **Decorator & Service**:
 
