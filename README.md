@@ -12,7 +12,7 @@ This plugin offers an Advanced AI management model with features like token-base
 - [Supported Versions](#supported-versions)
 - [Installation Instructions](#installation-instructions)
 - [Features](#features)
-- [AI Controller](#ai-controller)
+- [Architecture](#architecture)
 
 ## Supported Versions
 This plugin is compatible with Unreal Engine 5.2 and later and is designed to work in both Blueprint and C++ projects.
