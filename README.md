@@ -80,13 +80,13 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 
    - **1.CanTookToken**:
 
-   - **2.Has Patrol Route**:
+   - **2.Has Patrol Route**: A decorator that verifies whether the NPC has a valid patrol route assigned through a spline. Ensures the NPC can follow a predefined path.
      
    - **3.Is In The Range**:
      
-   - **4.Blackboard Value for "OnPossessState"**:
+   - **4.Blackboard Value for "OnPossessState"**: Represents the current behavior state of the NPC (e.g., Passive, Active, Investigating). Guides task execution and decision-making processes in the behavior tree.
      
-   - **5.Blackboard Value for "CanDoAction"**:
+   - **5.Blackboard Value for "CanDoAction"**: Indicates whether the NPC is permitted to perform a specific action. This value must be true for the action to execute; otherwise, it is blocked.
 
 - ### EQS:
 
