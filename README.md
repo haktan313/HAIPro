@@ -47,8 +47,8 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 
 ## Patrol Spline (for Patrol Route)
 
-### Blueprint Usage
+## Blueprint Usage
 
-### C++ Usage
+## C++ Usage
 
 ## Tutorial Video
