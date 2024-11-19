@@ -70,6 +70,10 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
    
    - **7.Set State Passive**: Sets the NPC's OnPossessState to Passive after the specified duration provided in the task.
 
+   - **8.Set State Investigate**: Sets the NPC's OnPossessState to Investigate after the specified duration provided in the task.
+
+   - **9.Set State Active**: Sets the NPC's OnPossessState to Active after the specified duration provided in the task.
+
 - ### Decorator & Service:
 
 ![Ekran görüntüsü 2024-11-19 161948](https://github.com/user-attachments/assets/af767b27-84e0-40e4-a4a4-ceebd6c4d73f)
@@ -92,5 +96,10 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 - ### Behavior Tree & Blackboard:
 
 ![blackboard](https://github.com/user-attachments/assets/dcf9ed70-e6dc-401c-8f28-71a12e456339) ![bt](https://github.com/user-attachments/assets/e004f1b5-ac1d-4e76-a124-88c35b3b9c01) 
+
+   - **targetActor**: Represents the target actor the NPC is focusing on or interacting with. This value is used to determine the NPC's target during specific tasks or actions.
+   - **OnPossessState**: Represents the NPC's current behavior state, such as Passive, Active, or Investigating. Tasks are guided based on this state.
+   - **pointOfInterest**: Represents the coordinates of a point the NPC is interested in or focusing on. This is typically the location of a target or an area to investigate.
+   - **canDoAction**: Indicates whether the NPC is allowed to perform a specific action. If set to true, the NPC can execute the action; if false, the action is canceled or blocked.
 
 
