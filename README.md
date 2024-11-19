@@ -37,6 +37,8 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 ![Ekran görüntüsü 2024-11-19 152520](https://github.com/user-attachments/assets/c697867e-8900-49b0-b660-fac3edc1655c)
 - **AI Controller**(Crowd Following Component):
 
+![bt](https://github.com/user-attachments/assets/e004f1b5-ac1d-4e76-a124-88c35b3b9c01)
+![blackboard](https://github.com/user-attachments/assets/dcf9ed70-e6dc-401c-8f28-71a12e456339)
 - **Behavior Tree & Blackboard**:
   
 - **Tasks**:
