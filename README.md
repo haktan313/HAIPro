@@ -56,17 +56,19 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 
 ![Ekran görüntüsü 2024-11-19 154736](https://github.com/user-attachments/assets/a2964214-900f-48ae-94e4-4765d30840f7)
 
-   - **1.Set Focus**: Allows the NPC to focus on the given blackboard value, which can be either an actor or a vector.
+   - **1.DoAction**: 
+
+   - **2.Set Focus**: Allows the NPC to focus on the given blackboard value, which can be either an actor or a vector.
    
-   - **2.Clear Focus**: Clears the NPC's current focus and redirects its attention back to the game.
+   - **3.Clear Focus**: Clears the NPC's current focus and redirects its attention back to the game.
    
-   - **3.Set Movement State**: Sets the NPC's speed to one of the provided movement states (Idle, Walking, Running, NormalFlying, FastFlying) based on the selected movement type (Walk or Fly).
+   - **4.Set Movement State**: Sets the NPC's speed to one of the provided movement states (Idle, Walking, Running, NormalFlying, FastFlying) based on the selected movement type (Walk or Fly).
    
-   - **4.Find Next Patrol Node**:
+   - **5.Find Next Patrol Node**: Finds the next patrol location by retrieving the spline assigned to the NPC through the HAIBaseComponent and moving to the next node along the spline.
    
-   - **5.Find Rnadom Point On NavMesh**:
+   - **6.Find Rnadom Point On NavMesh**: Finds a random point within the specified radius on the NavMesh around the NPC and assigns it to the provided vector blackboard key as a location.
    
-   - **6.Set State Passive**:
+   - **7.Set State Passive**: Sets the NPC's OnPossessState to Passive after the specified duration provided in the task.
 
 - ### Decorator & Service:
 
