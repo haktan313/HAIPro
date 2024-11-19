@@ -13,7 +13,7 @@ This plugin offers an Advanced AI management model with features like token-base
 - [Installation Instructions](#installation-instructions)
 - [Features](#features)
 - [Architecture](#architecture)
-     - [AI Controller(Crowd Following Component)](#ai-controller-(crowd-following-component))
+     - [AI Controller(Crowd Following Component)](#ai-controller-(-crowd-following-component-))
      - [Tasks](#tasks)
 
 ## Supported Versions
