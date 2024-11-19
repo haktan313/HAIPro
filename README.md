@@ -41,12 +41,12 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 
 ![Ekran görüntüsü 2024-11-19 154736](https://github.com/user-attachments/assets/a2964214-900f-48ae-94e4-4765d30840f7)
 
-      - **1.Set Focus**:
-      - **2.Clear Focus**:
-      - **3.Set Movement State**:
-      - **4.Find Next Patrol Node**:
-      - **5.Find Rnadom Point On NavMesh**:
-      - **6.Set State Passive**:
+   - **1.Set Focus**:
+   - **2.Clear Focus**:
+   - **3.Set Movement State**:
+   - **4.Find Next Patrol Node**:
+   - **5.Find Rnadom Point On NavMesh**:
+   - **6.Set State Passive**:
 
 - **Decorator & Service**:
 
