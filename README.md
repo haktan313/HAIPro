@@ -56,11 +56,11 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
         - **1.On Do Action**:
         - **2.Call On Action End**:
         - **3.Bind Event to On Do Action**:
-        - **2.Dead**:
-        - **3.Stop Behavior Tree**:
-        - **4.Start Behavior Trree**:
-        - **5.Set Movement State Walk**:
-        - **6.Set Movement State Fly**:
+        - **4.Dead**:
+        - **5.Stop Behavior Tree**:
+        - **6.Start Behavior Trree**:
+        - **7.Set Movement State Walk**:
+        - **8.Set Movement State Fly**:
 
 - ### Tasks:
 
