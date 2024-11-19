@@ -35,39 +35,39 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 
 ![Ekran görüntüsü 2024-11-19 151958](https://github.com/user-attachments/assets/9aec9ff3-a641-4c8b-a138-bf87a6a5f47a)
 ![Ekran görüntüsü 2024-11-19 152520](https://github.com/user-attachments/assets/c697867e-8900-49b0-b660-fac3edc1655c)
-- **AI Controller**(Crowd Following Component):
+- ### AI Controller(Crowd Following Component):
 
-- **Tasks**:
+- ### Tasks:
 
 ![Ekran görüntüsü 2024-11-19 154736](https://github.com/user-attachments/assets/a2964214-900f-48ae-94e4-4765d30840f7)
 
-   **1.Set Focus**:
+   - **1.Set Focus**:
    
-   **2.Clear Focus**:
+   - **2.Clear Focus**:
    
-   **3.Set Movement State**:
+   - **3.Set Movement State**:
    
-   **4.Find Next Patrol Node**:
+   - **4.Find Next Patrol Node**:
    
-   **5.Find Rnadom Point On NavMesh**:
+   - **5.Find Rnadom Point On NavMesh**:
    
-   **6.Set State Passive**:
+   - **6.Set State Passive**:
 
-- **Decorator & Service**:
+- ### Decorator & Service:
 
 ![Ekran görüntüsü 2024-11-19 154842](https://github.com/user-attachments/assets/e8558a8c-4973-4685-8e2d-8d4e228cfc78)
 
-- **EQS**:
+- ### EQS:
 
 ![Ekran görüntüsü 2024-11-19 154930](https://github.com/user-attachments/assets/e48ed425-5a14-4ccf-ac2f-e448374f6cfb) ![Ekran görüntüsü 2024-11-19 155426](https://github.com/user-attachments/assets/b0a18cb1-44f2-449d-b25d-5a7537f0d395)
 
 
-- **Behavior Tree & Blackboard**:
+- ### Behavior Tree & Blackboard:
 
 ![blackboard](https://github.com/user-attachments/assets/dcf9ed70-e6dc-401c-8f28-71a12e456339) ![bt](https://github.com/user-attachments/assets/e004f1b5-ac1d-4e76-a124-88c35b3b9c01) 
 
-- **HAI Base Component**:
+- ### HAI Base Component:
 ![aibase](https://github.com/user-attachments/assets/03bb5dd0-c482-40d8-9d74-f8ac236ebe58)
 
-- **Token System**:
+- ### Token System:
 ![token](https://github.com/user-attachments/assets/24ef2bf3-604f-4902-be53-fcb18d784fff)
