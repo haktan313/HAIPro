@@ -43,8 +43,9 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 
 - **EQS**:
 
-![aibase](https://github.com/user-attachments/assets/03bb5dd0-c482-40d8-9d74-f8ac236ebe58)
-- **HAI Base Component**:
 
-![token](https://github.com/user-attachments/assets/24ef2bf3-604f-4902-be53-fcb18d784fff)
+- **HAI Base Component**:
+![aibase](https://github.com/user-attachments/assets/03bb5dd0-c482-40d8-9d74-f8ac236ebe58)
+
 - **Token System**:
+![token](https://github.com/user-attachments/assets/24ef2bf3-604f-4902-be53-fcb18d784fff)
