@@ -31,21 +31,19 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 
 ## Features
 
-## AI Controller
+## Architecture
 
-## Tasks
+- **AI Controller**:
+  
+- **Tasks**:
 
-## Decorators & Service
+- **Decorator & Service**:
 
-## Token System
+- **EQS**:
 
-## Behavior Tree & Blackboard
+- **HAI Base Component**:
 
-## EQS
-
-## HAI Base Component
-
-## Patrol Spline (for Patrol Route)
+- **Token System**:
 
 ## Blueprint Usage
 
