@@ -16,6 +16,11 @@ This plugin offers an Advanced AI management model with features like token-base
      - [AI Controller (Crowd Following Component)](#ai-controller-crowd-following-component)
      - [Tasks](#tasks)
      - [Decorator & Service](#decorator--service)
+     - [EQS](#eqs)
+     - [Behavior Tree & Blackboard](#behavior-tree--blackboard)
+     - [HAI Base Component](#hai-base-component)
+     - [Token System](#token-system)
+
 
 ## Supported Versions
 This plugin is compatible with Unreal Engine 5.2 and later and is designed to work in both Blueprint and C++ projects.
