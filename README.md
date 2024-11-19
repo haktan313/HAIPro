@@ -62,6 +62,7 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
          - **7.Patrol Spline**:
 
 
+----------------------------------------------------------------------------------------------------------
 
 
 - ### HToken System:![token](https://github.com/user-attachments/assets/24ef2bf3-604f-4902-be53-fcb18d784fff)
@@ -72,7 +73,7 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
           - **1.Current Token**:
           - **2.Token Map**:
 
-
+----------------------------------------------------------------------------------------------------------
 
 
 ![Ekran görüntüsü 2024-11-19 151958](https://github.com/user-attachments/assets/9aec9ff3-a641-4c8b-a138-bf87a6a5f47a)
@@ -81,7 +82,7 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
   - AI Controller manages NPC behavior with AI Perception for sight, hearing, and damage detection, while using Crowd Following for dynamic pathfinding and collision avoidance in crowded scenes. It also controls OnPossessState transitions for flexible behavior management.
   - You can adjust the values of the senses sight, hearing and damage in the HAI Base Component.
 
-
+----------------------------------------------------------------------------------------------------------
 
 
 - ### Tasks:
@@ -106,6 +107,8 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 
    - **9.Set State Active**: Sets the NPC's OnPossessState to Active after the specified duration provided in the task.
 
+
+----------------------------------------------------------------------------------------------------------
      
 
 - ### Decorator & Service:
@@ -123,6 +126,8 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
    - **5.Blackboard Value for "CanDoAction"**: Indicates whether the NPC is permitted to perform a specific action. This value must be true for the action to execute; otherwise, it is blocked.
 
      
+----------------------------------------------------------------------------------------------------------
+
 
 - ### EQS:
 
@@ -135,6 +140,7 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
    - **Strafe_Example**: Generates positions around the target actor for strafing, ensuring effective and strategic movement.
 
 
+----------------------------------------------------------------------------------------------------------
 
 
 - ### Behavior Tree & Blackboard:
