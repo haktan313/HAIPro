@@ -33,7 +33,7 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 
 ## Architecture
 
-- **AI Controller**(Crowd Following Component)
+- **AI Controller**(Crowd Following Component):
   
 - **Tasks**:
 
@@ -44,9 +44,3 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 - **HAI Base Component**:
 
 - **Token System**:
-
-## Blueprint Usage
-
-## C++ Usage
-
-## Tutorial Video
