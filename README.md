@@ -74,10 +74,15 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 
 ![Ekran görüntüsü 2024-11-19 161948](https://github.com/user-attachments/assets/af767b27-84e0-40e4-a4a4-ceebd6c4d73f)
 
-   - **1.Has Patrol Route**:
-   - **2.Is In The Range**:
-   - **3.Blackboard Value for "OnPossessState"**
-   - **4.Blackboard Value for "CanDoAction"**
+   - **1.CanTookToken**:
+
+   - **2.Has Patrol Route**:
+     
+   - **3.Is In The Range**:
+     
+   - **4.Blackboard Value for "OnPossessState"**:
+     
+   - **5.Blackboard Value for "CanDoAction"**:
 
 - ### EQS:
 
