@@ -27,13 +27,17 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 3. **Activate the Plugin**  
    Open Unreal Engine, go to `Edit > Plugins`, and enable the plugin.
 
-   ## AI Controller & Behavior Tree & Blackboard & EQS
+   ## AI Controller
 
    ## Tasks
 
    ## Decorators & Service
 
    ## Token System
+
+   ## Behavior Tree & Blackboard
+
+   ## EQS
 
    ## HAI Base Component
 
