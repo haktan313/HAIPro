@@ -58,8 +58,9 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
         - **3.Bind Event to On Do Action**:
         - **2.Dead**:
         - **3.Stop Behavior Tree**:
-        - **4.Set Movement State Walk**:
-        - **5.Set Movement State Fly**:
+        - **4.Start Behavior Trree**:
+        - **5.Set Movement State Walk**:
+        - **6.Set Movement State Fly**:
 
 - ### Tasks:
 
