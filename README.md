@@ -63,7 +63,7 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 
 - ### Decorator & Service:
 
-![Ekran görüntüsü 2024-11-19 154842](https://github.com/user-attachments/assets/e8558a8c-4973-4685-8e2d-8d4e228cfc78)
+![Ekran görüntüsü 2024-11-19 161948](https://github.com/user-attachments/assets/af767b27-84e0-40e4-a4a4-ceebd6c4d73f)
 
    - **1.Has Patrol Route**:
    - **2.Is In The Range**:
