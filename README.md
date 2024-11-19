@@ -68,6 +68,7 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
           - **2.Give Token to Target**:
      - ## HToken System Component Varaibles
           - **1.Current Token**:
+          - **2.Token Map**:
 
 
 ![Ekran görüntüsü 2024-11-19 151958](https://github.com/user-attachments/assets/9aec9ff3-a641-4c8b-a138-bf87a6a5f47a)
