@@ -7,15 +7,15 @@ This plugin offers an Advanced AI management model with features like token-base
 
 -In future updates, this system will be integrated with H3DPathfinding, which I developed in Unreal Engine.
 
-##Contents
+## Contents
 
 -[Sypported Versions](#supported-versions)
 -[Installation Instructions(#installation-instructions)
 
-##Supported Versions
+## Supported Versions
 This plugin is compatible with Unreal Engine 5.2 and later and is designed to work in both Blueprint and C++ protecs.
 
-##Installation Instructions
+## Installation Instructions
 
 1. **Extract the Plugin File**  
    Extract the downloaded `.zip` file to a folder.
