@@ -52,6 +52,14 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 ![Ekran görüntüsü 2024-11-19 152520](https://github.com/user-attachments/assets/c697867e-8900-49b0-b660-fac3edc1655c)
 - ### HAI Controller (Crowd Following Component)
    - **About AI Controller**: AI Controller manages NPC behavior with AI Perception for sight, hearing, and damage detection, while using Crowd Following for dynamic pathfinding and collision avoidance in crowded scenes. It also controls OnPossessState transitions for flexible behavior management.
+   - ## HAI Controller Events and Functions
+        - **1.On Do Action**:
+        - **2.Call On Action End**:
+        - **3.Bind Event to On Do Action**:
+        - **2.Dead**:
+        - **3.Stop Behavior Tree**:
+        - **4.Set Movement State Walk**:
+        - **5.Set Movement State Fly**:
 
 - ### Tasks:
 
