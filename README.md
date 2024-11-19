@@ -56,11 +56,11 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 
 ![Ekran görüntüsü 2024-11-19 154736](https://github.com/user-attachments/assets/a2964214-900f-48ae-94e4-4765d30840f7)
 
-   - **1.Set Focus**:
+   - **1.Set Focus**: Allows the NPC to focus on the given blackboard value, which can be either an actor or a vector.
    
-   - **2.Clear Focus**:
+   - **2.Clear Focus**: Clears the NPC's current focus and redirects its attention back to the game.
    
-   - **3.Set Movement State**:
+   - **3.Set Movement State**: Sets the NPC's speed to one of the provided movement states (Idle, Walking, Running, NormalFlying, FastFlying) based on the selected movement type (Walk or Fly).
    
    - **4.Find Next Patrol Node**:
    
