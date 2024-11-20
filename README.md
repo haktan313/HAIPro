@@ -60,6 +60,7 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
          - **5.Normal Fly Speed**:
          - **6.Fast Fly Speed**:
          - **7.Patrol Spline**:
+          ---------**Sense**-------------
 
 
 ----------------------------------------------------------------------------------------------------------
