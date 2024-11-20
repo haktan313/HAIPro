@@ -9,7 +9,7 @@ This plugin offers an Advanced AI management model with features like token-base
 
 -The example behaviour tree, blackboard and 2 EQS are available in the plugin's content folder. 
 -To access them, you need to tick the ‘Show Engine Content’ and ‘Show Plugin Content’ settings in the content browser (drawer).
-![Ekran görüntüsü 2024-11-20 175109](https://github.com/user-attachments/assets/d1a921b8-ce46-453f-affc-aff00d3b4ee7)
+![image](https://github.com/user-attachments/assets/9710cf6f-d2a2-4a35-b48d-543bd348548f)
 
 ## Contents
 
