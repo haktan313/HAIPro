@@ -58,7 +58,7 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 - The HAI Base Component is the core of NPC behavior, integrating seamlessly with AI Perception for sight, hearing, and damage detection. It supports DoAction events, allowing dynamic tasks and smooth behavior tree integration for flexible and adaptive NPC actions.
      - ## HAI Base Component Events and Functions
  
-       ![all haibase](https://github.com/user-attachments/assets/d651468d-e47a-48d9-aff8-f1d38791e862)    ![ondoActionc++](https://github.com/user-attachments/assets/3cfc090a-1cb9-4fac-9338-7e766ba1b2d1)
+       ![all haibase](https://github.com/user-attachments/assets/d651468d-e47a-48d9-aff8-f1d38791e862)    ![ondoActionc++](https://github.com/user-attachments/assets/3cfc090a-1cb9-4fac-9338-7e766ba1b2d1)    ![Ekran görüntüsü 2024-11-20 174008](https://github.com/user-attachments/assets/5d176721-4b58-4fc5-8472-87ce6a98172a)
        
         - **!!! 1.On Do Action**: It is triggered when the NPC performs a specific action and carries an Action ID, which indicates the type or purpose of that action. Defined as a delegate in HAIBase, this triggering process can work with the DoAction task in the Behavior Tree or with a custom system you create.
           
