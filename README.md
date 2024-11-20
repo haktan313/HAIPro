@@ -60,7 +60,17 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
          - **5.Normal Fly Speed**:
          - **6.Fast Fly Speed**:
          - **7.Patrol Spline**:
-          ---------**Sense**-------------
+         - **8.Open Sight**:
+         - **9.Open Hear**:
+         - **10.Open Damage**:
+         - **11.Dominant Sense**:
+         - **12.Sight Radius**:
+         - **13.lose Sight Radius**:
+         - **14.Peripheral Vision Angle Degrees**:
+         - **15.Max Age for Sight**:
+         - **16.Hearing Range**:
+         - **17.Max Age Hear**:
+         - **18.Max Age Damage**:
 
 
 ----------------------------------------------------------------------------------------------------------
