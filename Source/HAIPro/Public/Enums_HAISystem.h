@@ -38,3 +38,12 @@ enum class E_MovementState : uint8 {
 	normalFlying UMETA(DisplayName = "NormalFlying"),
 	fastFlying UMETA(DisplayName = "FastFlying")
 };
+
+//Enum for the type of dominant sense
+UENUM(BlueprintType)
+enum class E_DominantSense : uint8
+{
+	Sight UMETA(DisplayName = "Sight"),
+	Hearing UMETA(DisplayName = "Hearing"),
+	Damage UMETA(DisplayName = "Damage")
+};

@@ -8,11 +8,9 @@
 #include "Enums_HAISystem.h"
 #include "HTokenSystemComponent.h"
 
-
 UHAIBaseComponent::UHAIBaseComponent()
 {
 	OwnerCharacter = Cast<ACharacter>(GetOwner());
-
 }
 
 void UHAIBaseComponent::SetMovementStateWalk(E_MovementState movementState)
@@ -92,6 +90,47 @@ bool UHAIBaseComponent::StopBehaviorTree()
 		return true;
 	}
 	return false;
+}
+
+// Set the state as passive
+void UHAIBaseComponent::SetStatePassive()
+{
+	AHAIController* AIController = Cast<AHAIController>(OwnerCharacter->GetController());
+	if(AIController)
+	{
+		AIController->SetStateAsPassive();
+	}
+}
+
+// Set the state as investigate
+void UHAIBaseComponent::SetStateInvestigate()
+{
+	AHAIController* AIController = Cast<AHAIController>(OwnerCharacter->GetController());
+	if(AIController)
+	{
+		AIController->SetStateAsInvestigate();
+	}
+}
+
+// Set the state as active
+void UHAIBaseComponent::SetStateActive()
+{
+	AHAIController* AIController = Cast<AHAIController>(OwnerCharacter->GetController());
+	if(AIController)
+	{
+		AIController->SetStateAsActive();
+	}
+}
+
+// Get the possess state
+E_OnPossessState UHAIBaseComponent::GetPossessState()
+{
+	AHAIController* AIController = Cast<AHAIController>(OwnerCharacter->GetController());
+	if(AIController)
+	{
+		return AIController->GetCurrentState();
+	}
+	return E_OnPossessState::passive;
 }
 
 // Get the patrol spline

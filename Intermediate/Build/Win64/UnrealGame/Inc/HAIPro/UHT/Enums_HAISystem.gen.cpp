@@ -9,6 +9,7 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeEnums_HAISystem() {}
 // Cross Module References
+	HAIPRO_API UEnum* Z_Construct_UEnum_HAIPro_E_DominantSense();
 	HAIPRO_API UEnum* Z_Construct_UEnum_HAIPro_E_MovementState();
 	HAIPRO_API UEnum* Z_Construct_UEnum_HAIPro_E_MovementType();
 	HAIPRO_API UEnum* Z_Construct_UEnum_HAIPro_E_OnPossessState();
@@ -258,6 +259,66 @@ void EmptyLinkFunctionForGeneratedCodeEnums_HAISystem() {}
 		}
 		return Z_Registration_Info_UEnum_E_MovementState.InnerSingleton;
 	}
+	static FEnumRegistrationInfo Z_Registration_Info_UEnum_E_DominantSense;
+	static UEnum* E_DominantSense_StaticEnum()
+	{
+		if (!Z_Registration_Info_UEnum_E_DominantSense.OuterSingleton)
+		{
+			Z_Registration_Info_UEnum_E_DominantSense.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_HAIPro_E_DominantSense, (UObject*)Z_Construct_UPackage__Script_HAIPro(), TEXT("E_DominantSense"));
+		}
+		return Z_Registration_Info_UEnum_E_DominantSense.OuterSingleton;
+	}
+	template<> HAIPRO_API UEnum* StaticEnum<E_DominantSense>()
+	{
+		return E_DominantSense_StaticEnum();
+	}
+	struct Z_Construct_UEnum_HAIPro_E_DominantSense_Statics
+	{
+		static const UECodeGen_Private::FEnumeratorParam Enumerators[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FEnumParams EnumParams;
+	};
+	const UECodeGen_Private::FEnumeratorParam Z_Construct_UEnum_HAIPro_E_DominantSense_Statics::Enumerators[] = {
+		{ "E_DominantSense::Sight", (int64)E_DominantSense::Sight },
+		{ "E_DominantSense::Hearing", (int64)E_DominantSense::Hearing },
+		{ "E_DominantSense::Damage", (int64)E_DominantSense::Damage },
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UEnum_HAIPro_E_DominantSense_Statics::Enum_MetaDataParams[] = {
+		{ "BlueprintType", "true" },
+		{ "Comment", "//Enum for the type of dominant sense\n" },
+		{ "Damage.DisplayName", "Damage" },
+		{ "Damage.Name", "E_DominantSense::Damage" },
+		{ "Hearing.DisplayName", "Hearing" },
+		{ "Hearing.Name", "E_DominantSense::Hearing" },
+		{ "ModuleRelativePath", "Public/Enums_HAISystem.h" },
+		{ "Sight.DisplayName", "Sight" },
+		{ "Sight.Name", "E_DominantSense::Sight" },
+		{ "ToolTip", "Enum for the type of dominant sense" },
+	};
+#endif
+	const UECodeGen_Private::FEnumParams Z_Construct_UEnum_HAIPro_E_DominantSense_Statics::EnumParams = {
+		(UObject*(*)())Z_Construct_UPackage__Script_HAIPro,
+		nullptr,
+		"E_DominantSense",
+		"E_DominantSense",
+		Z_Construct_UEnum_HAIPro_E_DominantSense_Statics::Enumerators,
+		UE_ARRAY_COUNT(Z_Construct_UEnum_HAIPro_E_DominantSense_Statics::Enumerators),
+		RF_Public|RF_Transient|RF_MarkAsNative,
+		EEnumFlags::None,
+		(uint8)UEnum::ECppForm::EnumClass,
+		METADATA_PARAMS(Z_Construct_UEnum_HAIPro_E_DominantSense_Statics::Enum_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UEnum_HAIPro_E_DominantSense_Statics::Enum_MetaDataParams))
+	};
+	UEnum* Z_Construct_UEnum_HAIPro_E_DominantSense()
+	{
+		if (!Z_Registration_Info_UEnum_E_DominantSense.InnerSingleton)
+		{
+			UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_E_DominantSense.InnerSingleton, Z_Construct_UEnum_HAIPro_E_DominantSense_Statics::EnumParams);
+		}
+		return Z_Registration_Info_UEnum_E_DominantSense.InnerSingleton;
+	}
 	struct Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HAISystem_Build_BuiltPlugins_HAIPro_5_2_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Enums_HAISystem_h_Statics
 	{
 		static const FEnumRegisterCompiledInInfo EnumInfo[];
@@ -267,8 +328,9 @@ void EmptyLinkFunctionForGeneratedCodeEnums_HAISystem() {}
 		{ E_OnPossessState_StaticEnum, TEXT("E_OnPossessState"), &Z_Registration_Info_UEnum_E_OnPossessState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2139805809U) },
 		{ E_MovementType_StaticEnum, TEXT("E_MovementType"), &Z_Registration_Info_UEnum_E_MovementType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 663590422U) },
 		{ E_MovementState_StaticEnum, TEXT("E_MovementState"), &Z_Registration_Info_UEnum_E_MovementState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3100350066U) },
+		{ E_DominantSense_StaticEnum, TEXT("E_DominantSense"), &Z_Registration_Info_UEnum_E_DominantSense, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 824497281U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HAISystem_Build_BuiltPlugins_HAIPro_5_2_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Enums_HAISystem_h_825989339(TEXT("/Script/HAIPro"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HAISystem_Build_BuiltPlugins_HAIPro_5_2_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Enums_HAISystem_h_2108615636(TEXT("/Script/HAIPro"),
 		nullptr, 0,
 		nullptr, 0,
 		Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HAISystem_Build_BuiltPlugins_HAIPro_5_2_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Enums_HAISystem_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HAISystem_Build_BuiltPlugins_HAIPro_5_2_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Enums_HAISystem_h_Statics::EnumInfo));

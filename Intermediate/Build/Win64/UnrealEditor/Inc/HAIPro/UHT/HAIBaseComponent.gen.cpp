@@ -14,7 +14,9 @@ void EmptyLinkFunctionForGeneratedCodeHAIBaseComponent() {}
 	HAIPRO_API UClass* Z_Construct_UClass_AHPatrolSpline_NoRegister();
 	HAIPRO_API UClass* Z_Construct_UClass_UHAIBaseComponent();
 	HAIPRO_API UClass* Z_Construct_UClass_UHAIBaseComponent_NoRegister();
+	HAIPRO_API UEnum* Z_Construct_UEnum_HAIPro_E_DominantSense();
 	HAIPRO_API UEnum* Z_Construct_UEnum_HAIPro_E_MovementState();
+	HAIPRO_API UEnum* Z_Construct_UEnum_HAIPro_E_OnPossessState();
 	HAIPRO_API UFunction* Z_Construct_UDelegateFunction_HAIPro_OnActionEndDelegate__DelegateSignature();
 	HAIPRO_API UFunction* Z_Construct_UDelegateFunction_HAIPro_OnDoActionDelegate__DelegateSignature();
 	UPackage* Z_Construct_UPackage__Script_HAIPro();
@@ -110,6 +112,34 @@ void FOnActionEndDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnActi
 	Parms.bSuccess=bSuccess ? true : false;
 	OnActionEndDelegate.ProcessMulticastDelegate<UObject>(&Parms);
 }
+	DEFINE_FUNCTION(UHAIBaseComponent::execGetPossessState)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(E_OnPossessState*)Z_Param__Result=P_THIS->GetPossessState();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UHAIBaseComponent::execSetStateActive)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->SetStateActive();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UHAIBaseComponent::execSetStateInvestigate)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->SetStateInvestigate();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UHAIBaseComponent::execSetStatePassive)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->SetStatePassive();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(UHAIBaseComponent::execStopBehaviorTree)
 	{
 		P_FINISH;
@@ -145,8 +175,12 @@ void FOnActionEndDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnActi
 		UClass* Class = UHAIBaseComponent::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "Dead", &UHAIBaseComponent::execDead },
+			{ "GetPossessState", &UHAIBaseComponent::execGetPossessState },
 			{ "SetMovementStateFly", &UHAIBaseComponent::execSetMovementStateFly },
 			{ "SetMovementStateWalk", &UHAIBaseComponent::execSetMovementStateWalk },
+			{ "SetStateActive", &UHAIBaseComponent::execSetStateActive },
+			{ "SetStateInvestigate", &UHAIBaseComponent::execSetStateInvestigate },
+			{ "SetStatePassive", &UHAIBaseComponent::execSetStatePassive },
 			{ "StopBehaviorTree", &UHAIBaseComponent::execStopBehaviorTree },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -171,6 +205,44 @@ void FOnActionEndDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnActi
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UHAIBaseComponent_Dead_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UHAIBaseComponent_GetPossessState_Statics
+	{
+		struct HAIBaseComponent_eventGetPossessState_Parms
+		{
+			E_OnPossessState ReturnValue;
+		};
+		static const UECodeGen_Private::FBytePropertyParams NewProp_ReturnValue_Underlying;
+		static const UECodeGen_Private::FEnumPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_UHAIBaseComponent_GetPossessState_Statics::NewProp_ReturnValue_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_UHAIBaseComponent_GetPossessState_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(HAIBaseComponent_eventGetPossessState_Parms, ReturnValue), Z_Construct_UEnum_HAIPro_E_OnPossessState, METADATA_PARAMS(nullptr, 0) }; // 2139805809
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UHAIBaseComponent_GetPossessState_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UHAIBaseComponent_GetPossessState_Statics::NewProp_ReturnValue_Underlying,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UHAIBaseComponent_GetPossessState_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UHAIBaseComponent_GetPossessState_Statics::Function_MetaDataParams[] = {
+		{ "Category", "HAI" },
+		{ "Comment", "//Set the state as active\n" },
+		{ "ModuleRelativePath", "Public/HAIBaseComponent.h" },
+		{ "ToolTip", "Set the state as active" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UHAIBaseComponent_GetPossessState_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UHAIBaseComponent, nullptr, "GetPossessState", nullptr, nullptr, sizeof(Z_Construct_UFunction_UHAIBaseComponent_GetPossessState_Statics::HAIBaseComponent_eventGetPossessState_Parms), Z_Construct_UFunction_UHAIBaseComponent_GetPossessState_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UHAIBaseComponent_GetPossessState_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UHAIBaseComponent_GetPossessState_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UHAIBaseComponent_GetPossessState_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UHAIBaseComponent_GetPossessState()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UHAIBaseComponent_GetPossessState_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -243,6 +315,81 @@ void FOnActionEndDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnActi
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UHAIBaseComponent_SetMovementStateWalk_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UHAIBaseComponent_SetStateActive_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UHAIBaseComponent_SetStateActive_Statics::Function_MetaDataParams[] = {
+		{ "Category", "HAI" },
+		{ "Comment", "//Set the state as investigate\n" },
+		{ "ModuleRelativePath", "Public/HAIBaseComponent.h" },
+		{ "ToolTip", "Set the state as investigate" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UHAIBaseComponent_SetStateActive_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UHAIBaseComponent, nullptr, "SetStateActive", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UHAIBaseComponent_SetStateActive_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UHAIBaseComponent_SetStateActive_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UHAIBaseComponent_SetStateActive()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UHAIBaseComponent_SetStateActive_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UHAIBaseComponent_SetStateInvestigate_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UHAIBaseComponent_SetStateInvestigate_Statics::Function_MetaDataParams[] = {
+		{ "Category", "HAI" },
+		{ "Comment", "//Set the state as passive\n" },
+		{ "ModuleRelativePath", "Public/HAIBaseComponent.h" },
+		{ "ToolTip", "Set the state as passive" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UHAIBaseComponent_SetStateInvestigate_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UHAIBaseComponent, nullptr, "SetStateInvestigate", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UHAIBaseComponent_SetStateInvestigate_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UHAIBaseComponent_SetStateInvestigate_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UHAIBaseComponent_SetStateInvestigate()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UHAIBaseComponent_SetStateInvestigate_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UHAIBaseComponent_SetStatePassive_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UHAIBaseComponent_SetStatePassive_Statics::Function_MetaDataParams[] = {
+		{ "Category", "HAI" },
+		{ "Comment", "//Stop the behavior tree\n" },
+		{ "ModuleRelativePath", "Public/HAIBaseComponent.h" },
+		{ "ToolTip", "Stop the behavior tree" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UHAIBaseComponent_SetStatePassive_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UHAIBaseComponent, nullptr, "SetStatePassive", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UHAIBaseComponent_SetStatePassive_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UHAIBaseComponent_SetStatePassive_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UHAIBaseComponent_SetStatePassive()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UHAIBaseComponent_SetStatePassive_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -335,6 +482,54 @@ void FOnActionEndDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnActi
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_OnActionEnd_MetaData[];
 #endif
 		static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnActionEnd;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_OpenSight_MetaData[];
+#endif
+		static void NewProp_OpenSight_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_OpenSight;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_SightRadius_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_SightRadius;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_LoseSightRadius_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_LoseSightRadius;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_PeripheralVisionAngleDegrees_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_PeripheralVisionAngleDegrees;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_MaxAgeForSight_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_MaxAgeForSight;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_OpenHear_MetaData[];
+#endif
+		static void NewProp_OpenHear_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_OpenHear;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_HearingRange_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_HearingRange;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_MaxAgeHear_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_MaxAgeHear;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_OpenDamage_MetaData[];
+#endif
+		static void NewProp_OpenDamage_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_OpenDamage;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_MaxAgeDamage_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_MaxAgeDamage;
+		static const UECodeGen_Private::FBytePropertyParams NewProp_DominantSense_Underlying;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_DominantSense_MetaData[];
+#endif
+		static const UECodeGen_Private::FEnumPropertyParams NewProp_DominantSense;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -345,8 +540,12 @@ void FOnActionEndDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnActi
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UHAIBaseComponent_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_UHAIBaseComponent_Dead, "Dead" }, // 1120632364
+		{ &Z_Construct_UFunction_UHAIBaseComponent_GetPossessState, "GetPossessState" }, // 2529795930
 		{ &Z_Construct_UFunction_UHAIBaseComponent_SetMovementStateFly, "SetMovementStateFly" }, // 4188923767
 		{ &Z_Construct_UFunction_UHAIBaseComponent_SetMovementStateWalk, "SetMovementStateWalk" }, // 1825607219
+		{ &Z_Construct_UFunction_UHAIBaseComponent_SetStateActive, "SetStateActive" }, // 1210242002
+		{ &Z_Construct_UFunction_UHAIBaseComponent_SetStateInvestigate, "SetStateInvestigate" }, // 2712900964
+		{ &Z_Construct_UFunction_UHAIBaseComponent_SetStatePassive, "SetStatePassive" }, // 2751138712
 		{ &Z_Construct_UFunction_UHAIBaseComponent_StopBehaviorTree, "StopBehaviorTree" }, // 1531876584
 	};
 #if WITH_METADATA
@@ -427,6 +626,96 @@ void FOnActionEndDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnActi
 	};
 #endif
 	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OnActionEnd = { "OnActionEnd", nullptr, (EPropertyFlags)0x0010100000080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHAIBaseComponent, OnActionEnd), Z_Construct_UDelegateFunction_HAIPro_OnActionEndDelegate__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OnActionEnd_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OnActionEnd_MetaData)) }; // 3680009195
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OpenSight_MetaData[] = {
+		{ "Category", "HAI|Sense" },
+		{ "ModuleRelativePath", "Public/HAIBaseComponent.h" },
+	};
+#endif
+	void Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OpenSight_SetBit(void* Obj)
+	{
+		((UHAIBaseComponent*)Obj)->OpenSight = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OpenSight = { "OpenSight", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(UHAIBaseComponent), &Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OpenSight_SetBit, METADATA_PARAMS(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OpenSight_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OpenSight_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_SightRadius_MetaData[] = {
+		{ "Category", "HAI|Sense|Sight" },
+		{ "ModuleRelativePath", "Public/HAIBaseComponent.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_SightRadius = { "SightRadius", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHAIBaseComponent, SightRadius), METADATA_PARAMS(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_SightRadius_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_SightRadius_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_LoseSightRadius_MetaData[] = {
+		{ "Category", "HAI|Sense|Sight" },
+		{ "ModuleRelativePath", "Public/HAIBaseComponent.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_LoseSightRadius = { "LoseSightRadius", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHAIBaseComponent, LoseSightRadius), METADATA_PARAMS(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_LoseSightRadius_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_LoseSightRadius_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_PeripheralVisionAngleDegrees_MetaData[] = {
+		{ "Category", "HAI|Sense|Sight" },
+		{ "ModuleRelativePath", "Public/HAIBaseComponent.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_PeripheralVisionAngleDegrees = { "PeripheralVisionAngleDegrees", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHAIBaseComponent, PeripheralVisionAngleDegrees), METADATA_PARAMS(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_PeripheralVisionAngleDegrees_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_PeripheralVisionAngleDegrees_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_MaxAgeForSight_MetaData[] = {
+		{ "Category", "HAI|Sense|Sight" },
+		{ "ModuleRelativePath", "Public/HAIBaseComponent.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_MaxAgeForSight = { "MaxAgeForSight", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHAIBaseComponent, MaxAgeForSight), METADATA_PARAMS(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_MaxAgeForSight_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_MaxAgeForSight_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OpenHear_MetaData[] = {
+		{ "Category", "HAI|Sense" },
+		{ "ModuleRelativePath", "Public/HAIBaseComponent.h" },
+	};
+#endif
+	void Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OpenHear_SetBit(void* Obj)
+	{
+		((UHAIBaseComponent*)Obj)->OpenHear = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OpenHear = { "OpenHear", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(UHAIBaseComponent), &Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OpenHear_SetBit, METADATA_PARAMS(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OpenHear_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OpenHear_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_HearingRange_MetaData[] = {
+		{ "Category", "HAI|Sense|Hear" },
+		{ "ModuleRelativePath", "Public/HAIBaseComponent.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_HearingRange = { "HearingRange", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHAIBaseComponent, HearingRange), METADATA_PARAMS(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_HearingRange_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_HearingRange_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_MaxAgeHear_MetaData[] = {
+		{ "Category", "HAI|Sense|Hear" },
+		{ "ModuleRelativePath", "Public/HAIBaseComponent.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_MaxAgeHear = { "MaxAgeHear", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHAIBaseComponent, MaxAgeHear), METADATA_PARAMS(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_MaxAgeHear_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_MaxAgeHear_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OpenDamage_MetaData[] = {
+		{ "Category", "HAI|Sense" },
+		{ "ModuleRelativePath", "Public/HAIBaseComponent.h" },
+	};
+#endif
+	void Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OpenDamage_SetBit(void* Obj)
+	{
+		((UHAIBaseComponent*)Obj)->OpenDamage = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OpenDamage = { "OpenDamage", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(UHAIBaseComponent), &Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OpenDamage_SetBit, METADATA_PARAMS(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OpenDamage_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OpenDamage_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_MaxAgeDamage_MetaData[] = {
+		{ "Category", "HAI|Sense|Damage" },
+		{ "ModuleRelativePath", "Public/HAIBaseComponent.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_MaxAgeDamage = { "MaxAgeDamage", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHAIBaseComponent, MaxAgeDamage), METADATA_PARAMS(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_MaxAgeDamage_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_MaxAgeDamage_MetaData)) };
+	const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_DominantSense_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_DominantSense_MetaData[] = {
+		{ "Category", "HAI|Sense" },
+		{ "ModuleRelativePath", "Public/HAIBaseComponent.h" },
+	};
+#endif
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_DominantSense = { "DominantSense", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHAIBaseComponent, DominantSense), Z_Construct_UEnum_HAIPro_E_DominantSense, METADATA_PARAMS(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_DominantSense_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_DominantSense_MetaData)) }; // 824497281
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UHAIBaseComponent_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_BehaviorTree,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_targetsTag_Inner,
@@ -438,6 +727,18 @@ void FOnActionEndDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnActi
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_PatrolSpline,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OnDoAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OnActionEnd,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OpenSight,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_SightRadius,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_LoseSightRadius,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_PeripheralVisionAngleDegrees,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_MaxAgeForSight,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OpenHear,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_HearingRange,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_MaxAgeHear,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OpenDamage,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_MaxAgeDamage,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_DominantSense_Underlying,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_DominantSense,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UHAIBaseComponent_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UHAIBaseComponent>::IsAbstract,
@@ -476,9 +777,9 @@ void FOnActionEndDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnActi
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HAISystem_Build_BuiltPlugins_HAIPro_5_2_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UHAIBaseComponent, UHAIBaseComponent::StaticClass, TEXT("UHAIBaseComponent"), &Z_Registration_Info_UClass_UHAIBaseComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHAIBaseComponent), 3267963660U) },
+		{ Z_Construct_UClass_UHAIBaseComponent, UHAIBaseComponent::StaticClass, TEXT("UHAIBaseComponent"), &Z_Registration_Info_UClass_UHAIBaseComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHAIBaseComponent), 2744506852U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HAISystem_Build_BuiltPlugins_HAIPro_5_2_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_1304438710(TEXT("/Script/HAIPro"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HAISystem_Build_BuiltPlugins_HAIPro_5_2_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_1819155943(TEXT("/Script/HAIPro"),
 		Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HAISystem_Build_BuiltPlugins_HAIPro_5_2_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HAISystem_Build_BuiltPlugins_HAIPro_5_2_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

@@ -4,6 +4,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Enums_HAISystem.h"
 #include "HPatrolSpline.h"
 #include "Components/ActorComponent.h"
 #include "HAIBaseComponent.generated.h"
@@ -40,6 +41,29 @@ public:
 	UPROPERTY(BlueprintCallable, Category="HAI")
 	FOnActionEndDelegate OnActionEnd;
 
+	UPROPERTY(EditAnywhere, Category="HAI|Sense")
+	bool OpenSight;
+	UPROPERTY(EditAnywhere, Category="HAI|Sense|Sight")
+	float SightRadius = 1200.0f;
+	UPROPERTY(EditAnywhere, Category="HAI|Sense|Sight")
+	float LoseSightRadius = 1500.0f;
+	UPROPERTY(EditAnywhere, Category="HAI|Sense|Sight")
+	float PeripheralVisionAngleDegrees = 90.0f;
+	UPROPERTY(EditAnywhere, Category="HAI|Sense|Sight")
+	float MaxAgeForSight = 3.0f;
+	UPROPERTY(EditAnywhere, Category="HAI|Sense")
+	bool OpenHear;
+	UPROPERTY(EditAnywhere, Category="HAI|Sense|Hear")
+	float HearingRange = 1000.0f;
+	UPROPERTY(EditAnywhere, Category="HAI|Sense|Hear")
+	float MaxAgeHear = 2.0f;
+	UPROPERTY(EditAnywhere, Category="HAI|Sense")
+	bool OpenDamage;
+	UPROPERTY(EditAnywhere, Category="HAI|Sense|Damage")
+	float MaxAgeDamage = 2.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HAI|Sense")
+	E_DominantSense DominantSense = E_DominantSense::Sight; //The dominant sense of the AI character (Sight, Hear, Damage) default is Sight
+
 private:
 
 	UHAIBaseComponent();
@@ -53,6 +77,14 @@ public:
 	void Dead();//The function can call if npc is dead
 	UFUNCTION(BlueprintCallable, Category = "HAI")
 	bool StopBehaviorTree(); //Stop the behavior tree
+	UFUNCTION(BlueprintCallable, Category = "HAI")
+	void SetStatePassive();//Set the state as passive
+	UFUNCTION(BlueprintCallable, Category = "HAI")
+	void SetStateInvestigate();//Set the state as investigate
+	UFUNCTION(BlueprintCallable, Category = "HAI")
+	void SetStateActive();//Set the state as active
+	UFUNCTION(BlueprintCallable, Category = "HAI")
+	E_OnPossessState GetPossessState();//Get the possess state
 
 	AHPatrolSpline* GetPatrolSpline();
 		

@@ -23,13 +23,13 @@ void EmptyLinkFunctionForGeneratedCodeHAIPro_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0x850497E2,
-				0x091693FF,
+				0xCD25884C,
+				0xD3CE1359,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_HAIPro.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_HAIPro.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_HAIPro(Z_Construct_UPackage__Script_HAIPro, TEXT("/Script/HAIPro"), Z_Registration_Info_UPackage__Script_HAIPro, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x850497E2, 0x091693FF));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_HAIPro(Z_Construct_UPackage__Script_HAIPro, TEXT("/Script/HAIPro"), Z_Registration_Info_UPackage__Script_HAIPro, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xCD25884C, 0xD3CE1359));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

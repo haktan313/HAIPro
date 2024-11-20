@@ -55,4 +55,13 @@ enum class E_MovementState : uint8;
 template<> struct TIsUEnumClass<E_MovementState> { enum { Value = true }; };
 template<> HAIPRO_API UEnum* StaticEnum<E_MovementState>();
 
+#define FOREACH_ENUM_E_DOMINANTSENSE(op) \
+	op(E_DominantSense::Sight) \
+	op(E_DominantSense::Hearing) \
+	op(E_DominantSense::Damage) 
+
+enum class E_DominantSense : uint8;
+template<> struct TIsUEnumClass<E_DominantSense> { enum { Value = true }; };
+template<> HAIPRO_API UEnum* StaticEnum<E_DominantSense>();
+
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

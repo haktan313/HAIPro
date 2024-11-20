@@ -16,30 +16,33 @@ AHAIController::AHAIController(const FObjectInitializer& ObjectInitializer)
 	AIPerceptionComponent = CreateDefaultSubobject<UAIPerceptionComponent>(TEXT("PerceptionComponent"));
 	SetPerceptionComponent(*AIPerceptionComponent);//Setting the perception component of the AI controller
 
+	//Creating the sense configurations of the AI character and setting their default values
 	SightConfig = CreateDefaultSubobject<UAISenseConfig_Sight>(TEXT("SightConfig"));
-	SightConfig->SightRadius = 1200.0f;
-	SightConfig->LoseSightRadius = 1500.0f;
-	SightConfig->PeripheralVisionAngleDegrees = 90.0f;
-	SightConfig->DetectionByAffiliation.bDetectEnemies = true;
-	SightConfig->DetectionByAffiliation.bDetectNeutrals = true;
-	SightConfig->DetectionByAffiliation.bDetectFriendlies = true;
-	SightConfig->SetMaxAge(3.0f);
-
+	SightConfig->SightRadius = 0.f;
+	SightConfig->LoseSightRadius = 0.f;
+	SightConfig->PeripheralVisionAngleDegrees = 0.f;
+	SightConfig->DetectionByAffiliation.bDetectEnemies = false;
+	SightConfig->DetectionByAffiliation.bDetectNeutrals = false;
+	SightConfig->DetectionByAffiliation.bDetectFriendlies = false;
+	SightConfig->SetMaxAge(0.f);
+	
 	HearingConfig = CreateDefaultSubobject<UAISenseConfig_Hearing>(TEXT("HearingConfig"));
-	HearingConfig->HearingRange = 1000.0f;
-	HearingConfig->SetMaxAge(2.0f);
-	HearingConfig->DetectionByAffiliation.bDetectEnemies = true;
-	HearingConfig->DetectionByAffiliation.bDetectNeutrals = true;
-	HearingConfig->DetectionByAffiliation.bDetectFriendlies = true;
-
+	HearingConfig->HearingRange = 0.f;
+	HearingConfig->DetectionByAffiliation.bDetectEnemies = false;
+	HearingConfig->DetectionByAffiliation.bDetectNeutrals = false;
+	HearingConfig->DetectionByAffiliation.bDetectFriendlies = false;
+	HearingConfig->SetMaxAge(0.f);
+	
 	DamageConfig = CreateDefaultSubobject<UAISenseConfig_Damage>(TEXT("DamageConfig"));
-	DamageConfig->SetMaxAge(2.0f);
+	DamageConfig->SetMaxAge(0.f);
 
+	//Configuring the sense configurations of the AI character
 	AIPerceptionComponent->ConfigureSense(*SightConfig);
 	AIPerceptionComponent->ConfigureSense(*HearingConfig);
 	AIPerceptionComponent->ConfigureSense(*DamageConfig);
 
 	AIPerceptionComponent->SetDominantSense(SightConfig->GetSenseImplementation());//Setting the dominant sense of the AI controller
+	
 	AIPerceptionComponent->OnPerceptionUpdated.AddDynamic(this, &AHAIController::OnPerceptionUpdated);//Binding the OnPerceptionUpdated function to the OnPerceptionUpdated event
 
 	CrowdFollowingComponent = Cast<UCrowdFollowingComponent>(GetPathFollowingComponent());//Casting the path following component to the CrowdFollowingComponent
@@ -59,11 +62,79 @@ AHAIController::AHAIController(const FObjectInitializer& ObjectInitializer)
 	CrowdFollowingComponent->SetCrowdRotateToVelocity(true);
 }
 
+
 // Called when the AI controller possesses a pawn
 void AHAIController::OnPossess(APawn* InPawn)
 {
 	Super::OnPossess(InPawn);
 	HAIBaseComponent = Cast<UHAIBaseComponent>(InPawn->GetComponentByClass(UHAIBaseComponent::StaticClass()));
+	if(HAIBaseComponent)
+	{
+		if(HAIBaseComponent->OpenSight)//If in HAIBaseComponent the OpenSight is true
+		{
+			SightConfig->SightRadius = HAIBaseComponent->SightRadius;
+			SightConfig->LoseSightRadius = HAIBaseComponent->LoseSightRadius;
+			SightConfig->PeripheralVisionAngleDegrees = HAIBaseComponent->PeripheralVisionAngleDegrees;
+			SightConfig->DetectionByAffiliation.bDetectEnemies = true;
+			SightConfig->DetectionByAffiliation.bDetectNeutrals = true;
+			SightConfig->DetectionByAffiliation.bDetectFriendlies = true;
+			SightConfig->SetMaxAge(HAIBaseComponent->MaxAgeForSight);
+			
+			AIPerceptionComponent->ConfigureSense(*SightConfig);
+		}
+		else
+		{
+			SightConfig->SightRadius = 0.f;
+			SightConfig->LoseSightRadius = 0.f;
+			SightConfig->PeripheralVisionAngleDegrees = 0.f;
+			SightConfig->DetectionByAffiliation.bDetectEnemies = false;
+			SightConfig->DetectionByAffiliation.bDetectNeutrals = false;
+			SightConfig->DetectionByAffiliation.bDetectFriendlies = false;
+			SightConfig->SetMaxAge(0.f);
+
+			AIPerceptionComponent->ConfigureSense(*SightConfig);
+		}
+		if(HAIBaseComponent->OpenHear)//If in HAIBaseComponent the OpenHear is true
+		{
+			HearingConfig->HearingRange = HAIBaseComponent->HearingRange;
+			HearingConfig->SetMaxAge(HAIBaseComponent->MaxAgeHear);
+			HearingConfig->DetectionByAffiliation.bDetectEnemies = true;
+			HearingConfig->DetectionByAffiliation.bDetectNeutrals = true;
+			HearingConfig->DetectionByAffiliation.bDetectFriendlies = true;
+			AIPerceptionComponent->ConfigureSense(*HearingConfig);
+		}
+		else
+		{
+			HearingConfig->HearingRange = 0.f;
+			HearingConfig->SetMaxAge(0.f);
+			HearingConfig->DetectionByAffiliation.bDetectEnemies = false;
+			HearingConfig->DetectionByAffiliation.bDetectNeutrals = false;
+			HearingConfig->DetectionByAffiliation.bDetectFriendlies = false;
+			AIPerceptionComponent->ConfigureSense(*HearingConfig);
+		}
+		if(HAIBaseComponent->OpenDamage)//If in HAIBaseComponent the OpenDamage is true
+		{
+			DamageConfig->SetMaxAge(HAIBaseComponent->MaxAgeDamage);
+			AIPerceptionComponent->ConfigureSense(*DamageConfig);
+		}
+		else
+		{
+			DamageConfig->SetMaxAge(0.f);
+			AIPerceptionComponent->ConfigureSense(*DamageConfig);
+		}
+		switch (HAIBaseComponent->DominantSense)//Set the dominant sense of the AI controller
+		{
+			case E_DominantSense::Sight:
+				AIPerceptionComponent->SetDominantSense(SightConfig->GetSenseImplementation());
+				break;
+			case E_DominantSense::Hearing:
+				AIPerceptionComponent->SetDominantSense(HearingConfig->GetSenseImplementation());
+				break;
+			case E_DominantSense::Damage:
+				AIPerceptionComponent->SetDominantSense(DamageConfig->GetSenseImplementation());
+				break;
+		}
+	}
 	if(HAIBaseComponent && HAIBaseComponent->BehaviorTree)
 	{
 		RunBehaviorTree(HAIBaseComponent->BehaviorTree);

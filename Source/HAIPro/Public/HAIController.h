@@ -30,19 +30,19 @@ protected:
 
 	void HandleSense(AActor* sensedTargetActor);//Handle the sense of the AI character
 
-	E_OnPossessState GetCurrentState();//Get the current state of the AI character
-
 	class UCrowdFollowingComponent* CrowdFollowingComponent;//The crowd following component of the AI character
 
 	class UHAIBaseComponent* HAIBaseComponent;//The base component of the AI character
 
-	UAIPerceptionComponent* AIPerceptionComponent;//The perception component of the AI character
+public:
 
+	UAIPerceptionComponent* AIPerceptionComponent;//The perception component of the AI character
+	
 	class UAISenseConfig_Sight* SightConfig;//The sense configurations of the AI character
 	class UAISenseConfig_Hearing* HearingConfig;//The sense configurations of the AI character
 	class UAISenseConfig_Damage* DamageConfig;//The sense configurations of the AI character
-
-public:
+	
+	E_OnPossessState GetCurrentState();//Get the current state of the AI character
 
 	FVector pointOfInterest;//The point of interest of the AI character
 	AActor* targetActor;//The target actor of the AI character
