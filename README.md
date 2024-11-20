@@ -80,7 +80,7 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 ![Ekran görüntüsü 2024-11-19 152520](https://github.com/user-attachments/assets/c697867e-8900-49b0-b660-fac3edc1655c)
 - ### HAI Controller (with Crowd Following Component)
   - AI Controller manages NPC behavior with AI Perception for sight, hearing, and damage detection, while using Crowd Following for dynamic pathfinding and collision avoidance in crowded scenes. It also controls OnPossessState transitions for flexible behavior management.
-  - You can adjust the values of the senses sight, hearing and damage in the HAI Base Component.
+  - You can adjust the values of the senses sight, hearing and damage in the HAI Base Component. And with it you can give different values to EVERY NPC created with the same class and the same aicontroller.
 
 ----------------------------------------------------------------------------------------------------------
 
