@@ -44,14 +44,21 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 
 - ### HAI Base Component:![aibase](https://github.com/user-attachments/assets/03bb5dd0-c482-40d8-9d74-f8ac236ebe58)
      - ## HAI Base Component Events and Functions
+ 
+       ![all haibase](https://github.com/user-attachments/assets/d651468d-e47a-48d9-aff8-f1d38791e862)
+       
         - **1.On Do Action**:
         - **2.Call On Action End**:
-        - **3.Bind Event to On Do Action**:
+        - **3.Bind Event to On Do Action (Assign On Do Action)**:
         - **4.Dead**:
         - **5.Stop Behavior Tree**:
         - **6.Start Behavior Trree**:
         - **7.Set Movement State Walk**:
         - **8.Set Movement State Fly**:
+        - **9.GetPossessState**:
+        - **10.Set State Active**:
+        - **11.Set State Investigate**:
+        - **12.Set State Passive**:
           
     - ## HAI Varaibles
       
