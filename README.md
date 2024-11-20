@@ -118,9 +118,9 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
  
        ![functions](https://github.com/user-attachments/assets/f456656e-03a2-41f5-89c4-01bb8393fcba)
        
-          - **1.Took Token from Target**:
+          - **1.Took Token from Target**: Request to take token from the target actor with the given amount of tokens and returns back whether the request was successful or not. This is used in the CanTookToken service.
             
-          - **2.Give Token to Target**:
+          - **2.Give Token to Target**: Gives the token in the target actor entered in the entered amount. This is used in DoAction task if Token Tooked is true.
             
      - ## HToken System Component Varaibles
  
