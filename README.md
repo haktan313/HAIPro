@@ -12,7 +12,7 @@ This plugin offers an Advanced AI management model with features like token-base
 - [Supported Versions](#supported-versions)
 - [Installation Instructions](#installation-instructions)
 - [Features](#features)
-- [Architecture and Blueprint/C++ Examples](#architecture-and-blueprint-c-examples)
+- [Architecture and Blueprint/C++ Examples](#architecture-and-blueprintc-examples)
      - [HAI Base Component](#hai-base-component)
      - [HToken System](#htoken-system)
      - [HAI Controller (with Crowd Following Component)](#hai-controller-with-crowd-following-component)
