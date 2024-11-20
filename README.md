@@ -42,7 +42,7 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 ## Architecture
 
 
-- ### HAI Base Component:![aibase](https://github.com/user-attachments/assets/03bb5dd0-c482-40d8-9d74-f8ac236ebe58)
+- ### HAI Base Component:![aibase](https://github.com/user-attachments/assets/03bb5dd0-c482-40d8-9d74-f8ac236ebe58) The HAI Base Component is the core of NPC behavior, integrating seamlessly with AI Perception for sight, hearing, and damage detection. It supports DoAction events, allowing dynamic tasks and smooth behavior tree integration for flexible and adaptive NPC actions.
      - ## HAI Base Component Events and Functions
  
        ![all haibase](https://github.com/user-attachments/assets/d651468d-e47a-48d9-aff8-f1d38791e862)
@@ -113,7 +113,7 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 ----------------------------------------------------------------------------------------------------------
 
 
-- ### HToken System:![token](https://github.com/user-attachments/assets/24ef2bf3-604f-4902-be53-fcb18d784fff)
+- ### HToken System:![token](https://github.com/user-attachments/assets/24ef2bf3-604f-4902-be53-fcb18d784fff) The HToken System is used for prioritizing NPC actions with token-based logic. NPCs can take or give tokens to decide who performs an action, ensuring smooth and fair task execution.
      - ## HToken System Component Functions
  
        ![functions](https://github.com/user-attachments/assets/f456656e-03a2-41f5-89c4-01bb8393fcba)
