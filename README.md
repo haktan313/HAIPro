@@ -52,26 +52,61 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
         - **6.Start Behavior Trree**:
         - **7.Set Movement State Walk**:
         - **8.Set Movement State Fly**:
+          
     - ## HAI Varaibles
-         - **1.Behavior Tree**:
-         - **2.Targets Tag**:
-         - **3.Walk Speed**:
-         - **4.Run Speed**:
-         - **5.Normal Fly Speed**:
-         - **6.Fast Fly Speed**:
-         - **7.Patrol Spline**:
-         - **8.Open Sight**:
-         - **9.Open Hear**:
-         - **10.Open Damage**:
-         - **11.Dominant Sense**:
-         - **12.Sight Radius**:
-         - **13.lose Sight Radius**:
-         - **14.Peripheral Vision Angle Degrees**:
-         - **15.Max Age for Sight**:
-         - **16.Hearing Range**:
-         - **17.Max Age Hear**:
-         - **18.Max Age Damage**:
+         - **1.Behavior Tree**:  
+           The behavior tree asset assigned to the NPC.
 
+         - **2.Targets Tag**:  
+           A list of tags representing potential targets the NPC can detect. If left empty, the NPC detects all characters.
+
+         - **3.Walk Speed**:  
+           The NPC's walking speed, used for ground movement.
+
+         - **4.Run Speed**:  
+           The NPC's running speed, used for faster ground movement.
+
+         - **5.Normal Fly Speed**:  
+           The NPC's default flying speed during regular movement.
+
+         - **6.Fast Fly Speed**:  
+           The NPC's fast flying speed for high-speed aerial movement.
+
+         - **7.Patrol Spline**:  
+           A spline component used to define the NPC's patrol path.
+
+         - **8.Open Sight**:  
+           Enables or disables the sight sense in the AI Perception component.
+
+         - **9.Open Hear**:  
+           Enables or disables the hearing sense in the AI Perception component.
+
+         - **10.Open Damage**:  
+           Enables or disables the damage sense in the AI Perception component.
+
+         - **11.Dominant Sense**:  
+           The primary sense of the AI Perception component, typically used for prioritizing detection (e.g., sight).
+
+         - **12.Sight Radius**:  
+           The maximum range within which the AI Perception's sight sense can detect targets.
+
+         - **13.Lose Sight Radius**:  
+           The range at which the AI Perception's sight sense loses track of a target.
+
+         - **14.Peripheral Vision Angle Degrees**:  
+           The AI Perception's field of view angle for detecting targets with sight.
+
+         - **15.Max Age for Sight**:  
+           The maximum duration the AI Perception retains sight information about a target.
+
+         - **16.Hearing Range**:  
+           The maximum range within which the AI Perception's hearing sense can detect sounds.
+
+         - **17.Max Age Hear**:  
+           The maximum duration the AI Perception retains hearing information.
+
+         - **18.Max Age Damage**:  
+           The maximum duration the AI Perception retains damage information.
 
 ----------------------------------------------------------------------------------------------------------
 
