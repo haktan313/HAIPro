@@ -8,8 +8,8 @@ This plugin offers an Advanced AI management model with features like token-base
 -In future updates, this system will be integrated with H3DPathfinding, which I developed in Unreal Engine.
 
 -The example behaviour tree, blackboard and 2 EQS are available in the plugin's content folder. 
--To access them, you need to tick the ‘Show Engine Content’ and ‘Show Plugin Content’ options in the content browser (drawer).
-![Ekran görüntüsü 2024-11-20 174700](https://github.com/user-attachments/assets/c8335686-7144-40cb-890d-fa2db061a25a)
+-To access them, you need to tick the ‘Show Engine Content’ and ‘Show Plugin Content’ settings in the content browser (drawer).
+![Ekran görüntüsü 2024-11-20 175109](https://github.com/user-attachments/assets/d1a921b8-ce46-453f-affc-aff00d3b4ee7)
 
 ## Contents
 
