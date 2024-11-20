@@ -48,17 +48,27 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
        ![all haibase](https://github.com/user-attachments/assets/d651468d-e47a-48d9-aff8-f1d38791e862)
        
         - **1.On Do Action**:
+          
         - **2.Call On Action End**:
+          
         - **3.Bind Event to On Do Action (Assign On Do Action)**:
-        - **4.Dead**:
-        - **5.Stop Behavior Tree**:
-        - **6.Start Behavior Trree**:
-        - **7.Set Movement State Walk**:
-        - **8.Set Movement State Fly**:
-        - **9.GetPossessState**:
-        - **10.Set State Active**:
-        - **11.Set State Investigate**:
-        - **12.Set State Passive**:
+          
+        - **4.Dead**: It simply kills the npc, cleans up any focus the npc has, returns any tokens the npc has taken from someone, and stops the behaviour tree.
+          
+        - **5.Stop Behavior Tree**: stops the behaviour tree
+          
+        - **6.Set Movement State Walk**: Sets the npc's walk speed
+          
+        - **7.Set Movement State Fly**: Sets the npc's fly speed
+          
+        - **8.GetPossessState**: Returns the OnPossessState of the NPC
+          
+        - **9.Set State Active**: Sets the NPC's OnPossessState to Active after the specified duration provided in the task.
+          
+        - **10.Set State Investigate**: Sets the NPC's OnPossessState to Investigate after the specified duration provided in the task.
+          
+        - **11.Set State Passive**: Sets the NPC's OnPossessState to Passive after the specified duration provided in the task.
+          
           
     - ## HAI Varaibles
       
