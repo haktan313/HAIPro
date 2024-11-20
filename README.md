@@ -126,11 +126,11 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 ----------------------------------------------------------------------------------------------------------
 
 
-- ### HToken System:![token](https://github.com/user-attachments/assets/24ef2bf3-604f-4902-be53-fcb18d784fff)     ![tokenc++](https://github.com/user-attachments/assets/cb45a7ce-bb78-4359-a582-c96b60da620e)
+- ### HToken System:![token](https://github.com/user-attachments/assets/24ef2bf3-604f-4902-be53-fcb18d784fff)   
 - The HToken System is used for prioritizing NPC actions with token-based logic. NPCs can take or give tokens to decide who performs an action, ensuring smooth and fair task execution.
      - ## HToken System Component Functions
  
-       ![functions](https://github.com/user-attachments/assets/f456656e-03a2-41f5-89c4-01bb8393fcba)
+       ![functions](https://github.com/user-attachments/assets/f456656e-03a2-41f5-89c4-01bb8393fcba)   ![tokenc++](https://github.com/user-attachments/assets/cb45a7ce-bb78-4359-a582-c96b60da620e)
        
           - **1.Took Token from Target**: Request to take token from the target actor with the given amount of tokens and returns back whether the request was successful or not. This is used in the CanTookToken service.
             
