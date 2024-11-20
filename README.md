@@ -115,9 +115,15 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 
 - ### HToken System:![token](https://github.com/user-attachments/assets/24ef2bf3-604f-4902-be53-fcb18d784fff)
      - ## HToken System Component Functions
+ 
+       ![functions](https://github.com/user-attachments/assets/f456656e-03a2-41f5-89c4-01bb8393fcba)
+       
           - **1.Took Token from Target**:
           - **2.Give Token to Target**:
      - ## HToken System Component Varaibles
+ 
+       ![varaible](https://github.com/user-attachments/assets/0519b55e-b7c2-4bea-83f9-d4faf7d54dea)
+       
           - **1.Current Token**:
           - **2.Token Map**:
 
