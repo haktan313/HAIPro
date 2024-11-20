@@ -53,7 +53,7 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
         - **7.Set Movement State Walk**:
         - **8.Set Movement State Fly**:
           
-    - ## HAI Varaibles
+    - ## HAI Varaibles ![haivaraibles](https://github.com/user-attachments/assets/349713fc-7aa2-471b-92e6-35906efa0cf6)
          - **1.Behavior Tree**: The behavior tree asset assigned to the NPC.
 
          - **2.Targets Tag**: A list of tags representing potential targets the NPC can detect. If left empty, the NPC detects all characters.
