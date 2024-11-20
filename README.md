@@ -47,11 +47,11 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
  
        ![all haibase](https://github.com/user-attachments/assets/d651468d-e47a-48d9-aff8-f1d38791e862)
        
-        - **1.On Do Action**: It is triggered when the NPC performs a specific action and carries an Action ID, which indicates the type or purpose of that action. Defined as a delegate in HAIBase, this triggering process can work with the DoAction task in the Behavior Tree or with a custom system you create.
+        - **1.On Do Action !!!**: It is triggered when the NPC performs a specific action and carries an Action ID, which indicates the type or purpose of that action. Defined as a delegate in HAIBase, this triggering process can work with the DoAction task in the Behavior Tree or with a custom system you create.
           
-        - **2.Call On Action End**: Call On Action End works in conjunction with OnDoAction. It must be called at the end of the events triggered by OnDoAction to mark the action as complete. Additionally, it finalizes the currently running DoAction task in the Behavior Tree. The provided Success value determines whether the action was successful or not.
+        - **2.Call On Action End !!!**: Call On Action End works in conjunction with OnDoAction. It must be called at the end of the events triggered by OnDoAction to mark the action as complete. Additionally, it finalizes the currently running DoAction task in the Behavior Tree. The provided Success value determines whether the action was successful or not.
           
-        - **3.Bind Event to On Do Action (Assign On Do Action)**: It performs the same function as OnDoAction by responding to specific actions triggered by the NPC with an Action ID. However, the difference is that this node allows you to bind a custom event to the OnDoAction delegate. When OnDoAction is triggered, the assigned custom event is automatically executed, enabling you to define specific behaviors or additional logic for each action.
+        - **3.Bind Event to On Do Action (Assign On Do Action) !!!**: It performs the same function as OnDoAction by responding to specific actions triggered by the NPC with an Action ID. However, the difference is that this node allows you to bind a custom event to the OnDoAction delegate. When OnDoAction is triggered, the assigned custom event is automatically executed, enabling you to define specific behaviors or additional logic for each action.
           
         - **4.Dead**: It simply kills the npc, cleans up any focus the npc has, returns any tokens the npc has taken from someone, and stops the behaviour tree.
           
