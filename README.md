@@ -39,6 +39,18 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 
 ## Features
 
+- **Token-Based Task Prioritization**: NPCs can use tokens to dynamically prioritize tasks. Both the giver and receiver of tokens must have the **HTokenSystem Component** for this system to work.
+
+- **Advanced AIController**: Includes AI Perception for sight, hearing, and damage detection, integrated with the Crowd Following Component for smooth pathfinding and collision avoidance in crowded environments.
+
+- **Flexible Multi-Action Support**: The **DoAction Task** allows NPCs to perform multiple actions dynamically using Action IDs. This system can be used both in behavior trees or independently for custom setups.
+
+- **Customizable Perception System**: Adjust sight, hearing, and damage detection values for each NPC individually via the HAI Base Component.
+
+- **Dynamic Patrol System**: NPCs can follow splines for patrol routes or perform random patrols within a defined area, offering flexible pathing behavior.
+
+- **Seamless Behavior Tree Integration**: Built-in tasks, services, and decorators simplify NPC behavior customization while supporting dynamic decision-making.
+
 ## Architecture
 
 
