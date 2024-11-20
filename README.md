@@ -119,13 +119,16 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
        ![functions](https://github.com/user-attachments/assets/f456656e-03a2-41f5-89c4-01bb8393fcba)
        
           - **1.Took Token from Target**:
+            
           - **2.Give Token to Target**:
+            
      - ## HToken System Component Varaibles
  
        ![varaible](https://github.com/user-attachments/assets/0519b55e-b7c2-4bea-83f9-d4faf7d54dea)
        
-          - **1.Current Token**:
-          - **2.Token Map**:
+          - **1.Current Token**: The amount of tokens owned by the character who has this component
+            
+          - **2.Token Map**: Do not touch if not necessary!!!!. This is the TMap varibles that stores how many tokens these characters have received and from who.
 
 ----------------------------------------------------------------------------------------------------------
 
