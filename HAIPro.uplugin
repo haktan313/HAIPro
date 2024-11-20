@@ -1,0 +1,23 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "HAIPro",
+	"Description": "This plugin offers an Advanced AI management model with features like token-based task prioritization for NPCs, integration with an Advanced AIController using the CrowdFollowing component, and flexible multi-action support through the DoAction task within the Behavior Tree.",
+	"Category": "Advance AIModule",
+	"CreatedBy": "Haktan Cagri Kodat",
+	"CreatedByURL": "https://www.linkedin.com/in/haktan-%C3%A7a%C4%9Fr%C4%B1-kodat-3b01b7297/",
+	"DocsURL": "https://github.com/haktan313/HAIPro",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"EngineVersion": "5.2.0",
+	"CanContainContent": true,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "HAIPro",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
