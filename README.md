@@ -148,7 +148,7 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 
 ![Ekran görüntüsü 2024-11-19 154736](https://github.com/user-attachments/assets/a2964214-900f-48ae-94e4-4765d30840f7)
 
-   - **1.DoAction**: 
+   - **!!!!!!!! 1.DoAction**: The DoAction Task allows NPCs to perform specific actions dynamically using HAI Base Component's DoAction events. For token-based actions, the Token Tooked bool must be set to true, and the target actor (from whom the token will be taken) should be specified because, after the task is completed, this token will be returned to that target. Additionally, if the task depends on a blackboard bool value being true, it should be provided to ensure the task resets the bool to false upon completion.
 
    - **2.Set Focus**: Allows the NPC to focus on the given blackboard value, which can be either an actor or a vector.
    
