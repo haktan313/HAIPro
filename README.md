@@ -11,7 +11,7 @@ This plugin offers an Advanced AI management model with features like token-base
 
 - [Supported Versions](#supported-versions)
 - [Installation Instructions](#installation-instructions)
-- [Features](#features)
+- [Some Features](#some-features)
 - [Architecture and Blueprint/C++ Examples](#architecture-and-blueprintc-examples)
      - [HAI Base Component](#hai-base-component)
      - [HToken System](#htoken-system)
@@ -37,7 +37,7 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 3. **Activate the Plugin**  
    Open Unreal Engine, go to `Edit > Plugins`, and enable the plugin.
 
-## Features
+## Some Features
 
 - **Token-Based Task Prioritization**: NPCs can use tokens to dynamically prioritize tasks. Both the giver and receiver of tokens must have the **HTokenSystem Component** for this system to work.
 
