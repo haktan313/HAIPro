@@ -12,7 +12,7 @@ This plugin offers an Advanced AI management model with features like token-base
 - [Supported Versions](#supported-versions)
 - [Installation Instructions](#installation-instructions)
 - [Features](#features)
-- [Architecture](#architecture)
+- [Architecture and Blueprint/C++ Examples](#architecture-and-blueprint-c-examples)
      - [HAI Base Component](#hai-base-component)
      - [HToken System](#htoken-system)
      - [HAI Controller (with Crowd Following Component)](#hai-controller-with-crowd-following-component)
@@ -51,7 +51,7 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 
 - **Seamless Behavior Tree Integration**: Built-in tasks, services, and decorators simplify NPC behavior customization while supporting dynamic decision-making.
 
-## Architecture
+## Architecture and Blueprint/C++ Examples
 
 
 - ### HAI Base Component:![aibase](https://github.com/user-attachments/assets/03bb5dd0-c482-40d8-9d74-f8ac236ebe58)
