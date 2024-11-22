@@ -177,6 +177,7 @@ By following this guide, you can set up intelligent NPC behaviors, patrols, and 
 
 
 
+----------------------------------------------------------------------------------------
 
 ## Architecture and Blueprint/C++ Examples
 
