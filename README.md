@@ -33,6 +33,7 @@ This plugin offers an Advanced AI management model with features like token-base
      - [EQS](#eqs)
      - [Behavior Tree & Blackboard](#behavior-tree--blackboard)
 - [Tutorial Video](#tutorial-video)
+- [HAIPro Plugin - What You Can Do With It](#haipro-plugin--what-you-can-do-with-it)
 
 
 ## Supported Versions
@@ -370,3 +371,5 @@ By following this guide, you can set up intelligent NPC behaviors, patrols, and 
 
 ## Tutorial Video
 [HAIPro Tutorial](https://youtu.be/Xdd8zPXJ8Gw)
+## HAIPro Plugin - What You Can Do With It
+[HAIPro Plugin - What You Can Do With It](https://youtu.be/ZgtUwNrf7Nc)
