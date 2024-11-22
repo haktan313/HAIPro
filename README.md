@@ -33,7 +33,7 @@ This plugin offers an Advanced AI management model with features like token-base
      - [EQS](#eqs)
      - [Behavior Tree & Blackboard](#behavior-tree--blackboard)
 - [Tutorial Video](#tutorial-video)
-- [HAIPro Plugin - What You Can Do With It](#haipro-plugin-what-you-can-do-with-it)
+- [HAIPro Plugin - What You Can Do With It](#haipro-plugin---what-you-can-do-with-it)
 
 
 ## Supported Versions
