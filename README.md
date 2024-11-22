@@ -119,9 +119,9 @@ To use the HAI AIController for your NPCs:
 
    ![tasks](https://github.com/user-attachments/assets/551cb5e4-acb8-463c-93ac-70aea4d8cfc6) ![decorators](https://github.com/user-attachments/assets/555b6507-0f4f-4d06-9902-06ec7510344a)
    
-   - **Tasks**: `DoAction`, `Find Next Patrol Node`, `Set State Passive`
+   - **Tasks**: `DoAction`, `Set Focus`, `Clear Focus`, `Set Movement State`, `Find RandomPointOnNavMesh`, `Find Next Patrol Node`, `Set State Passive`, `Set State Investigate`, `Set State Active`
    - **Services**: `CanTookToken`
-   - **Decorators**: `Has Patrol Route`
+   - **Decorators**: `Has Patrol Route`, `Is In The Range`, `Blacboard Base Condition(OnPossessState)` `Blackboard Base Condition(canDoAction)`
 
   ### **Blackboard Setup**
 
@@ -163,6 +163,10 @@ To use the HAI AIController for your NPCs:
 
   ### **Purpose**
 The **HToken System** manages task prioritization, ensuring smooth execution of tasks for NPCs or other entities (e.g., players, objects).
+
+![388136577-f456656e-03a2-41f5-89c4-01bb8393fcba](https://github.com/user-attachments/assets/38566b03-e552-4d68-bb63-f6c522e7602d)
+![388183765-cb45a7ce-bb78-4359-a582-c96b60da620e](https://github.com/user-attachments/assets/5bde07b6-c9e6-457a-af50-1513809110dc)
+![388136567-0519b55e-b7c2-4bea-83f9-d4faf7d54dea](https://github.com/user-attachments/assets/3e0b49b2-d1b2-40db-9171-7e0233348d43)
 
   ### **Requirements**
 1. Both the giver (e.g., NPC, player, or object) and the receiver (e.g., NPC or another entity) must have the **HToken System Component**.
