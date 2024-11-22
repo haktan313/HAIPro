@@ -26,6 +26,7 @@ This plugin offers an Advanced AI management model with features like token-base
      - [Decorator & Service](#decorator--service)
      - [EQS](#eqs)
      - [Behavior Tree & Blackboard](#behavior-tree--blackboard)
+- [Tutorial Video](#tutorial-video)
 
 
 ## Supported Versions
@@ -231,3 +232,5 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
    - **canDoAction**: Indicates whether the NPC is allowed to perform a specific action. If set to true, the NPC can execute the action; if false, the action is canceled or blocked.
 
 
+## Tutorial Video
+[HAIPro Tutorial](https://youtu.be/Xdd8zPXJ8Gw)
