@@ -57,6 +57,120 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 - **Dynamic Patrol System**: NPCs can follow splines for patrol routes or perform random patrols within a defined area, offering flexible pathing behavior.
 
 - **Seamless Behavior Tree Integration**: Built-in tasks, services, and decorators simplify NPC behavior customization while supporting dynamic decision-making.
+  
+
+  # **HAIPro Plugin: Basic Setup and Usage**
+
+This guide will help you set up and use the **HAIPro Plugin** within Unreal Engine for advanced NPC behaviors, patrols, and task management.
+
+---
+
+## **1. Assigning the HAI AIController**
+
+To use the HAI AIController for your NPCs:
+
+1. Open the NPC Blueprint.
+2. In the **Class Defaults**, locate the **AI Controller Class** property.
+3. Select **HAIController** from the dropdown list.
+4. Save the Blueprint.
+
+---
+
+## **2. Adding the HAI Base Component & Configuring Perception**
+
+### **Adding the HAI Base Component**
+1. Open your NPC Blueprint.
+2. Add the **HAI Base Component** through the **Components** panel.
+
+### **Configuring Perception**
+1. Adjust detection variables in the **HAI Base Component**, such as:
+   - `Sight Radius`: Maximum range for sight detection.
+   - `Peripheral Vision Angle Degrees`: Field of view for sight.
+   - `Hearing Range`: Maximum range for sound detection.
+   - `Dominant Sense`: Primary detection method (e.g., Sight).
+
+2. Toggle specific senses using:
+   - `Open Sight`, `Open Hear`, `Open Damage` (enable/disable sight, hearing, and damage detection).
+
+3. Ensure proper Blackboard integration:
+   - Use the **CanTookToken** service to manage task prioritization.
+   - Assign a Blackboard boolean (e.g., `canDoAction`) to the **DoAction** task to reset it after use.
+
+---
+
+## **3. Setting Up the Behavior Tree**
+
+### **Using Example Files**
+- The plugin includes an example **Behavior Tree**, two **EQS setups**, and a **Blackboard** in the plugin’s **Content** folder.
+- Enable **Show Engine Content** and **Show Plugin Content** in the Content Browser to access these files.
+
+### **Building Your Own Behavior Tree**
+1. Use the example Behavior Tree as a reference.
+2. Add plugin tasks, decorators, and services such as:
+   - **Tasks**: `DoAction`, `Find Next Patrol Node`, `Set State Passive`
+   - **Services**: `CanTookToken`
+   - **Decorators**: `Has Patrol Route`
+
+### **Blackboard Setup**
+1. Add required keys like:
+   - `targetActor`: Focused target for the NPC.
+   - `OnPossessState`: Current state (e.g., Passive, Active, Investigating).
+   - `pointOfInterest`: Location of interest.
+   - `canDoAction`: Boolean indicating if an action can be performed.
+2. Assign default values to avoid errors.
+
+### **EQS Queries**
+- Use the included EQS setups:
+  - `FindIdealRange_Example`: Finds optimal positions based on visibility and distance.
+  - `Strafe_Example`: Generates strafing positions around the target actor.
+
+---
+
+## **4. Configuring Patrol Behavior**
+
+### **Setting Up Patrols**
+1. Add a **Spline Component** in your NPC Blueprint and define patrol points.
+2. Assign the spline to the **Patrol Spline** property in the **HAI Base Component**.
+
+### **Behavior Tree Integration**
+- Use the **Find Next Patrol Node** task to make the NPC follow the patrol path.
+
+### **Dynamic Patrol Management**
+- Manage how many NPCs can perform a patrol or action simultaneously.
+- Adjust token settings in the **HToken System Component** to control task limits.
+
+---
+
+## **5. Using the Token System**
+
+### **Purpose**
+The **HToken System** manages task prioritization, ensuring smooth execution of tasks for NPCs or other entities (e.g., players, objects).
+
+### **Requirements**
+1. Both the giver (e.g., NPC, player, or object) and the receiver (e.g., NPC or another entity) must have the **HToken System Component**.
+
+### **Behavior Tree Integration**
+1. Use the **CanTookToken** service in the Behavior Tree:
+   - It checks if a token can be taken and updates a Blackboard boolean to `true`.
+2. Combine with the **DoAction** task:
+   - Assign the Blackboard boolean (e.g., `canDoAction`) to the task.
+   - The task marks the token as taken and resets the boolean to `false` after completion.
+
+### **Direct Token Management**
+1. Use functions in the **HToken System Component**:
+   - `Took Token From Target`: Takes a token from the target.
+   - `Give Token To Target`: Gives a token to the target.
+
+### **Managing Simultaneous Actions**
+- Use tokens to limit how many NPCs or entities can perform a task at the same time.
+- Adjust the number of tokens available to fine-tune task management.
+
+---
+
+By following this guide, you can set up intelligent NPC behaviors, patrols, and task prioritization systems using the **HAIPro Plugin**.
+
+
+
 
 ## Architecture and Blueprint/C++ Examples
 
