@@ -116,11 +116,17 @@ To use the HAI AIController for your NPCs:
   ### **Building Your Own Behavior Tree**
 1. Use the example Behavior Tree as a reference.
 2. Add plugin tasks, decorators, and services such as:
+
+   ![tasks](https://github.com/user-attachments/assets/551cb5e4-acb8-463c-93ac-70aea4d8cfc6) ![decorators](https://github.com/user-attachments/assets/555b6507-0f4f-4d06-9902-06ec7510344a)
+   
    - **Tasks**: `DoAction`, `Find Next Patrol Node`, `Set State Passive`
    - **Services**: `CanTookToken`
    - **Decorators**: `Has Patrol Route`
 
   ### **Blackboard Setup**
+
+  ![blackboard](https://github.com/user-attachments/assets/9703c3aa-d855-4d85-8ee6-60ccad7c1379)
+  
 1. Add required keys like:
    - `targetActor`: Focused target for the NPC.
    - `OnPossessState`: Current state (e.g., Passive, Active, Investigating).
@@ -129,6 +135,9 @@ To use the HAI AIController for your NPCs:
 2. Assign default values to avoid errors.
 
   ### **EQS Queries**
+
+  ![eqs](https://github.com/user-attachments/assets/82871d8a-c587-48c5-a97f-3035d4922fd6)
+  
 - Use the included EQS setups:
   - `FindIdealRange_Example`: Finds optimal positions based on visibility and distance.
   - `Strafe_Example`: Generates strafing positions around the target actor.
