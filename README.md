@@ -171,7 +171,6 @@ The **HToken System** manages task prioritization, ensuring smooth execution of 
 - Use tokens to limit how many NPCs or entities can perform a task at the same time.
 - Adjust the number of tokens available to fine-tune task management.
 
----
 
 By following this guide, you can set up intelligent NPC behaviors, patrols, and task prioritization systems using the **HAIPro Plugin**.
 
