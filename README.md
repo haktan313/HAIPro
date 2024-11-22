@@ -73,6 +73,8 @@ This guide will help you set up and use the **HAIPro Plugin** within Unreal Engi
 
    ## **1. Assigning the HAI AIController**
 
+![Ekran görüntüsü 2024-11-22 143644](https://github.com/user-attachments/assets/bbe7f24f-5051-4fac-95be-0c77914dd73f)
+
 To use the HAI AIController for your NPCs:
 
 1. Open the NPC Blueprint.
@@ -88,7 +90,12 @@ To use the HAI AIController for your NPCs:
 1. Open your NPC Blueprint.
 2. Add the **HAI Base Component** through the **Components** panel.
 
+   ![Ekran görüntüsü 2024-11-22 143655](https://github.com/user-attachments/assets/b1d86dfc-5abf-4a7d-a0a8-7d3274ed1230)
+
    ### **Configuring Perception**
+
+   ![Ekran görüntüsü 2024-11-22 143711](https://github.com/user-attachments/assets/e82b4c4c-18e7-4ae2-b331-804618117a48)
+   
 1. Adjust detection variables in the **HAI Base Component**, such as:
    - `Sight Radius`: Maximum range for sight detection.
    - `Peripheral Vision Angle Degrees`: Field of view for sight.
@@ -97,10 +104,6 @@ To use the HAI AIController for your NPCs:
 
 2. Toggle specific senses using:
    - `Open Sight`, `Open Hear`, `Open Damage` (enable/disable sight, hearing, and damage detection).
-
-3. Ensure proper Blackboard integration:
-   - Use the **CanTookToken** service to manage task prioritization.
-   - Assign a Blackboard boolean (e.g., `canDoAction`) to the **DoAction** task to reset it after use.
 
 ---
 
