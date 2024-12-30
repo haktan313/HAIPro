@@ -4,6 +4,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Enums_HAISystem.h"
 #include "BehaviorTree/BTTaskNode.h"
 #include "BTTask_DoAction.generated.h"
 
@@ -17,8 +18,10 @@ class HAIPRO_API UBTTask_DoAction : public UBTTaskNode
 
 	virtual EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;
 
+	virtual EBTNodeResult::Type AbortTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;
+
 	UFUNCTION()
-	void ActionEnd(bool bSuccess);//Called when the action is ended with delegate 
+	void ActionEnd(E_DoActionResult DoActionResult);//Called when the action is ended with delegate 
 
 	UPROPERTY(EditAnywhere, Category = "Action")
 	int ActionID;//ID of the action

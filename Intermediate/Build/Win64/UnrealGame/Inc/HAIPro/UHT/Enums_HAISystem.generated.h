@@ -15,7 +15,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define HAIPRO_Enums_HAISystem_generated_h
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_Haktan_Documents_Unreal_Projects_HAISystem_Build_BuiltPlugins_HAIPro_5_2_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Enums_HAISystem_h
+#define CURRENT_FILE_ID FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Enums_HAISystem_h
 
 
 #define FOREACH_ENUM_E_SENSETYPE(op) \
@@ -63,5 +63,15 @@ template<> HAIPRO_API UEnum* StaticEnum<E_MovementState>();
 enum class E_DominantSense : uint8;
 template<> struct TIsUEnumClass<E_DominantSense> { enum { Value = true }; };
 template<> HAIPRO_API UEnum* StaticEnum<E_DominantSense>();
+
+#define FOREACH_ENUM_E_DOACTIONRESULT(op) \
+	op(E_DoActionResult::success) \
+	op(E_DoActionResult::failed) \
+	op(E_DoActionResult::inProgress) \
+	op(E_DoActionResult::aborted) 
+
+enum class E_DoActionResult : uint8;
+template<> struct TIsUEnumClass<E_DoActionResult> { enum { Value = true }; };
+template<> HAIPRO_API UEnum* StaticEnum<E_DoActionResult>();
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

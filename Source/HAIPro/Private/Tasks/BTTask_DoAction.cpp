@@ -33,7 +33,25 @@ EBTNodeResult::Type UBTTask_DoAction::ExecuteTask(UBehaviorTreeComponent& OwnerC
 	return EBTNodeResult::Failed;
 }
 
-void UBTTask_DoAction::ActionEnd(bool bSuccess)
+EBTNodeResult::Type UBTTask_DoAction::AbortTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
+{
+	if(TokenTooked)//If the token is tooken give the token to the target actor
+	{
+		AActor* Target = Cast<AActor>(MyOwnerComp->GetBlackboardComponent()->GetValueAsObject(TargetKey.SelectedKeyName));//Get the target actor from the blackboard
+		UHTokenSystemComponent* TokenSystem = Pawn->FindComponentByClass<UHTokenSystemComponent>();//Token system component of the AI character
+		if(TokenSystem && Target && TokenSystem->TokenMap.Contains(Target))
+		{
+			TokenAmount = Pawn->FindComponentByClass<UHTokenSystemComponent>()->TokenMap[Target];//Get the token amount from the token map
+			TokenSystem->GiveTokenToTarget(TokenAmount, Target);//Give the token to the target actor
+			MyOwnerComp->GetBlackboardComponent()->SetValueAsBool(CanDoActionBoolKey.SelectedKeyName, false);//Set the CanDoActionBoolKey as false
+		}
+	}
+	HAIBaseComponent->OnActionEnd.RemoveDynamic(this, &UBTTask_DoAction::ActionEnd);//Remove the delegate
+	HAIBaseComponent->OnActionEnd.Broadcast(E_DoActionResult::aborted);//Broadcast the end of the action
+	return EBTNodeResult::Aborted;
+}
+
+void UBTTask_DoAction::ActionEnd(E_DoActionResult DoActionResult)
 {
 	HAIBaseComponent->OnActionEnd.RemoveDynamic(this, &UBTTask_DoAction::ActionEnd);//Remove the delegate
 	if(MyOwnerComp)
@@ -42,20 +60,24 @@ void UBTTask_DoAction::ActionEnd(bool bSuccess)
 		{
 			AActor* Target = Cast<AActor>(MyOwnerComp->GetBlackboardComponent()->GetValueAsObject(TargetKey.SelectedKeyName));//Get the target actor from the blackboard
 			UHTokenSystemComponent* TokenSystem = Pawn->FindComponentByClass<UHTokenSystemComponent>();//Token system component of the AI character
-			if(TokenSystem && Target)
+			if(TokenSystem && Target && TokenSystem->TokenMap.Contains(Target))//If the token system component and the target actor is valid
 			{
 				TokenAmount = Pawn->FindComponentByClass<UHTokenSystemComponent>()->TokenMap[Target];//Get the token amount from the token map
 				TokenSystem->GiveTokenToTarget(TokenAmount, Target);//Give the token to the target actor
 				MyOwnerComp->GetBlackboardComponent()->SetValueAsBool(CanDoActionBoolKey.SelectedKeyName, false);//Set the CanDoActionBoolKey as false
 			}
 		}
-		if(bSuccess)
+		switch (DoActionResult)
 		{
-			FinishLatentTask(*MyOwnerComp, EBTNodeResult::Succeeded);
+			case E_DoActionResult::success:
+				FinishLatentTask(*MyOwnerComp, EBTNodeResult::Succeeded);
+				break;
+			case E_DoActionResult::failed:
+				FinishLatentTask(*MyOwnerComp, EBTNodeResult::Failed);
+				break;
+			case E_DoActionResult::aborted:
+				FinishLatentTask(*MyOwnerComp, EBTNodeResult::Aborted);
+				break;
 		}
-		else
-		{
-			FinishLatentTask(*MyOwnerComp, EBTNodeResult::Failed);
-		}	
 	}
 }

@@ -13,7 +13,6 @@ void EmptyLinkFunctionForGeneratedCodeHTokenSystemComponent() {}
 	ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
 	HAIPRO_API UClass* Z_Construct_UClass_UHTokenSystemComponent();
 	HAIPRO_API UClass* Z_Construct_UClass_UHTokenSystemComponent_NoRegister();
-	HAIPRO_API UClass* Z_Construct_UClass_UInterface_HTokenSystem_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_HAIPro();
 // End Cross Module References
 	DEFINE_FUNCTION(UHTokenSystemComponent::execGiveTokenToTarget)
@@ -151,7 +150,6 @@ void EmptyLinkFunctionForGeneratedCodeHTokenSystemComponent() {}
 #endif
 		static const UECodeGen_Private::FMapPropertyParams NewProp_TokenMap;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
-		static const UECodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
 	};
@@ -195,9 +193,6 @@ void EmptyLinkFunctionForGeneratedCodeHTokenSystemComponent() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHTokenSystemComponent_Statics::NewProp_TokenMap_Key_KeyProp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHTokenSystemComponent_Statics::NewProp_TokenMap,
 	};
-		const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_UHTokenSystemComponent_Statics::InterfaceParams[] = {
-			{ Z_Construct_UClass_UInterface_HTokenSystem_NoRegister, (int32)VTABLE_OFFSET(UHTokenSystemComponent, IInterface_HTokenSystem), false },  // 3566531069
-		};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UHTokenSystemComponent_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UHTokenSystemComponent>::IsAbstract,
 	};
@@ -208,11 +203,11 @@ void EmptyLinkFunctionForGeneratedCodeHTokenSystemComponent() {}
 		DependentSingletons,
 		FuncInfo,
 		Z_Construct_UClass_UHTokenSystemComponent_Statics::PropPointers,
-		InterfaceParams,
+		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		UE_ARRAY_COUNT(FuncInfo),
 		UE_ARRAY_COUNT(Z_Construct_UClass_UHTokenSystemComponent_Statics::PropPointers),
-		UE_ARRAY_COUNT(InterfaceParams),
+		0,
 		0x00B000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_UHTokenSystemComponent_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_UHTokenSystemComponent_Statics::Class_MetaDataParams))
 	};
@@ -231,15 +226,15 @@ void EmptyLinkFunctionForGeneratedCodeHTokenSystemComponent() {}
 	UHTokenSystemComponent::UHTokenSystemComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UHTokenSystemComponent);
 	UHTokenSystemComponent::~UHTokenSystemComponent() {}
-	struct Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HAISystem_Build_BuiltPlugins_HAIPro_5_2_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_Statics
+	struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HAISystem_Build_BuiltPlugins_HAIPro_5_2_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UHTokenSystemComponent, UHTokenSystemComponent::StaticClass, TEXT("UHTokenSystemComponent"), &Z_Registration_Info_UClass_UHTokenSystemComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHTokenSystemComponent), 2073843358U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_UHTokenSystemComponent, UHTokenSystemComponent::StaticClass, TEXT("UHTokenSystemComponent"), &Z_Registration_Info_UClass_UHTokenSystemComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHTokenSystemComponent), 898760790U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HAISystem_Build_BuiltPlugins_HAIPro_5_2_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_1979743515(TEXT("/Script/HAIPro"),
-		Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HAISystem_Build_BuiltPlugins_HAIPro_5_2_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HAISystem_Build_BuiltPlugins_HAIPro_5_2_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_3782402622(TEXT("/Script/HAIPro"),
+		Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

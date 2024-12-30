@@ -17,6 +17,8 @@ class HAIPRO_API UBTDecorator_IsInTheRange : public UBTDecorator
 
 	virtual bool CalculateRawConditionValue(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) const override;
 
+	virtual void TickNode(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory, float DeltaSeconds) override;
+
 	UPROPERTY(EditAnywhere, Category = "HAI")
 	float idealRangeValue;//The ideal range value
 	UPROPERTY(EditAnywhere, Category = "HAI")

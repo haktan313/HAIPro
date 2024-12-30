@@ -10,7 +10,7 @@
 #include "HAIBaseComponent.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnDoActionDelegate, int , ActionID);//Delegate for starting an action
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnActionEndDelegate, bool , bSuccess);//Delegate for ending an action
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnActionEndDelegate, E_DoActionResult, DoActionResult);//Delegate for ending an action
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class HAIPRO_API UHAIBaseComponent : public UActorComponent
@@ -36,9 +36,9 @@ public:
 	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="HAI")
 	AHPatrolSpline* PatrolSpline;
 
-	UPROPERTY(BlueprintAssignable, Category="HAI")
+	UPROPERTY(BlueprintAssignable, BlueprintCallable, Category="HAI")
 	FOnDoActionDelegate OnDoAction; 
-	UPROPERTY(BlueprintCallable, Category="HAI")
+	UPROPERTY(BlueprintAssignable,BlueprintCallable, Category="HAI")
 	FOnActionEndDelegate OnActionEnd;
 
 	UPROPERTY(EditAnywhere, Category="HAI|Sense")

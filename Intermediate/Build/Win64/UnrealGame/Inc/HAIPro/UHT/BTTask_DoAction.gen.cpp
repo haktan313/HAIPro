@@ -14,14 +14,15 @@ void EmptyLinkFunctionForGeneratedCodeBTTask_DoAction() {}
 	AIMODULE_API UScriptStruct* Z_Construct_UScriptStruct_FBlackboardKeySelector();
 	HAIPRO_API UClass* Z_Construct_UClass_UBTTask_DoAction();
 	HAIPRO_API UClass* Z_Construct_UClass_UBTTask_DoAction_NoRegister();
+	HAIPRO_API UEnum* Z_Construct_UEnum_HAIPro_E_DoActionResult();
 	UPackage* Z_Construct_UPackage__Script_HAIPro();
 // End Cross Module References
 	DEFINE_FUNCTION(UBTTask_DoAction::execActionEnd)
 	{
-		P_GET_UBOOL(Z_Param_bSuccess);
+		P_GET_ENUM(E_DoActionResult,Z_Param_DoActionResult);
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->ActionEnd(Z_Param_bSuccess);
+		P_THIS->ActionEnd(E_DoActionResult(Z_Param_DoActionResult));
 		P_NATIVE_END;
 	}
 	void UBTTask_DoAction::StaticRegisterNativesUBTTask_DoAction()
@@ -36,23 +37,21 @@ void EmptyLinkFunctionForGeneratedCodeBTTask_DoAction() {}
 	{
 		struct BTTask_DoAction_eventActionEnd_Parms
 		{
-			bool bSuccess;
+			E_DoActionResult DoActionResult;
 		};
-		static void NewProp_bSuccess_SetBit(void* Obj);
-		static const UECodeGen_Private::FBoolPropertyParams NewProp_bSuccess;
+		static const UECodeGen_Private::FBytePropertyParams NewProp_DoActionResult_Underlying;
+		static const UECodeGen_Private::FEnumPropertyParams NewProp_DoActionResult;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
-	void Z_Construct_UFunction_UBTTask_DoAction_ActionEnd_Statics::NewProp_bSuccess_SetBit(void* Obj)
-	{
-		((BTTask_DoAction_eventActionEnd_Parms*)Obj)->bSuccess = 1;
-	}
-	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UBTTask_DoAction_ActionEnd_Statics::NewProp_bSuccess = { "bSuccess", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(BTTask_DoAction_eventActionEnd_Parms), &Z_Construct_UFunction_UBTTask_DoAction_ActionEnd_Statics::NewProp_bSuccess_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_UBTTask_DoAction_ActionEnd_Statics::NewProp_DoActionResult_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_UBTTask_DoAction_ActionEnd_Statics::NewProp_DoActionResult = { "DoActionResult", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(BTTask_DoAction_eventActionEnd_Parms, DoActionResult), Z_Construct_UEnum_HAIPro_E_DoActionResult, METADATA_PARAMS(nullptr, 0) }; // 676304402
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UBTTask_DoAction_ActionEnd_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UBTTask_DoAction_ActionEnd_Statics::NewProp_bSuccess,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UBTTask_DoAction_ActionEnd_Statics::NewProp_DoActionResult_Underlying,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UBTTask_DoAction_ActionEnd_Statics::NewProp_DoActionResult,
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UBTTask_DoAction_ActionEnd_Statics::Function_MetaDataParams[] = {
@@ -107,7 +106,7 @@ void EmptyLinkFunctionForGeneratedCodeBTTask_DoAction() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_HAIPro,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UBTTask_DoAction_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UBTTask_DoAction_ActionEnd, "ActionEnd" }, // 2464215108
+		{ &Z_Construct_UFunction_UBTTask_DoAction_ActionEnd, "ActionEnd" }, // 284015557
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBTTask_DoAction_Statics::Class_MetaDataParams[] = {
@@ -194,15 +193,15 @@ void EmptyLinkFunctionForGeneratedCodeBTTask_DoAction() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UBTTask_DoAction);
 	UBTTask_DoAction::~UBTTask_DoAction() {}
-	struct Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HAISystem_Build_BuiltPlugins_HAIPro_5_2_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_DoAction_h_Statics
+	struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_DoAction_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HAISystem_Build_BuiltPlugins_HAIPro_5_2_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_DoAction_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UBTTask_DoAction, UBTTask_DoAction::StaticClass, TEXT("UBTTask_DoAction"), &Z_Registration_Info_UClass_UBTTask_DoAction, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBTTask_DoAction), 4289854295U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_DoAction_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_UBTTask_DoAction, UBTTask_DoAction::StaticClass, TEXT("UBTTask_DoAction"), &Z_Registration_Info_UClass_UBTTask_DoAction, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBTTask_DoAction), 3135403430U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HAISystem_Build_BuiltPlugins_HAIPro_5_2_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_DoAction_h_3337685083(TEXT("/Script/HAIPro"),
-		Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HAISystem_Build_BuiltPlugins_HAIPro_5_2_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_DoAction_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HAISystem_Build_BuiltPlugins_HAIPro_5_2_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_DoAction_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_DoAction_h_2103576362(TEXT("/Script/HAIPro"),
+		Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_DoAction_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_DoAction_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

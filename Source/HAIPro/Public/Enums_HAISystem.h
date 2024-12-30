@@ -47,3 +47,13 @@ enum class E_DominantSense : uint8
 	Hearing UMETA(DisplayName = "Hearing"),
 	Damage UMETA(DisplayName = "Damage")
 };
+
+//Enum for the result of the action
+UENUM(BlueprintType)
+enum class E_DoActionResult : uint8
+{
+	success UMETA(DisplayName = "Success"),
+	failed UMETA(DisplayName = "Failed"),
+	inProgress UMETA(DisplayName = "InProgress"),
+	aborted UMETA(DisplayName = "Aborted")
+};

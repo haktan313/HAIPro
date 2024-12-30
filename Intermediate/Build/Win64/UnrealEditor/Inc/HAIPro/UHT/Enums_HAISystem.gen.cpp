@@ -9,6 +9,7 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeEnums_HAISystem() {}
 // Cross Module References
+	HAIPRO_API UEnum* Z_Construct_UEnum_HAIPro_E_DoActionResult();
 	HAIPRO_API UEnum* Z_Construct_UEnum_HAIPro_E_DominantSense();
 	HAIPRO_API UEnum* Z_Construct_UEnum_HAIPro_E_MovementState();
 	HAIPRO_API UEnum* Z_Construct_UEnum_HAIPro_E_MovementType();
@@ -319,19 +320,83 @@ void EmptyLinkFunctionForGeneratedCodeEnums_HAISystem() {}
 		}
 		return Z_Registration_Info_UEnum_E_DominantSense.InnerSingleton;
 	}
-	struct Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HAISystem_Build_BuiltPlugins_HAIPro_5_2_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Enums_HAISystem_h_Statics
+	static FEnumRegistrationInfo Z_Registration_Info_UEnum_E_DoActionResult;
+	static UEnum* E_DoActionResult_StaticEnum()
+	{
+		if (!Z_Registration_Info_UEnum_E_DoActionResult.OuterSingleton)
+		{
+			Z_Registration_Info_UEnum_E_DoActionResult.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_HAIPro_E_DoActionResult, (UObject*)Z_Construct_UPackage__Script_HAIPro(), TEXT("E_DoActionResult"));
+		}
+		return Z_Registration_Info_UEnum_E_DoActionResult.OuterSingleton;
+	}
+	template<> HAIPRO_API UEnum* StaticEnum<E_DoActionResult>()
+	{
+		return E_DoActionResult_StaticEnum();
+	}
+	struct Z_Construct_UEnum_HAIPro_E_DoActionResult_Statics
+	{
+		static const UECodeGen_Private::FEnumeratorParam Enumerators[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FEnumParams EnumParams;
+	};
+	const UECodeGen_Private::FEnumeratorParam Z_Construct_UEnum_HAIPro_E_DoActionResult_Statics::Enumerators[] = {
+		{ "E_DoActionResult::success", (int64)E_DoActionResult::success },
+		{ "E_DoActionResult::failed", (int64)E_DoActionResult::failed },
+		{ "E_DoActionResult::inProgress", (int64)E_DoActionResult::inProgress },
+		{ "E_DoActionResult::aborted", (int64)E_DoActionResult::aborted },
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UEnum_HAIPro_E_DoActionResult_Statics::Enum_MetaDataParams[] = {
+		{ "aborted.DisplayName", "Aborted" },
+		{ "aborted.Name", "E_DoActionResult::aborted" },
+		{ "BlueprintType", "true" },
+		{ "Comment", "//Enum for the result of the action\n" },
+		{ "failed.DisplayName", "Failed" },
+		{ "failed.Name", "E_DoActionResult::failed" },
+		{ "inProgress.DisplayName", "InProgress" },
+		{ "inProgress.Name", "E_DoActionResult::inProgress" },
+		{ "ModuleRelativePath", "Public/Enums_HAISystem.h" },
+		{ "success.DisplayName", "Success" },
+		{ "success.Name", "E_DoActionResult::success" },
+		{ "ToolTip", "Enum for the result of the action" },
+	};
+#endif
+	const UECodeGen_Private::FEnumParams Z_Construct_UEnum_HAIPro_E_DoActionResult_Statics::EnumParams = {
+		(UObject*(*)())Z_Construct_UPackage__Script_HAIPro,
+		nullptr,
+		"E_DoActionResult",
+		"E_DoActionResult",
+		Z_Construct_UEnum_HAIPro_E_DoActionResult_Statics::Enumerators,
+		UE_ARRAY_COUNT(Z_Construct_UEnum_HAIPro_E_DoActionResult_Statics::Enumerators),
+		RF_Public|RF_Transient|RF_MarkAsNative,
+		EEnumFlags::None,
+		(uint8)UEnum::ECppForm::EnumClass,
+		METADATA_PARAMS(Z_Construct_UEnum_HAIPro_E_DoActionResult_Statics::Enum_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UEnum_HAIPro_E_DoActionResult_Statics::Enum_MetaDataParams))
+	};
+	UEnum* Z_Construct_UEnum_HAIPro_E_DoActionResult()
+	{
+		if (!Z_Registration_Info_UEnum_E_DoActionResult.InnerSingleton)
+		{
+			UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_E_DoActionResult.InnerSingleton, Z_Construct_UEnum_HAIPro_E_DoActionResult_Statics::EnumParams);
+		}
+		return Z_Registration_Info_UEnum_E_DoActionResult.InnerSingleton;
+	}
+	struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Enums_HAISystem_h_Statics
 	{
 		static const FEnumRegisterCompiledInInfo EnumInfo[];
 	};
-	const FEnumRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HAISystem_Build_BuiltPlugins_HAIPro_5_2_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Enums_HAISystem_h_Statics::EnumInfo[] = {
+	const FEnumRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Enums_HAISystem_h_Statics::EnumInfo[] = {
 		{ E_SenseType_StaticEnum, TEXT("E_SenseType"), &Z_Registration_Info_UEnum_E_SenseType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3369778184U) },
 		{ E_OnPossessState_StaticEnum, TEXT("E_OnPossessState"), &Z_Registration_Info_UEnum_E_OnPossessState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2139805809U) },
 		{ E_MovementType_StaticEnum, TEXT("E_MovementType"), &Z_Registration_Info_UEnum_E_MovementType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 663590422U) },
 		{ E_MovementState_StaticEnum, TEXT("E_MovementState"), &Z_Registration_Info_UEnum_E_MovementState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3100350066U) },
 		{ E_DominantSense_StaticEnum, TEXT("E_DominantSense"), &Z_Registration_Info_UEnum_E_DominantSense, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 824497281U) },
+		{ E_DoActionResult_StaticEnum, TEXT("E_DoActionResult"), &Z_Registration_Info_UEnum_E_DoActionResult, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 676304402U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HAISystem_Build_BuiltPlugins_HAIPro_5_2_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Enums_HAISystem_h_2108615636(TEXT("/Script/HAIPro"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Enums_HAISystem_h_899327923(TEXT("/Script/HAIPro"),
 		nullptr, 0,
 		nullptr, 0,
-		Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HAISystem_Build_BuiltPlugins_HAIPro_5_2_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Enums_HAISystem_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_HAISystem_Build_BuiltPlugins_HAIPro_5_2_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Enums_HAISystem_h_Statics::EnumInfo));
+		Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Enums_HAISystem_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Enums_HAISystem_h_Statics::EnumInfo));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

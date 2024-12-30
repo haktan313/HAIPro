@@ -5,18 +5,17 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Interface_HTokenSystem.h"
 #include "Components/ActorComponent.h"
 #include "HTokenSystemComponent.generated.h"
 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class HAIPRO_API UHTokenSystemComponent : public UActorComponent, public IInterface_HTokenSystem
+class HAIPRO_API UHTokenSystemComponent : public UActorComponent
 {
 	GENERATED_BODY()
 	
-	virtual bool TookToken_Implementation(int amount) override;//Interface function for taking token from the target
-	virtual void GiveToken_Implementation(int amount) override;//Interface function for giving token to the target
+	bool TookToken(int amount);//Take token
+	void GiveToken(int amount);//Give token
 
 public:
 	UFUNCTION(BlueprintCallable, Category = "HToken")

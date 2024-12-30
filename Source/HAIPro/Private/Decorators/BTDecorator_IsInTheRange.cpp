@@ -8,11 +8,12 @@
 UBTDecorator_IsInTheRange::UBTDecorator_IsInTheRange()
 {
 	NodeName = "Is In The Range";
+	bNotifyTick = true;
 }
 
 bool UBTDecorator_IsInTheRange::CalculateRawConditionValue(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) const
 {
-	AAIController* AIController = OwnerComp.GetAIOwner();
+	AAIController* AIController = OwnerComp.GetAIOwner();//
 	if(AIController)
 	{
 		APawn* pawn = AIController->GetPawn();
@@ -33,3 +34,19 @@ bool UBTDecorator_IsInTheRange::CalculateRawConditionValue(UBehaviorTreeComponen
 	}
 	return false;
 }
+
+void UBTDecorator_IsInTheRange::TickNode(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory, float DeltaSeconds)
+{
+	Super::TickNode(OwnerComp, NodeMemory, DeltaSeconds);
+	bool bIsInRange = CalculateRawConditionValue(OwnerComp, NodeMemory);
+	if (bIsInRange)
+	{
+		ConditionalFlowAbort(OwnerComp, EBTDecoratorAbortRequest::ConditionPassing);
+	}
+	else
+	{
+		ConditionalFlowAbort(OwnerComp, EBTDecoratorAbortRequest::ConditionResultChanged);
+	}
+}
+
+
