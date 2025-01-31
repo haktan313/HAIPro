@@ -1,6 +1,4 @@
 
-
-
 #include "Tasks/BTTask_SetFocus.h"
 #include "AIController.h"
 #include "BehaviorTree/BlackboardComponent.h"
@@ -21,7 +19,7 @@ EBTNodeResult::Type UBTTask_SetFocus::ExecuteTask(UBehaviorTreeComponent& OwnerC
 			AActor* target = Cast<AActor>(BlackboardComp->GetValueAsObject(targetActorKey.SelectedKeyName));
 			if(target)
 			{
-				AIController->SetFocus(target);//Set the focus of the AI controller to the target actor
+				AIController->SetFocus(target);
 				return EBTNodeResult::Succeeded;
 			}
 		}

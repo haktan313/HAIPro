@@ -55,14 +55,13 @@ void UHAIBaseComponent::SetMovementStateFly(E_MovementState movementState)
 	OwnerCharacter->GetCharacterMovement()->MaxFlySpeed = newSpeed;
 }
 
-// The function can call if npc is dead
 void UHAIBaseComponent::Dead()
 {
-	StopBehaviorTree();//Stop the behavior tree
+	StopBehaviorTree();
 	AAIController* AIController = Cast<AAIController>(OwnerCharacter->GetController());
 	if(AIController)
 	{
-		AIController->ClearFocus(EAIFocusPriority::Gameplay);//Clear the focus
+		AIController->ClearFocus(EAIFocusPriority::Gameplay);
 	}
 	UHTokenSystemComponent* TokenSystemComponent = OwnerCharacter->FindComponentByClass<UHTokenSystemComponent>();
 	if(TokenSystemComponent && !TokenSystemComponent->TokenMap.IsEmpty())//If the token system component is valid and the token map is not empty that means the character took some tokens from other characters before dead
@@ -74,13 +73,12 @@ void UHAIBaseComponent::Dead()
 			if(Actor)
 			{
 				int amount = TokenSystemComponent->TokenMap[Actor];//Get the amount of the token that the character took from the actor
-				TokenSystemComponent->GiveTokenToTarget(amount, Actor);//Give the token back to the actor
+				TokenSystemComponent->GiveTokenToTarget(amount, Actor);//Give the token back
 			}
 		}
 	}
 }
 
-// Stop the behavior tree
 bool UHAIBaseComponent::StopBehaviorTree()
 {
 	AHAIController* AIController = Cast<AHAIController>(OwnerCharacter->GetController());
@@ -92,7 +90,6 @@ bool UHAIBaseComponent::StopBehaviorTree()
 	return false;
 }
 
-// Set the state as passive
 void UHAIBaseComponent::SetStatePassive()
 {
 	AHAIController* AIController = Cast<AHAIController>(OwnerCharacter->GetController());
@@ -102,7 +99,6 @@ void UHAIBaseComponent::SetStatePassive()
 	}
 }
 
-// Set the state as investigate
 void UHAIBaseComponent::SetStateInvestigate()
 {
 	AHAIController* AIController = Cast<AHAIController>(OwnerCharacter->GetController());
@@ -112,7 +108,6 @@ void UHAIBaseComponent::SetStateInvestigate()
 	}
 }
 
-// Set the state as active
 void UHAIBaseComponent::SetStateActive()
 {
 	AHAIController* AIController = Cast<AHAIController>(OwnerCharacter->GetController());
@@ -122,7 +117,6 @@ void UHAIBaseComponent::SetStateActive()
 	}
 }
 
-// Get the possess state
 E_OnPossessState UHAIBaseComponent::GetPossessState()
 {
 	AHAIController* AIController = Cast<AHAIController>(OwnerCharacter->GetController());
@@ -133,7 +127,6 @@ E_OnPossessState UHAIBaseComponent::GetPossessState()
 	return E_OnPossessState::passive;
 }
 
-// Get the patrol spline
 AHPatrolSpline* UHAIBaseComponent::GetPatrolSpline()
 {
 	return PatrolSpline;

@@ -1,5 +1,3 @@
-//HPatrolSpline
-//It is an actor that is used to create a patrol route with splines for AI characters.
 
 #pragma once
 
@@ -14,15 +12,16 @@ class HAIPRO_API AHPatrolSpline : public AActor
 
 	AHPatrolSpline();
 public:
-	void PatrolRouteIndex();//Increase the current point index and change the direction if needed
+	void PatrolRouteIndex();
 	
-	FVector GetPatrolRouteLocation();//Get the location of the current point
+	FVector GetPatrolRouteLocation();
 private:
 
 	int currentPointIndex;
 	UPROPERTY(meta=(ClampMin="-1",ClampMax="1"))
 	int direction;
 
+	UPROPERTY()
 	class USplineComponent* SplineComponent;
 
 };

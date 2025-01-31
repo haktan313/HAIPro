@@ -1,5 +1,3 @@
-//FindRandomPointOnNavMesh
-//It is a task which finds a random point on the nav mesh for the AI to move to. The point is stored in the blackboard
 
 #pragma once
 
@@ -18,8 +16,8 @@ class HAIPRO_API UBTTask_FindRandomPointOnNavMesh : public UBTTaskNode
 	virtual EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;
 
 	UPROPERTY(EditAnywhere, Category = "Radius")
-	float Radius = 500.0f;//The radius for finding the random point
+	float Radius = 500.0f;
 	UPROPERTY(EditAnywhere, Category = "Blackboard")
-	FBlackboardKeySelector pointVector;//The key for setting the random point in the blackboard
+	FBlackboardKeySelector pointVector;
 	
 };

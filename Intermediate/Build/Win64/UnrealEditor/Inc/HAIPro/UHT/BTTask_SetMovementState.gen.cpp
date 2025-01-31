@@ -61,17 +61,15 @@ void EmptyLinkFunctionForGeneratedCodeBTTask_SetMovementState() {}
 		{ "ModuleRelativePath", "Public/Tasks/BTTask_SetMovementState.h" },
 	};
 #endif
-	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UBTTask_SetMovementState_Statics::NewProp_MovementType = { "MovementType", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UBTTask_SetMovementState, MovementType), Z_Construct_UEnum_HAIPro_E_MovementType, METADATA_PARAMS(Z_Construct_UClass_UBTTask_SetMovementState_Statics::NewProp_MovementType_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UBTTask_SetMovementState_Statics::NewProp_MovementType_MetaData)) }; // 663590422
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UBTTask_SetMovementState_Statics::NewProp_MovementType = { "MovementType", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UBTTask_SetMovementState, MovementType), Z_Construct_UEnum_HAIPro_E_MovementType, METADATA_PARAMS(Z_Construct_UClass_UBTTask_SetMovementState_Statics::NewProp_MovementType_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UBTTask_SetMovementState_Statics::NewProp_MovementType_MetaData)) }; // 3926520521
 	const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_UBTTask_SetMovementState_Statics::NewProp_MovementState_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBTTask_SetMovementState_Statics::NewProp_MovementState_MetaData[] = {
 		{ "Category", "Blackboard" },
-		{ "Comment", "//The type of movement\n" },
 		{ "ModuleRelativePath", "Public/Tasks/BTTask_SetMovementState.h" },
-		{ "ToolTip", "The type of movement" },
 	};
 #endif
-	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UBTTask_SetMovementState_Statics::NewProp_MovementState = { "MovementState", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UBTTask_SetMovementState, MovementState), Z_Construct_UEnum_HAIPro_E_MovementState, METADATA_PARAMS(Z_Construct_UClass_UBTTask_SetMovementState_Statics::NewProp_MovementState_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UBTTask_SetMovementState_Statics::NewProp_MovementState_MetaData)) }; // 3100350066
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UBTTask_SetMovementState_Statics::NewProp_MovementState = { "MovementState", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UBTTask_SetMovementState, MovementState), Z_Construct_UEnum_HAIPro_E_MovementState, METADATA_PARAMS(Z_Construct_UClass_UBTTask_SetMovementState_Statics::NewProp_MovementState_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UBTTask_SetMovementState_Statics::NewProp_MovementState_MetaData)) }; // 731240949
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UBTTask_SetMovementState_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBTTask_SetMovementState_Statics::NewProp_MovementType_Underlying,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBTTask_SetMovementState_Statics::NewProp_MovementType,
@@ -110,15 +108,15 @@ void EmptyLinkFunctionForGeneratedCodeBTTask_SetMovementState() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UBTTask_SetMovementState);
 	UBTTask_SetMovementState::~UBTTask_SetMovementState() {}
-	struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_SetMovementState_h_Statics
+	struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_SetMovementState_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_SetMovementState_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UBTTask_SetMovementState, UBTTask_SetMovementState::StaticClass, TEXT("UBTTask_SetMovementState"), &Z_Registration_Info_UClass_UBTTask_SetMovementState, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBTTask_SetMovementState), 3947083948U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_SetMovementState_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_UBTTask_SetMovementState, UBTTask_SetMovementState::StaticClass, TEXT("UBTTask_SetMovementState"), &Z_Registration_Info_UClass_UBTTask_SetMovementState, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBTTask_SetMovementState), 766728375U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_SetMovementState_h_3084816420(TEXT("/Script/HAIPro"),
-		Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_SetMovementState_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_SetMovementState_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_SetMovementState_h_4269509919(TEXT("/Script/HAIPro"),
+		Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_SetMovementState_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_SetMovementState_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

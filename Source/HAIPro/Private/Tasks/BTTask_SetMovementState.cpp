@@ -1,6 +1,4 @@
 
-
-
 #include "Tasks/BTTask_SetMovementState.h"
 #include "AIController.h"
 #include "HAIBaseComponent.h"
@@ -22,7 +20,7 @@ EBTNodeResult::Type UBTTask_SetMovementState::ExecuteTask(UBehaviorTreeComponent
 			UHAIBaseComponent* HAIBaseComponent = Cast<UHAIBaseComponent>(pawn->GetComponentByClass(UHAIBaseComponent::StaticClass()));
 			if(HAIBaseComponent)
 			{
-				switch (MovementType)//Set the movement state based on the movement type
+				switch (MovementType)
 				{
 				case E_MovementType::walk:
 					HAIBaseComponent->SetMovementStateWalk(MovementState);

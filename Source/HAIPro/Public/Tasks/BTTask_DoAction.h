@@ -1,5 +1,3 @@
-//DoAction
-// It is a task node for the behavior tree. It is responsible for triggering the action of the AI character.
 
 #pragma once
 
@@ -21,20 +19,23 @@ class HAIPRO_API UBTTask_DoAction : public UBTTaskNode
 	virtual EBTNodeResult::Type AbortTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;
 
 	UFUNCTION()
-	void ActionEnd(E_DoActionResult DoActionResult);//Called when the action is ended with delegate 
+	void ActionEnd(E_DoActionResult DoActionResult);
 
 	UPROPERTY(EditAnywhere, Category = "Action")
-	int ActionID;//ID of the action
+	int ActionID;
 	UPROPERTY(EditAnywhere, Category = "Action")
 	FBlackboardKeySelector CanDoActionBoolKey; //Blackboard key for checking if the AI character can do the action
 
-	UBehaviorTreeComponent* MyOwnerComp;//Owner of the behavior tree component
-	class UHAIBaseComponent* HAIBaseComponent;//HAIBaseComponent of the AI character
-	APawn* Pawn;//Pawn of the AI character
-	int TokenAmount;//Amount of the token
+	UPROPERTY()
+	UBehaviorTreeComponent* MyOwnerComp;
+	UPROPERTY()
+	class UHAIBaseComponent* HAIBaseComponent;
+	UPROPERTY()
+	APawn* Pawn;
+	int TokenAmount;
 
 	UPROPERTY(EditAnywhere, Category = "Token")
-	bool TokenTooked;//Check if the token is tooken if true give the token to the target actor after the action is ended
+	bool TokenTooked;
 	UPROPERTY(EditAnywhere, Category = "Token")
-	FBlackboardKeySelector TargetKey;//Blackboard key for the target of the action for giving the token
+	FBlackboardKeySelector TargetKey;
 };

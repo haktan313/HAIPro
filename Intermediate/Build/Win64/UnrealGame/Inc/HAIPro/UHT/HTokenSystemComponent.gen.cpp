@@ -66,9 +66,7 @@ void EmptyLinkFunctionForGeneratedCodeHTokenSystemComponent() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UHTokenSystemComponent_GiveTokenToTarget_Statics::Function_MetaDataParams[] = {
 		{ "Category", "HToken" },
-		{ "Comment", "//Take token from the target\n" },
 		{ "ModuleRelativePath", "Public/HTokenSystemComponent.h" },
-		{ "ToolTip", "Take token from the target" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UHTokenSystemComponent_GiveTokenToTarget_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UHTokenSystemComponent, nullptr, "GiveTokenToTarget", nullptr, nullptr, sizeof(Z_Construct_UFunction_UHTokenSystemComponent_GiveTokenToTarget_Statics::HTokenSystemComponent_eventGiveTokenToTarget_Parms), Z_Construct_UFunction_UHTokenSystemComponent_GiveTokenToTarget_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UHTokenSystemComponent_GiveTokenToTarget_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UHTokenSystemComponent_GiveTokenToTarget_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UHTokenSystemComponent_GiveTokenToTarget_Statics::Function_MetaDataParams)) };
@@ -158,7 +156,7 @@ void EmptyLinkFunctionForGeneratedCodeHTokenSystemComponent() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_HAIPro,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UHTokenSystemComponent_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UHTokenSystemComponent_GiveTokenToTarget, "GiveTokenToTarget" }, // 1154710130
+		{ &Z_Construct_UFunction_UHTokenSystemComponent_GiveTokenToTarget, "GiveTokenToTarget" }, // 3790206802
 		{ &Z_Construct_UFunction_UHTokenSystemComponent_TookTokenFromTarget, "TookTokenFromTarget" }, // 1155664457
 	};
 #if WITH_METADATA
@@ -172,9 +170,7 @@ void EmptyLinkFunctionForGeneratedCodeHTokenSystemComponent() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHTokenSystemComponent_Statics::NewProp_currentToken_MetaData[] = {
 		{ "Category", "HToken" },
-		{ "Comment", "//Give token to the target\n" },
 		{ "ModuleRelativePath", "Public/HTokenSystemComponent.h" },
-		{ "ToolTip", "Give token to the target" },
 	};
 #endif
 	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_UHTokenSystemComponent_Statics::NewProp_currentToken = { "currentToken", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHTokenSystemComponent, currentToken), METADATA_PARAMS(Z_Construct_UClass_UHTokenSystemComponent_Statics::NewProp_currentToken_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHTokenSystemComponent_Statics::NewProp_currentToken_MetaData)) };
@@ -226,15 +222,15 @@ void EmptyLinkFunctionForGeneratedCodeHTokenSystemComponent() {}
 	UHTokenSystemComponent::UHTokenSystemComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UHTokenSystemComponent);
 	UHTokenSystemComponent::~UHTokenSystemComponent() {}
-	struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_Statics
+	struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UHTokenSystemComponent, UHTokenSystemComponent::StaticClass, TEXT("UHTokenSystemComponent"), &Z_Registration_Info_UClass_UHTokenSystemComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHTokenSystemComponent), 898760790U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_UHTokenSystemComponent, UHTokenSystemComponent::StaticClass, TEXT("UHTokenSystemComponent"), &Z_Registration_Info_UClass_UHTokenSystemComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHTokenSystemComponent), 3228129793U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_3782402622(TEXT("/Script/HAIPro"),
-		Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_2561432292(TEXT("/Script/HAIPro"),
+		Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

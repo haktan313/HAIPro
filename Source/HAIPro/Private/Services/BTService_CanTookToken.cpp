@@ -1,6 +1,4 @@
 
-
-
 #include "Services/BTService_CanTookToken.h"
 #include "AIController.h"
 #include "BehaviorTree/BlackboardComponent.h"
@@ -26,7 +24,7 @@ void UBTService_CanTookToken::TickNode(UBehaviorTreeComponent& OwnerComp, uint8*
 				UHTokenSystemComponent* TokenSystem = Pawn->FindComponentByClass<UHTokenSystemComponent>();
 				if(TokenSystem)
 				{
-					if(TokenSystem->TookTokenFromTarget(amountOfTokenNedded, Target))//Check if the AI can take the token from the target
+					if(TokenSystem->TookTokenFromTarget(amountOfTokenNedded, Target))
 					{
 						OwnerComp.GetBlackboardComponent()->SetValueAsBool(DoActionBoolKey.SelectedKeyName, true);//Set the action bool in the blackboard
 					}

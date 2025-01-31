@@ -1,5 +1,3 @@
-//HEnvQueryContext_TargetActor
-// It is a context class for the Environment Query System. It provides the target actor for the AI character.
 
 #pragma once
 

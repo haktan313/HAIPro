@@ -9,7 +9,7 @@
 UBTTask_SetStatePassive::UBTTask_SetStatePassive(const FObjectInitializer& ObjectInitializer)
 {
 	NodeName = "Set State Passive";
-	bCreateNodeInstance = true;//Create a new instance of the node
+	bCreateNodeInstance = true;//for latent task
 }
 
 EBTNodeResult::Type UBTTask_SetStatePassive::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
@@ -17,14 +17,14 @@ EBTNodeResult::Type UBTTask_SetStatePassive::ExecuteTask(UBehaviorTreeComponent&
 	AIController = Cast<AHAIController>(OwnerComp.GetAIOwner());
 	if (AIController)
 	{
-		MyOwnerComp = &OwnerComp;//Behavior tree component of the AI character reference
+		MyOwnerComp = &OwnerComp;
 		GetWorld()->GetTimerManager().SetTimer(PassiveTimerHandle, this, &UBTTask_SetStatePassive::SetStateAsPassive, howManySecondsBeforePassive, false);
 		return EBTNodeResult::InProgress;
 	}
 	return EBTNodeResult::Failed;
 }
 
-//Set the state of the AI character as passive
+
 void UBTTask_SetStatePassive::SetStateAsPassive()
 {
 	if(MyOwnerComp)

@@ -10,10 +10,13 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeBTTask_DoAction() {}
 // Cross Module References
+	AIMODULE_API UClass* Z_Construct_UClass_UBehaviorTreeComponent_NoRegister();
 	AIMODULE_API UClass* Z_Construct_UClass_UBTTaskNode();
 	AIMODULE_API UScriptStruct* Z_Construct_UScriptStruct_FBlackboardKeySelector();
+	ENGINE_API UClass* Z_Construct_UClass_APawn_NoRegister();
 	HAIPRO_API UClass* Z_Construct_UClass_UBTTask_DoAction();
 	HAIPRO_API UClass* Z_Construct_UClass_UBTTask_DoAction_NoRegister();
+	HAIPRO_API UClass* Z_Construct_UClass_UHAIBaseComponent_NoRegister();
 	HAIPRO_API UEnum* Z_Construct_UEnum_HAIPro_E_DoActionResult();
 	UPackage* Z_Construct_UPackage__Script_HAIPro();
 // End Cross Module References
@@ -48,7 +51,7 @@ void EmptyLinkFunctionForGeneratedCodeBTTask_DoAction() {}
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
 	const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_UBTTask_DoAction_ActionEnd_Statics::NewProp_DoActionResult_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
-	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_UBTTask_DoAction_ActionEnd_Statics::NewProp_DoActionResult = { "DoActionResult", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(BTTask_DoAction_eventActionEnd_Parms, DoActionResult), Z_Construct_UEnum_HAIPro_E_DoActionResult, METADATA_PARAMS(nullptr, 0) }; // 676304402
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_UBTTask_DoAction_ActionEnd_Statics::NewProp_DoActionResult = { "DoActionResult", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(BTTask_DoAction_eventActionEnd_Parms, DoActionResult), Z_Construct_UEnum_HAIPro_E_DoActionResult, METADATA_PARAMS(nullptr, 0) }; // 357980464
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UBTTask_DoAction_ActionEnd_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UBTTask_DoAction_ActionEnd_Statics::NewProp_DoActionResult_Underlying,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UBTTask_DoAction_ActionEnd_Statics::NewProp_DoActionResult,
@@ -89,6 +92,18 @@ void EmptyLinkFunctionForGeneratedCodeBTTask_DoAction() {}
 #endif
 		static const UECodeGen_Private::FStructPropertyParams NewProp_CanDoActionBoolKey;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_MyOwnerComp_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_MyOwnerComp;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_HAIBaseComponent_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_HAIBaseComponent;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Pawn_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_Pawn;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_TokenTooked_MetaData[];
 #endif
 		static void NewProp_TokenTooked_SetBit(void* Obj);
@@ -106,7 +121,7 @@ void EmptyLinkFunctionForGeneratedCodeBTTask_DoAction() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_HAIPro,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UBTTask_DoAction_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UBTTask_DoAction_ActionEnd, "ActionEnd" }, // 284015557
+		{ &Z_Construct_UFunction_UBTTask_DoAction_ActionEnd, "ActionEnd" }, // 2339776448
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBTTask_DoAction_Statics::Class_MetaDataParams[] = {
@@ -118,27 +133,43 @@ void EmptyLinkFunctionForGeneratedCodeBTTask_DoAction() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_ActionID_MetaData[] = {
 		{ "Category", "Action" },
-		{ "Comment", "//Called when the action is ended with delegate \n" },
 		{ "ModuleRelativePath", "Public/Tasks/BTTask_DoAction.h" },
-		{ "ToolTip", "Called when the action is ended with delegate" },
 	};
 #endif
 	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_ActionID = { "ActionID", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UBTTask_DoAction, ActionID), METADATA_PARAMS(Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_ActionID_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_ActionID_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_CanDoActionBoolKey_MetaData[] = {
 		{ "Category", "Action" },
-		{ "Comment", "//ID of the action\n" },
 		{ "ModuleRelativePath", "Public/Tasks/BTTask_DoAction.h" },
-		{ "ToolTip", "ID of the action" },
 	};
 #endif
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_CanDoActionBoolKey = { "CanDoActionBoolKey", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UBTTask_DoAction, CanDoActionBoolKey), Z_Construct_UScriptStruct_FBlackboardKeySelector, METADATA_PARAMS(Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_CanDoActionBoolKey_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_CanDoActionBoolKey_MetaData)) }; // 3376895314
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_MyOwnerComp_MetaData[] = {
+		{ "Comment", "//Blackboard key for checking if the AI character can do the action\n" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/Tasks/BTTask_DoAction.h" },
+		{ "ToolTip", "Blackboard key for checking if the AI character can do the action" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_MyOwnerComp = { "MyOwnerComp", nullptr, (EPropertyFlags)0x0040000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UBTTask_DoAction, MyOwnerComp), Z_Construct_UClass_UBehaviorTreeComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_MyOwnerComp_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_MyOwnerComp_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_HAIBaseComponent_MetaData[] = {
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/Tasks/BTTask_DoAction.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_HAIBaseComponent = { "HAIBaseComponent", nullptr, (EPropertyFlags)0x0040000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UBTTask_DoAction, HAIBaseComponent), Z_Construct_UClass_UHAIBaseComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_HAIBaseComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_HAIBaseComponent_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_Pawn_MetaData[] = {
+		{ "ModuleRelativePath", "Public/Tasks/BTTask_DoAction.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_Pawn = { "Pawn", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UBTTask_DoAction, Pawn), Z_Construct_UClass_APawn_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_Pawn_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_Pawn_MetaData)) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_TokenTooked_MetaData[] = {
 		{ "Category", "Token" },
-		{ "Comment", "//Amount of the token\n" },
 		{ "ModuleRelativePath", "Public/Tasks/BTTask_DoAction.h" },
-		{ "ToolTip", "Amount of the token" },
 	};
 #endif
 	void Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_TokenTooked_SetBit(void* Obj)
@@ -149,15 +180,16 @@ void EmptyLinkFunctionForGeneratedCodeBTTask_DoAction() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_TargetKey_MetaData[] = {
 		{ "Category", "Token" },
-		{ "Comment", "//Check if the token is tooken if true give the token to the target actor after the action is ended\n" },
 		{ "ModuleRelativePath", "Public/Tasks/BTTask_DoAction.h" },
-		{ "ToolTip", "Check if the token is tooken if true give the token to the target actor after the action is ended" },
 	};
 #endif
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_TargetKey = { "TargetKey", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UBTTask_DoAction, TargetKey), Z_Construct_UScriptStruct_FBlackboardKeySelector, METADATA_PARAMS(Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_TargetKey_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_TargetKey_MetaData)) }; // 3376895314
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UBTTask_DoAction_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_ActionID,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_CanDoActionBoolKey,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_MyOwnerComp,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_HAIBaseComponent,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_Pawn,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_TokenTooked,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBTTask_DoAction_Statics::NewProp_TargetKey,
 	};
@@ -176,7 +208,7 @@ void EmptyLinkFunctionForGeneratedCodeBTTask_DoAction() {}
 		UE_ARRAY_COUNT(FuncInfo),
 		UE_ARRAY_COUNT(Z_Construct_UClass_UBTTask_DoAction_Statics::PropPointers),
 		0,
-		0x001000A0u,
+		0x009000A0u,
 		METADATA_PARAMS(Z_Construct_UClass_UBTTask_DoAction_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_UBTTask_DoAction_Statics::Class_MetaDataParams))
 	};
 	UClass* Z_Construct_UClass_UBTTask_DoAction()
@@ -193,15 +225,15 @@ void EmptyLinkFunctionForGeneratedCodeBTTask_DoAction() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UBTTask_DoAction);
 	UBTTask_DoAction::~UBTTask_DoAction() {}
-	struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_DoAction_h_Statics
+	struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_DoAction_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_DoAction_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UBTTask_DoAction, UBTTask_DoAction::StaticClass, TEXT("UBTTask_DoAction"), &Z_Registration_Info_UClass_UBTTask_DoAction, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBTTask_DoAction), 3135403430U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_DoAction_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_UBTTask_DoAction, UBTTask_DoAction::StaticClass, TEXT("UBTTask_DoAction"), &Z_Registration_Info_UClass_UBTTask_DoAction, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBTTask_DoAction), 2231906524U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_DoAction_h_2103576362(TEXT("/Script/HAIPro"),
-		Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_DoAction_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_DoAction_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_DoAction_h_822978413(TEXT("/Script/HAIPro"),
+		Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_DoAction_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_DoAction_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -14,9 +14,8 @@ AHAIController::AHAIController(const FObjectInitializer& ObjectInitializer)
 	:Super(ObjectInitializer.SetDefaultSubobjectClass<UCrowdFollowingComponent>(TEXT("PathFollowingComponent")))//Setting CrowdFollowingComponent as the default path following component
 {
 	AIPerceptionComponent = CreateDefaultSubobject<UAIPerceptionComponent>(TEXT("PerceptionComponent"));
-	SetPerceptionComponent(*AIPerceptionComponent);//Setting the perception component of the AI controller
-
-	//Creating the sense configurations of the AI character and setting their default values
+	SetPerceptionComponent(*AIPerceptionComponent);
+	
 	SightConfig = CreateDefaultSubobject<UAISenseConfig_Sight>(TEXT("SightConfig"));
 	SightConfig->SightRadius = 0.f;
 	SightConfig->LoseSightRadius = 0.f;
@@ -35,15 +34,14 @@ AHAIController::AHAIController(const FObjectInitializer& ObjectInitializer)
 	
 	DamageConfig = CreateDefaultSubobject<UAISenseConfig_Damage>(TEXT("DamageConfig"));
 	DamageConfig->SetMaxAge(0.f);
-
-	//Configuring the sense configurations of the AI character
+	
 	AIPerceptionComponent->ConfigureSense(*SightConfig);
 	AIPerceptionComponent->ConfigureSense(*HearingConfig);
 	AIPerceptionComponent->ConfigureSense(*DamageConfig);
 
-	AIPerceptionComponent->SetDominantSense(SightConfig->GetSenseImplementation());//Setting the dominant sense of the AI controller
+	AIPerceptionComponent->SetDominantSense(SightConfig->GetSenseImplementation());
 	
-	AIPerceptionComponent->OnPerceptionUpdated.AddDynamic(this, &AHAIController::OnPerceptionUpdated);//Binding the OnPerceptionUpdated function to the OnPerceptionUpdated event
+	AIPerceptionComponent->OnPerceptionUpdated.AddDynamic(this, &AHAIController::OnPerceptionUpdated);
 
 	CrowdFollowingComponent = Cast<UCrowdFollowingComponent>(GetPathFollowingComponent());//Casting the path following component to the CrowdFollowingComponent
 	CrowdFollowingComponent->SetCrowdAnticipateTurns(true); //default false
@@ -63,14 +61,13 @@ AHAIController::AHAIController(const FObjectInitializer& ObjectInitializer)
 }
 
 
-// Called when the AI controller possesses a pawn
 void AHAIController::OnPossess(APawn* InPawn)
 {
 	Super::OnPossess(InPawn);
 	HAIBaseComponent = Cast<UHAIBaseComponent>(InPawn->GetComponentByClass(UHAIBaseComponent::StaticClass()));
 	if(HAIBaseComponent)
 	{
-		if(HAIBaseComponent->OpenSight)//If in HAIBaseComponent the OpenSight is true
+		if(HAIBaseComponent->OpenSight)
 		{
 			SightConfig->SightRadius = HAIBaseComponent->SightRadius;
 			SightConfig->LoseSightRadius = HAIBaseComponent->LoseSightRadius;
@@ -94,7 +91,7 @@ void AHAIController::OnPossess(APawn* InPawn)
 
 			AIPerceptionComponent->ConfigureSense(*SightConfig);
 		}
-		if(HAIBaseComponent->OpenHear)//If in HAIBaseComponent the OpenHear is true
+		if(HAIBaseComponent->OpenHear)
 		{
 			HearingConfig->HearingRange = HAIBaseComponent->HearingRange;
 			HearingConfig->SetMaxAge(HAIBaseComponent->MaxAgeHear);
@@ -112,7 +109,7 @@ void AHAIController::OnPossess(APawn* InPawn)
 			HearingConfig->DetectionByAffiliation.bDetectFriendlies = false;
 			AIPerceptionComponent->ConfigureSense(*HearingConfig);
 		}
-		if(HAIBaseComponent->OpenDamage)//If in HAIBaseComponent the OpenDamage is true
+		if(HAIBaseComponent->OpenDamage)
 		{
 			DamageConfig->SetMaxAge(HAIBaseComponent->MaxAgeDamage);
 			AIPerceptionComponent->ConfigureSense(*DamageConfig);
@@ -122,7 +119,7 @@ void AHAIController::OnPossess(APawn* InPawn)
 			DamageConfig->SetMaxAge(0.f);
 			AIPerceptionComponent->ConfigureSense(*DamageConfig);
 		}
-		switch (HAIBaseComponent->DominantSense)//Set the dominant sense of the AI controller
+		switch (HAIBaseComponent->DominantSense)
 		{
 			case E_DominantSense::Sight:
 				AIPerceptionComponent->SetDominantSense(SightConfig->GetSenseImplementation());
@@ -143,19 +140,18 @@ void AHAIController::OnPossess(APawn* InPawn)
 	}
 }
 
-// Called when the perception of the AI controller is updated
 void AHAIController::OnPerceptionUpdated(const TArray<AActor*>& UpdatedActors)
 {
-	for(AActor* sensedActor : UpdatedActors)//Loop for each actor sensed by the AI controller
+	for(AActor* sensedActor : UpdatedActors)
 	{
-		if(targetsTag.Num() == 0)//If the AI character has no target tag
+		if(targetsTag.Num() == 0)
 		{
 			HandleSense(sensedActor);
 			targetActor = sensedActor;
 		}
-		for(FName tag : targetsTag)//Loop for each target tag of the AI character
+		for(FName tag : targetsTag)
 		{
-			if(sensedActor->ActorHasTag(tag))//Check if the sensed actor has the target tag
+			if(sensedActor->ActorHasTag(tag))
 			{
 				HandleSense(sensedActor);
 				targetActor = sensedActor;
@@ -164,14 +160,13 @@ void AHAIController::OnPerceptionUpdated(const TArray<AActor*>& UpdatedActors)
 	}
 }
 
-// Check if the AI character sensed something
 bool AHAIController::PlayerSensed(AActor* sensedActor, E_SenseType senseType)
 {
-	FActorPerceptionBlueprintInfo perceptionInfo;//The perception info of the AI character
-	AIPerceptionComponent->GetActorsPerception(sensedActor, perceptionInfo);//Getting the perception info of the AI character
+	FActorPerceptionBlueprintInfo perceptionInfo;
+	AIPerceptionComponent->GetActorsPerception(sensedActor, perceptionInfo);
 	FAISenseID senseID;
 
-	switch (senseType)//Set the sense ID according to the sense type
+	switch (senseType)
 	{
 		case E_SenseType::see:senseID = UAISense::GetSenseID<UAISenseConfig_Sight>(); break;
 		case E_SenseType::hear:senseID = UAISense::GetSenseID<UAISenseConfig_Hearing>(); break;
@@ -189,40 +184,37 @@ bool AHAIController::PlayerSensed(AActor* sensedActor, E_SenseType senseType)
 	return false;
 }
 
-// Handle the sense of the AI character
 void AHAIController::HandleSense(AActor* sensedTargetActor)
 {
 	E_OnPossessState currentState = GetCurrentState();
 	
-	if(PlayerSensed(sensedTargetActor,E_SenseType::see))//If the AI character sees the player
+	if(PlayerSensed(sensedTargetActor,E_SenseType::see))
 	{
-		if(currentState != E_OnPossessState::active)//If the AI character is not  active
+		if(currentState != E_OnPossessState::active)
 		{
-			targetActor = sensedTargetActor;//Set the target actor as the sensed target actor
-			SetStateAsActive();//Set the state of the AI character as active
+			targetActor = sensedTargetActor;
+			SetStateAsActive();
 		}
 	}
-	else if(PlayerSensed(sensedTargetActor,E_SenseType::hear) || PlayerSensed(sensedTargetActor,E_SenseType::damage))//If the AI character hears the player
+	else if(PlayerSensed(sensedTargetActor,E_SenseType::hear) || PlayerSensed(sensedTargetActor,E_SenseType::damage))
 	{
-		if(currentState != E_OnPossessState::active)//If the AI character is not  active
+		if(currentState != E_OnPossessState::active)
 		{
-			SetStateAsInvestigate();//Set the state of the AI character as investigate
+			SetStateAsInvestigate();
 		}
 	}
-	else//If the AI character loses the sense of the target
+	else
 	{
-		SetStateAsInvestigate();//Loose the sense of the AI character
+		SetStateAsInvestigate();
 	}
 }
 
-// Get the current state of the AI character
 E_OnPossessState AHAIController::GetCurrentState()
 {
 	return (E_OnPossessState)GetBlackboardComponent()->GetValueAsEnum("OnPossessState");
 }
 
 
-// Set the state of the AI character as passive
 void AHAIController::SetStateAsPassive()
 {
 	GetBlackboardComponent()->SetValueAsEnum("OnPossessState",(uint8)E_OnPossessState::passive);
@@ -230,14 +222,14 @@ void AHAIController::SetStateAsPassive()
 	pointOfInterest = FVector::ZeroVector;
 }
 
-// Set the state of the AI character as investigate
+
 void AHAIController::SetStateAsInvestigate()
 {
 	GetBlackboardComponent()->SetValueAsEnum("OnPossessState",(uint8)E_OnPossessState::investigate);
 	GetBlackboardComponent()->SetValueAsVector("pointOfInterest",pointOfInterest);
 }
 
-// Set the state of the AI character as active
+
 void AHAIController::SetStateAsActive()
 {
 	GetBlackboardComponent()->SetValueAsEnum("OnPossessState",(uint8)E_OnPossessState::active);
@@ -245,7 +237,7 @@ void AHAIController::SetStateAsActive()
 }
 
 
-// Stop the behavior tree of the AI character
+
 void AHAIController::StopBehaviorTree()
 {
 	CleanupBrainComponent();

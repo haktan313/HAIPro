@@ -18,10 +18,10 @@ bool UBTDecorator_HasPatrolRoute::CalculateRawConditionValue(UBehaviorTreeCompon
 		APawn* controlledPawn = AIController->GetPawn();
 		if(controlledPawn)
 		{
-			UHAIBaseComponent* HAIBaseComponent = Cast<UHAIBaseComponent>(controlledPawn->GetComponentByClass(UHAIBaseComponent::StaticClass()));//Get the HAIBaseComponent
+			UHAIBaseComponent* HAIBaseComponent = Cast<UHAIBaseComponent>(controlledPawn->GetComponentByClass(UHAIBaseComponent::StaticClass()));
 			if(HAIBaseComponent)
 			{
-				AHPatrolSpline* patrolSpline = HAIBaseComponent->GetPatrolSpline();//Get the patrol spline from the HAIBaseComponent
+				AHPatrolSpline* patrolSpline = HAIBaseComponent->GetPatrolSpline();
 				if(patrolSpline)
 				{
 					return true;

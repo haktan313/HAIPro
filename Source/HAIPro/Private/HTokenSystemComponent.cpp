@@ -3,35 +3,32 @@
 #include "GameFramework/Actor.h" 
 #include "Engine/World.h"      
 
-//Interface function for taking token from the target
 bool UHTokenSystemComponent::TookTokenFromTarget(int amount, AActor* targetActor)
 {
 	UHTokenSystemComponent* targetTokenSystem = targetActor->FindComponentByClass<UHTokenSystemComponent>();
-	if(targetTokenSystem && targetTokenSystem->TookToken(amount))//If the target has enough token to take
+	if(targetTokenSystem && targetTokenSystem->TookToken(amount))
 	{
 		currentToken += amount;
-		TokenMap.Add(targetActor, amount);//Add the target to the map
+		TokenMap.Add(targetActor, amount);
 		return true;
 	}
 	return false;
 }
 
-//Interface function for giving token to the target
 void UHTokenSystemComponent::GiveTokenToTarget(int amount, AActor* targetActor)
 {
 	UHTokenSystemComponent* targetTokenSystem = targetActor->FindComponentByClass<UHTokenSystemComponent>();
 	if (targetTokenSystem)
 	{
-		targetTokenSystem->GiveToken(amount);//Give token to the target
+		targetTokenSystem->GiveToken(amount);
 		currentToken -= amount;
 		TokenMap.Remove(targetActor);
 	}
 }
 
-//Interface function for taking token from the target
 bool UHTokenSystemComponent::TookToken(int amount)
 {
-	if(currentToken >= amount)//If the target has enough token
+	if(currentToken >= amount)
 	{
 		currentToken -= amount;
 		return true;
@@ -39,7 +36,6 @@ bool UHTokenSystemComponent::TookToken(int amount)
 	return false;
 }
 
-//Interface function for giving token to the target
 void UHTokenSystemComponent::GiveToken(int amount)
 {
 	currentToken += amount;

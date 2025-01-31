@@ -9,7 +9,7 @@
 UBTTask_DoAction::UBTTask_DoAction(const FObjectInitializer& ObjectInitializer)
 {
 	NodeName = TEXT("DoAction");
-	bCreateNodeInstance = true;//Create a new instance of the node
+	bCreateNodeInstance = true;//for latent task
 }
 
 EBTNodeResult::Type UBTTask_DoAction::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
@@ -23,9 +23,9 @@ EBTNodeResult::Type UBTTask_DoAction::ExecuteTask(UBehaviorTreeComponent& OwnerC
 			HAIBaseComponent = Cast<UHAIBaseComponent>(Pawn->GetComponentByClass(UHAIBaseComponent::StaticClass()));
 			if(HAIBaseComponent)
 			{
-				HAIBaseComponent->OnDoAction.Broadcast(ActionID);//Call the action with the ID of the action
-				HAIBaseComponent->OnActionEnd.AddDynamic(this, &UBTTask_DoAction::ActionEnd);//Add the delegate for the end of the action
-				MyOwnerComp = &OwnerComp;//Behavior tree component of the AI character reference
+				HAIBaseComponent->OnDoAction.Broadcast(ActionID);
+				HAIBaseComponent->OnActionEnd.AddDynamic(this, &UBTTask_DoAction::ActionEnd);
+				MyOwnerComp = &OwnerComp;
 				return EBTNodeResult::InProgress;
 			}
 		}
@@ -35,36 +35,36 @@ EBTNodeResult::Type UBTTask_DoAction::ExecuteTask(UBehaviorTreeComponent& OwnerC
 
 EBTNodeResult::Type UBTTask_DoAction::AbortTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
 {
-	if(TokenTooked)//If the token is tooken give the token to the target actor
+	if(TokenTooked)
 	{
-		AActor* Target = Cast<AActor>(MyOwnerComp->GetBlackboardComponent()->GetValueAsObject(TargetKey.SelectedKeyName));//Get the target actor from the blackboard
-		UHTokenSystemComponent* TokenSystem = Pawn->FindComponentByClass<UHTokenSystemComponent>();//Token system component of the AI character
+		AActor* Target = Cast<AActor>(MyOwnerComp->GetBlackboardComponent()->GetValueAsObject(TargetKey.SelectedKeyName));
+		UHTokenSystemComponent* TokenSystem = Pawn->FindComponentByClass<UHTokenSystemComponent>();
 		if(TokenSystem && Target && TokenSystem->TokenMap.Contains(Target))
 		{
-			TokenAmount = Pawn->FindComponentByClass<UHTokenSystemComponent>()->TokenMap[Target];//Get the token amount from the token map
-			TokenSystem->GiveTokenToTarget(TokenAmount, Target);//Give the token to the target actor
-			MyOwnerComp->GetBlackboardComponent()->SetValueAsBool(CanDoActionBoolKey.SelectedKeyName, false);//Set the CanDoActionBoolKey as false
+			TokenAmount = Pawn->FindComponentByClass<UHTokenSystemComponent>()->TokenMap[Target];
+			TokenSystem->GiveTokenToTarget(TokenAmount, Target);
+			MyOwnerComp->GetBlackboardComponent()->SetValueAsBool(CanDoActionBoolKey.SelectedKeyName, false);
 		}
 	}
-	HAIBaseComponent->OnActionEnd.RemoveDynamic(this, &UBTTask_DoAction::ActionEnd);//Remove the delegate
-	HAIBaseComponent->OnActionEnd.Broadcast(E_DoActionResult::aborted);//Broadcast the end of the action
+	HAIBaseComponent->OnActionEnd.RemoveDynamic(this, &UBTTask_DoAction::ActionEnd);
+	HAIBaseComponent->OnActionEnd.Broadcast(E_DoActionResult::aborted);
 	return EBTNodeResult::Aborted;
 }
 
 void UBTTask_DoAction::ActionEnd(E_DoActionResult DoActionResult)
 {
-	HAIBaseComponent->OnActionEnd.RemoveDynamic(this, &UBTTask_DoAction::ActionEnd);//Remove the delegate
+	HAIBaseComponent->OnActionEnd.RemoveDynamic(this, &UBTTask_DoAction::ActionEnd);
 	if(MyOwnerComp)
 	{
-		if(TokenTooked)//If the token is tooken give the token to the target actor
+		if(TokenTooked)
 		{
-			AActor* Target = Cast<AActor>(MyOwnerComp->GetBlackboardComponent()->GetValueAsObject(TargetKey.SelectedKeyName));//Get the target actor from the blackboard
-			UHTokenSystemComponent* TokenSystem = Pawn->FindComponentByClass<UHTokenSystemComponent>();//Token system component of the AI character
-			if(TokenSystem && Target && TokenSystem->TokenMap.Contains(Target))//If the token system component and the target actor is valid
+			AActor* Target = Cast<AActor>(MyOwnerComp->GetBlackboardComponent()->GetValueAsObject(TargetKey.SelectedKeyName));
+			UHTokenSystemComponent* TokenSystem = Pawn->FindComponentByClass<UHTokenSystemComponent>();
+			if(TokenSystem && Target && TokenSystem->TokenMap.Contains(Target))
 			{
-				TokenAmount = Pawn->FindComponentByClass<UHTokenSystemComponent>()->TokenMap[Target];//Get the token amount from the token map
-				TokenSystem->GiveTokenToTarget(TokenAmount, Target);//Give the token to the target actor
-				MyOwnerComp->GetBlackboardComponent()->SetValueAsBool(CanDoActionBoolKey.SelectedKeyName, false);//Set the CanDoActionBoolKey as false
+				TokenAmount = Pawn->FindComponentByClass<UHTokenSystemComponent>()->TokenMap[Target];
+				TokenSystem->GiveTokenToTarget(TokenAmount, Target);
+				MyOwnerComp->GetBlackboardComponent()->SetValueAsBool(CanDoActionBoolKey.SelectedKeyName, false);
 			}
 		}
 		switch (DoActionResult)

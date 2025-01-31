@@ -1,5 +1,3 @@
-//HasPatrolRoute
-//It is a decorator which checks if the AI has a patrol route or not.
 
 #pragma once
 

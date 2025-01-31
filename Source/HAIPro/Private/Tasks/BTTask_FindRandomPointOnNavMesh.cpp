@@ -1,6 +1,4 @@
 
-
-
 #include "Tasks/BTTask_FindRandomPointOnNavMesh.h"
 #include "AIController.h"
 #include "NavigationSystem.h"
@@ -19,15 +17,15 @@ EBTNodeResult::Type UBTTask_FindRandomPointOnNavMesh::ExecuteTask(UBehaviorTreeC
 		APawn* ControlledPawn = AIController->GetPawn();
 		if(ControlledPawn)
 		{
-			FVector origin = ControlledPawn->GetActorLocation();//Get the origin of the AI
-			FNavLocation location;//The location of the random point
-			UNavigationSystemV1* NavSys = UNavigationSystemV1::GetCurrent(GetWorld());//Get the navigation system
-			if(NavSys && NavSys->GetRandomPointInNavigableRadius(origin, Radius, location))//Get a random point on the nav mesh
+			FVector origin = ControlledPawn->GetActorLocation();
+			FNavLocation location;
+			UNavigationSystemV1* NavSys = UNavigationSystemV1::GetCurrent(GetWorld());
+			if(NavSys && NavSys->GetRandomPointInNavigableRadius(origin, Radius, location))
 			{
 				UBlackboardComponent* BlackboardComp = OwnerComp.GetBlackboardComponent();
 				if(BlackboardComp)
 				{
-					BlackboardComp->SetValueAsVector(pointVector.SelectedKeyName, location.Location);//Set the random point in the blackboard
+					BlackboardComp->SetValueAsVector(pointVector.SelectedKeyName, location.Location);
 					return EBTNodeResult::Succeeded;
 				}
 			}

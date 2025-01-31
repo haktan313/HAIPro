@@ -9,29 +9,29 @@
 
 void UHEnvQueryContext_TargetActor::ProvideContext(FEnvQueryInstance& QueryInstance,FEnvQueryContextData& ContextData) const
 {
-	UObject* querierObject = QueryInstance.Owner.Get();//Get the owner of the query
+	UObject* querierObject = QueryInstance.Owner.Get();
 	if(!querierObject)
 	{
 		return;
 	}
-	AActor* querierActor = Cast<AActor>(querierObject);//Cast the owner to an actor	
+	AActor* querierActor = Cast<AActor>(querierObject);
 	if(!querierActor)
 	{
 		return;
 	}
-	AAIController* aiController = UAIBlueprintHelperLibrary::GetAIController(querierActor);//Get the AI controller of the actor
+	AAIController* aiController = UAIBlueprintHelperLibrary::GetAIController(querierActor);
 	if(!aiController)
 	{
 		return;
 	}
-	AHAIController* hAIController = Cast<AHAIController>(aiController);//Cast the AI controller to the HAI controller
+	AHAIController* hAIController = Cast<AHAIController>(aiController);
 	if(!hAIController)
 	{
 		return;
 	}
-	AActor* targetActor = hAIController->targetActor;//Get the target actor of the HAI controller
+	AActor* targetActor = hAIController->targetActor;
 	if(targetActor)
 	{
-		UEnvQueryItemType_Actor::SetContextHelper(ContextData,targetActor);//Set the target actor as the context
+		UEnvQueryItemType_Actor::SetContextHelper(ContextData,targetActor);
 	}
 }

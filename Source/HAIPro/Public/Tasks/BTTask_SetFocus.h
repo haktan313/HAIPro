@@ -1,5 +1,3 @@
-//SetFocus
-//It is a task which sets the focus of the AI controller to a target actor. The target actor is stored in the blackboard
 
 #pragma once
 
@@ -20,6 +18,6 @@ class HAIPRO_API UBTTask_SetFocus : public UBTTaskNode
 public:
 
 	UPROPERTY(EditAnywhere, Category = "Blackboard")
-	FBlackboardKeySelector targetActorKey;//The key for the target actor in the blackboard
+	FBlackboardKeySelector targetActorKey;
 	
 };

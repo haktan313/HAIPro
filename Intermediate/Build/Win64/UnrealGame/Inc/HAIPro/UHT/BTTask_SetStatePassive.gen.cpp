@@ -9,7 +9,9 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeBTTask_SetStatePassive() {}
 // Cross Module References
+	AIMODULE_API UClass* Z_Construct_UClass_UBehaviorTreeComponent_NoRegister();
 	AIMODULE_API UClass* Z_Construct_UClass_UBTTaskNode();
+	HAIPRO_API UClass* Z_Construct_UClass_AHAIController_NoRegister();
 	HAIPRO_API UClass* Z_Construct_UClass_UBTTask_SetStatePassive();
 	HAIPRO_API UClass* Z_Construct_UClass_UBTTask_SetStatePassive_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_HAIPro();
@@ -67,6 +69,14 @@ void EmptyLinkFunctionForGeneratedCodeBTTask_SetStatePassive() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_howManySecondsBeforePassive_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_howManySecondsBeforePassive;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_MyOwnerComp_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_MyOwnerComp;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_AIController_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_AIController;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -88,14 +98,27 @@ void EmptyLinkFunctionForGeneratedCodeBTTask_SetStatePassive() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBTTask_SetStatePassive_Statics::NewProp_howManySecondsBeforePassive_MetaData[] = {
 		{ "Category", "Task" },
-		{ "Comment", "//Set the state of the AI character as passive\n" },
 		{ "ModuleRelativePath", "Public/Tasks/BTTask_SetStatePassive.h" },
-		{ "ToolTip", "Set the state of the AI character as passive" },
 	};
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UBTTask_SetStatePassive_Statics::NewProp_howManySecondsBeforePassive = { "howManySecondsBeforePassive", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UBTTask_SetStatePassive, howManySecondsBeforePassive), METADATA_PARAMS(Z_Construct_UClass_UBTTask_SetStatePassive_Statics::NewProp_howManySecondsBeforePassive_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UBTTask_SetStatePassive_Statics::NewProp_howManySecondsBeforePassive_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBTTask_SetStatePassive_Statics::NewProp_MyOwnerComp_MetaData[] = {
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/Tasks/BTTask_SetStatePassive.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UBTTask_SetStatePassive_Statics::NewProp_MyOwnerComp = { "MyOwnerComp", nullptr, (EPropertyFlags)0x0040000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UBTTask_SetStatePassive, MyOwnerComp), Z_Construct_UClass_UBehaviorTreeComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UBTTask_SetStatePassive_Statics::NewProp_MyOwnerComp_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UBTTask_SetStatePassive_Statics::NewProp_MyOwnerComp_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBTTask_SetStatePassive_Statics::NewProp_AIController_MetaData[] = {
+		{ "ModuleRelativePath", "Public/Tasks/BTTask_SetStatePassive.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UBTTask_SetStatePassive_Statics::NewProp_AIController = { "AIController", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UBTTask_SetStatePassive, AIController), Z_Construct_UClass_AHAIController_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UBTTask_SetStatePassive_Statics::NewProp_AIController_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UBTTask_SetStatePassive_Statics::NewProp_AIController_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UBTTask_SetStatePassive_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBTTask_SetStatePassive_Statics::NewProp_howManySecondsBeforePassive,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBTTask_SetStatePassive_Statics::NewProp_MyOwnerComp,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBTTask_SetStatePassive_Statics::NewProp_AIController,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UBTTask_SetStatePassive_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UBTTask_SetStatePassive>::IsAbstract,
@@ -112,7 +135,7 @@ void EmptyLinkFunctionForGeneratedCodeBTTask_SetStatePassive() {}
 		UE_ARRAY_COUNT(FuncInfo),
 		UE_ARRAY_COUNT(Z_Construct_UClass_UBTTask_SetStatePassive_Statics::PropPointers),
 		0,
-		0x001000A0u,
+		0x009000A0u,
 		METADATA_PARAMS(Z_Construct_UClass_UBTTask_SetStatePassive_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_UBTTask_SetStatePassive_Statics::Class_MetaDataParams))
 	};
 	UClass* Z_Construct_UClass_UBTTask_SetStatePassive()
@@ -129,15 +152,15 @@ void EmptyLinkFunctionForGeneratedCodeBTTask_SetStatePassive() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UBTTask_SetStatePassive);
 	UBTTask_SetStatePassive::~UBTTask_SetStatePassive() {}
-	struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_SetStatePassive_h_Statics
+	struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_SetStatePassive_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_SetStatePassive_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UBTTask_SetStatePassive, UBTTask_SetStatePassive::StaticClass, TEXT("UBTTask_SetStatePassive"), &Z_Registration_Info_UClass_UBTTask_SetStatePassive, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBTTask_SetStatePassive), 3244396237U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_SetStatePassive_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_UBTTask_SetStatePassive, UBTTask_SetStatePassive::StaticClass, TEXT("UBTTask_SetStatePassive"), &Z_Registration_Info_UClass_UBTTask_SetStatePassive, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBTTask_SetStatePassive), 121828560U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_SetStatePassive_h_4284592980(TEXT("/Script/HAIPro"),
-		Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_SetStatePassive_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_SetStatePassive_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_SetStatePassive_h_2625977335(TEXT("/Script/HAIPro"),
+		Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_SetStatePassive_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_SetStatePassive_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

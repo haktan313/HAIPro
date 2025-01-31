@@ -10,6 +10,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeHPatrolSpline() {}
 // Cross Module References
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
+	ENGINE_API UClass* Z_Construct_UClass_USplineComponent_NoRegister();
 	HAIPRO_API UClass* Z_Construct_UClass_AHPatrolSpline();
 	HAIPRO_API UClass* Z_Construct_UClass_AHPatrolSpline_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_HAIPro();
@@ -32,6 +33,10 @@ void EmptyLinkFunctionForGeneratedCodeHPatrolSpline() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_direction_MetaData[];
 #endif
 		static const UECodeGen_Private::FUnsizedIntPropertyParams NewProp_direction;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_SplineComponent_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_SplineComponent;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -54,8 +59,16 @@ void EmptyLinkFunctionForGeneratedCodeHPatrolSpline() {}
 	};
 #endif
 	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_AHPatrolSpline_Statics::NewProp_direction = { "direction", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AHPatrolSpline, direction), METADATA_PARAMS(Z_Construct_UClass_AHPatrolSpline_Statics::NewProp_direction_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AHPatrolSpline_Statics::NewProp_direction_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AHPatrolSpline_Statics::NewProp_SplineComponent_MetaData[] = {
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/HPatrolSpline.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AHPatrolSpline_Statics::NewProp_SplineComponent = { "SplineComponent", nullptr, (EPropertyFlags)0x0040000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AHPatrolSpline, SplineComponent), Z_Construct_UClass_USplineComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AHPatrolSpline_Statics::NewProp_SplineComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AHPatrolSpline_Statics::NewProp_SplineComponent_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AHPatrolSpline_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AHPatrolSpline_Statics::NewProp_direction,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AHPatrolSpline_Statics::NewProp_SplineComponent,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AHPatrolSpline_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AHPatrolSpline>::IsAbstract,
@@ -89,15 +102,15 @@ void EmptyLinkFunctionForGeneratedCodeHPatrolSpline() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AHPatrolSpline);
 	AHPatrolSpline::~AHPatrolSpline() {}
-	struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HPatrolSpline_h_Statics
+	struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HPatrolSpline_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HPatrolSpline_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AHPatrolSpline, AHPatrolSpline::StaticClass, TEXT("AHPatrolSpline"), &Z_Registration_Info_UClass_AHPatrolSpline, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AHPatrolSpline), 1215512164U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HPatrolSpline_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_AHPatrolSpline, AHPatrolSpline::StaticClass, TEXT("AHPatrolSpline"), &Z_Registration_Info_UClass_AHPatrolSpline, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AHPatrolSpline), 3698499813U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HPatrolSpline_h_3983163222(TEXT("/Script/HAIPro"),
-		Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HPatrolSpline_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HPatrolSpline_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HPatrolSpline_h_2285644067(TEXT("/Script/HAIPro"),
+		Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HPatrolSpline_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HPatrolSpline_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

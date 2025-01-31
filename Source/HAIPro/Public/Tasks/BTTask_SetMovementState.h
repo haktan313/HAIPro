@@ -1,5 +1,3 @@
-//SetMovementState
-//It is a task which sets the movement state of the AI. The movement state is stored in the blackboard
 
 #pragma once
 
@@ -19,7 +17,7 @@ class HAIPRO_API UBTTask_SetMovementState : public UBTTaskNode
 
 public:
 	UPROPERTY(EditAnywhere, Category = "Blackboard")
-	E_MovementType MovementType;//The type of movement
+	E_MovementType MovementType;
 	UPROPERTY(EditAnywhere, Category = "Blackboard")
-	E_MovementState MovementState;//The movement state
+	E_MovementState MovementState;
 };

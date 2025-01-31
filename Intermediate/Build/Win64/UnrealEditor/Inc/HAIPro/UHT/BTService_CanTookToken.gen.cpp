@@ -66,18 +66,14 @@ void EmptyLinkFunctionForGeneratedCodeBTService_CanTookToken() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBTService_CanTookToken_Statics::NewProp_targetKey_MetaData[] = {
 		{ "Category", "Blackboard" },
-		{ "Comment", "//The amount of token needed to take from the target\n" },
 		{ "ModuleRelativePath", "Public/Services/BTService_CanTookToken.h" },
-		{ "ToolTip", "The amount of token needed to take from the target" },
 	};
 #endif
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UBTService_CanTookToken_Statics::NewProp_targetKey = { "targetKey", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UBTService_CanTookToken, targetKey), Z_Construct_UScriptStruct_FBlackboardKeySelector, METADATA_PARAMS(Z_Construct_UClass_UBTService_CanTookToken_Statics::NewProp_targetKey_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UBTService_CanTookToken_Statics::NewProp_targetKey_MetaData)) }; // 3376895314
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBTService_CanTookToken_Statics::NewProp_DoActionBoolKey_MetaData[] = {
 		{ "Category", "Blackboard" },
-		{ "Comment", "//The key for getting the target actor from the blackboard for taking the token\n" },
 		{ "ModuleRelativePath", "Public/Services/BTService_CanTookToken.h" },
-		{ "ToolTip", "The key for getting the target actor from the blackboard for taking the token" },
 	};
 #endif
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UBTService_CanTookToken_Statics::NewProp_DoActionBoolKey = { "DoActionBoolKey", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UBTService_CanTookToken, DoActionBoolKey), Z_Construct_UScriptStruct_FBlackboardKeySelector, METADATA_PARAMS(Z_Construct_UClass_UBTService_CanTookToken_Statics::NewProp_DoActionBoolKey_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UBTService_CanTookToken_Statics::NewProp_DoActionBoolKey_MetaData)) }; // 3376895314
@@ -118,15 +114,15 @@ void EmptyLinkFunctionForGeneratedCodeBTService_CanTookToken() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UBTService_CanTookToken);
 	UBTService_CanTookToken::~UBTService_CanTookToken() {}
-	struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Services_BTService_CanTookToken_h_Statics
+	struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Services_BTService_CanTookToken_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Services_BTService_CanTookToken_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UBTService_CanTookToken, UBTService_CanTookToken::StaticClass, TEXT("UBTService_CanTookToken"), &Z_Registration_Info_UClass_UBTService_CanTookToken, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBTService_CanTookToken), 4146265527U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Services_BTService_CanTookToken_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_UBTService_CanTookToken, UBTService_CanTookToken::StaticClass, TEXT("UBTService_CanTookToken"), &Z_Registration_Info_UClass_UBTService_CanTookToken, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBTService_CanTookToken), 358713341U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Services_BTService_CanTookToken_h_2160984761(TEXT("/Script/HAIPro"),
-		Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Services_BTService_CanTookToken_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Services_BTService_CanTookToken_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Services_BTService_CanTookToken_h_3380586478(TEXT("/Script/HAIPro"),
+		Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Services_BTService_CanTookToken_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Services_BTService_CanTookToken_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

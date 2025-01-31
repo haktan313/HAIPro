@@ -1,5 +1,3 @@
-//FindNextPatrolNode
-//It is a task which finds the next patrol node for the AI to move to. The patrol node is stored in the blackboard
 
 #pragma once
 
@@ -18,6 +16,6 @@ class HAIPRO_API UBTTask_FindNextPatrolNode : public UBTTaskNode
 	virtual EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;
 
 	UPROPERTY(EditAnywhere,Category="Blackboard")
-	FBlackboardKeySelector pointVector;//The key for setting the patrol point in the blackboard
+	FBlackboardKeySelector pointVector;
 	
 };

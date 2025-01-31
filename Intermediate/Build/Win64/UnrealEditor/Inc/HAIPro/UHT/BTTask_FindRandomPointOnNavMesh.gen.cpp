@@ -62,9 +62,7 @@ void EmptyLinkFunctionForGeneratedCodeBTTask_FindRandomPointOnNavMesh() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBTTask_FindRandomPointOnNavMesh_Statics::NewProp_pointVector_MetaData[] = {
 		{ "Category", "Blackboard" },
-		{ "Comment", "//The radius for finding the random point\n" },
 		{ "ModuleRelativePath", "Public/Tasks/BTTask_FindRandomPointOnNavMesh.h" },
-		{ "ToolTip", "The radius for finding the random point" },
 	};
 #endif
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UBTTask_FindRandomPointOnNavMesh_Statics::NewProp_pointVector = { "pointVector", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UBTTask_FindRandomPointOnNavMesh, pointVector), Z_Construct_UScriptStruct_FBlackboardKeySelector, METADATA_PARAMS(Z_Construct_UClass_UBTTask_FindRandomPointOnNavMesh_Statics::NewProp_pointVector_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UBTTask_FindRandomPointOnNavMesh_Statics::NewProp_pointVector_MetaData)) }; // 3376895314
@@ -104,15 +102,15 @@ void EmptyLinkFunctionForGeneratedCodeBTTask_FindRandomPointOnNavMesh() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UBTTask_FindRandomPointOnNavMesh);
 	UBTTask_FindRandomPointOnNavMesh::~UBTTask_FindRandomPointOnNavMesh() {}
-	struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_FindRandomPointOnNavMesh_h_Statics
+	struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_FindRandomPointOnNavMesh_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_FindRandomPointOnNavMesh_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UBTTask_FindRandomPointOnNavMesh, UBTTask_FindRandomPointOnNavMesh::StaticClass, TEXT("UBTTask_FindRandomPointOnNavMesh"), &Z_Registration_Info_UClass_UBTTask_FindRandomPointOnNavMesh, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBTTask_FindRandomPointOnNavMesh), 3501954372U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_FindRandomPointOnNavMesh_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_UBTTask_FindRandomPointOnNavMesh, UBTTask_FindRandomPointOnNavMesh::StaticClass, TEXT("UBTTask_FindRandomPointOnNavMesh"), &Z_Registration_Info_UClass_UBTTask_FindRandomPointOnNavMesh, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBTTask_FindRandomPointOnNavMesh), 3214307054U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_FindRandomPointOnNavMesh_h_1273512677(TEXT("/Script/HAIPro"),
-		Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_FindRandomPointOnNavMesh_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_pluginNewVersions_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_FindRandomPointOnNavMesh_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_FindRandomPointOnNavMesh_h_1226958493(TEXT("/Script/HAIPro"),
+		Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_FindRandomPointOnNavMesh_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Tasks_BTTask_FindRandomPointOnNavMesh_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

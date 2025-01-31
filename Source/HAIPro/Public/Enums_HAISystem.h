@@ -6,7 +6,6 @@
 #include "CoreMinimal.h"
 #include "Enums_HAISystem.generated.h"
 
-//Enum for the type of sense
 UENUM(BlueprintType)
 enum class E_SenseType : uint8 { 
 	see UMETA(DisplayName = "See"),
@@ -14,7 +13,6 @@ enum class E_SenseType : uint8 {
 	damage UMETA(DisplayName = "Damage")
 };
 
-//Enum for the type of state
 UENUM(BlueprintType)
 enum class E_OnPossessState : uint8 {
 	passive UMETA(DisplayName = "Passive"),
@@ -22,14 +20,12 @@ enum class E_OnPossessState : uint8 {
 	active UMETA(DisplayName = "Active")
 };
 
-//Enum for the type of movement
 UENUM(BlueprintType)
 enum class E_MovementType : uint8 {
 	walk UMETA(DisplayName = "Walk"),
 	fly UMETA(DisplayName = "Fly")
 };
 
-//Enum for the type of movement speed state
 UENUM(BlueprintType)
 enum class E_MovementState : uint8 {
 	idle UMETA(DisplayName = "Idle"),
@@ -39,7 +35,6 @@ enum class E_MovementState : uint8 {
 	fastFlying UMETA(DisplayName = "FastFlying")
 };
 
-//Enum for the type of dominant sense
 UENUM(BlueprintType)
 enum class E_DominantSense : uint8
 {
@@ -48,7 +43,6 @@ enum class E_DominantSense : uint8
 	Damage UMETA(DisplayName = "Damage")
 };
 
-//Enum for the result of the action
 UENUM(BlueprintType)
 enum class E_DoActionResult : uint8
 {

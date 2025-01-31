@@ -1,5 +1,3 @@
-//HAIBaseComponent
-//It is a component that is attached to an AI character. It is responsible for AI things.
 
 #pragma once
 
@@ -22,8 +20,8 @@ public:
 	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="HAI")
 	class UBehaviorTree* BehaviorTree;
 
-	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category = "HAI")//The behavior tree of the AI character
-	TArray<FName> targetsTag;//The tag of the target actor of the AI character
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category = "HAI")
+	TArray<FName> targetsTag;
 	UPROPERTY(EditAnywhere,BlueprintReadWrite ,Category="HAI")
 	float WalkSpeed;
 	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="HAI")
@@ -74,18 +72,18 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "HAI")
 	void SetMovementStateFly(E_MovementState movementState);
 	UFUNCTION(BlueprintCallable, Category = "HAI")
-	void Dead();//The function can call if npc is dead
+	void Dead();
 	UFUNCTION(BlueprintCallable, Category = "HAI")
-	bool StopBehaviorTree(); //Stop the behavior tree
+	bool StopBehaviorTree();
 	UFUNCTION(BlueprintCallable, Category = "HAI")
-	void SetStatePassive();//Set the state as passive
+	void SetStatePassive();
 	UFUNCTION(BlueprintCallable, Category = "HAI")
-	void SetStateInvestigate();//Set the state as investigate
+	void SetStateInvestigate();
 	UFUNCTION(BlueprintCallable, Category = "HAI")
-	void SetStateActive();//Set the state as active
+	void SetStateActive();
 	UFUNCTION(BlueprintCallable, Category = "HAI")
-	E_OnPossessState GetPossessState();//Get the possess state
-
+	E_OnPossessState GetPossessState();
+	
 	AHPatrolSpline* GetPatrolSpline();
 		
 };

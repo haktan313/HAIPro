@@ -1,6 +1,4 @@
 
-
-
 #include "HPatrolSpline.h"
 #include "Components/SplineComponent.h"
 
@@ -13,11 +11,11 @@ AHPatrolSpline::AHPatrolSpline()
 	currentPointIndex = 0;
 }
 
-//Increase the current point index and change the direction if needed
+
 void AHPatrolSpline::PatrolRouteIndex()
 {
 	currentPointIndex += direction;
-	if(currentPointIndex == SplineComponent->GetNumberOfSplinePoints() -1)//If the current point index is the last point
+	if(currentPointIndex == SplineComponent->GetNumberOfSplinePoints() -1)
 	{
 		direction = -1;
 	}
@@ -30,9 +28,8 @@ void AHPatrolSpline::PatrolRouteIndex()
 	}
 }
 
-//Get the location of the current point
 FVector AHPatrolSpline::GetPatrolRouteLocation()
 {
-	FVector splineLocalPoint = SplineComponent->GetLocationAtSplinePoint(currentPointIndex, ESplineCoordinateSpace::World);//Get the location of the current point
+	FVector splineLocalPoint = SplineComponent->GetLocationAtSplinePoint(currentPointIndex, ESplineCoordinateSpace::World);
 	return splineLocalPoint;
 }

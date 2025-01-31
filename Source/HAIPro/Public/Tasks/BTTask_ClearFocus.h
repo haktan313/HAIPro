@@ -1,5 +1,3 @@
-//ClearFocus
-// It is a task which clears the focus of the AI controller.
 
 #pragma once
 

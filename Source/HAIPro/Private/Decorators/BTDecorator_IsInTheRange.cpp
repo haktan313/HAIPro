@@ -1,6 +1,5 @@
 
 
-
 #include "Decorators/BTDecorator_IsInTheRange.h"
 #include "AIController.h"
 #include "BehaviorTree/BlackboardComponent.h"
@@ -22,12 +21,12 @@ bool UBTDecorator_IsInTheRange::CalculateRawConditionValue(UBehaviorTreeComponen
 			UBlackboardComponent* BlackboardComp = AIController->GetBlackboardComponent();
 			if(BlackboardComp)
 			{
-				AActor* targetActor = Cast<AActor>(BlackboardComp->GetValueAsObject(targetActorKey.SelectedKeyName));//Get the target actor from the blackboard
+				AActor* targetActor = Cast<AActor>(BlackboardComp->GetValueAsObject(targetActorKey.SelectedKeyName));
 				if(targetActor)
 				{
-					float distance = FVector::Dist(targetActor->GetActorLocation(), pawn->GetActorLocation());//Get the distance between the AI and the target actor
-					distance = distance - AcceptableErorRadius;//Subtract the acceptable error radius from the distance
-					return distance <= idealRangeValue;//Check if the distance is less than or equal to the ideal range value
+					float distance = FVector::Dist(targetActor->GetActorLocation(), pawn->GetActorLocation());
+					distance = distance - AcceptableErorRadius;
+					return distance <= idealRangeValue;
 				}
 			}
 		}

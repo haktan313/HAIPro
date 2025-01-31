@@ -1,5 +1,3 @@
-//SetStatePassive
-//It is a task node that sets the state of the AI character as passive. It is used in the behavior tree of the AI character.
 
 #pragma once
 
@@ -19,11 +17,13 @@ class HAIPRO_API UBTTask_SetStatePassive : public UBTTaskNode
 
 	FTimerHandle PassiveTimerHandle;
 	UFUNCTION()
-	void SetStateAsPassive();//Set the state of the AI character as passive
+	void SetStateAsPassive();
 
 	UPROPERTY(EditAnywhere, Category = "Task")
-	float howManySecondsBeforePassive = 5.0f;//How many seconds before the AI character becomes passive
+	float howManySecondsBeforePassive = 5.0f;
 
-	UBehaviorTreeComponent* MyOwnerComp;//Owner of the behavior tree component
+	UPROPERTY()
+	UBehaviorTreeComponent* MyOwnerComp;
+	UPROPERTY()
 	class AHAIController* AIController;
 };
