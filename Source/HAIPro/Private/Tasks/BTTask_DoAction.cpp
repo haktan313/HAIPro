@@ -5,11 +5,14 @@
 #include "BehaviorTree/BlackboardComponent.h"
 #include "HAIBaseComponent.h"
 #include "HTokenSystemComponent.h"
+#include "BehaviorTree/Blackboard/BlackboardKeyType_Bool.h"
 
 UBTTask_DoAction::UBTTask_DoAction(const FObjectInitializer& ObjectInitializer)
 {
 	NodeName = TEXT("DoAction");
 	bCreateNodeInstance = true;//for latent task
+	CanDoActionBoolKey.AddBoolFilter(this, CanDoActionBoolKey.SelectedKeyName);
+	TargetKey.AddObjectFilter(this,TargetKey.SelectedKeyName, AActor::StaticClass());
 }
 
 EBTNodeResult::Type UBTTask_DoAction::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
@@ -64,8 +67,11 @@ void UBTTask_DoAction::ActionEnd(E_DoActionResult DoActionResult)
 			{
 				TokenAmount = Pawn->FindComponentByClass<UHTokenSystemComponent>()->TokenMap[Target];
 				TokenSystem->GiveTokenToTarget(TokenAmount, Target);
-				MyOwnerComp->GetBlackboardComponent()->SetValueAsBool(CanDoActionBoolKey.SelectedKeyName, false);
 			}
+		}
+		if (MyOwnerComp->GetBlackboardComponent()->GetValueAsBool(CanDoActionBoolKey.SelectedKeyName))
+		{
+			MyOwnerComp->GetBlackboardComponent()->SetValueAsBool(CanDoActionBoolKey.SelectedKeyName, false);
 		}
 		switch (DoActionResult)
 		{
