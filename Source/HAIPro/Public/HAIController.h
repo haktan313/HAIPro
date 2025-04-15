@@ -28,28 +28,28 @@ protected:
 	void HandleSense(AActor* sensedTargetActor);
 
 	UPROPERTY()
-	class UCrowdFollowingComponent* CrowdFollowingComponent;
+	TObjectPtr<class UCrowdFollowingComponent> CrowdFollowingComponent;
 
 	UPROPERTY()
-	class UHAIBaseComponent* HAIBaseComponent;
+	TObjectPtr<class UHAIBaseComponent> HAIBaseComponent;
 
 public:
 
 	UPROPERTY()
-	UAIPerceptionComponent* AIPerceptionComponent;
+	TObjectPtr<UAIPerceptionComponent> AIPerceptionComponent;
 
 	UPROPERTY()
-	class UAISenseConfig_Sight* SightConfig;
+	TObjectPtr<class UAISenseConfig_Sight> SightConfig;
 	UPROPERTY()
-	class UAISenseConfig_Hearing* HearingConfig;
+	TObjectPtr<class UAISenseConfig_Hearing> HearingConfig;
 	UPROPERTY()
-	class UAISenseConfig_Damage* DamageConfig;
+	TObjectPtr<class UAISenseConfig_Damage> DamageConfig;
 	
 	E_OnPossessState GetCurrentState();
 
 	FVector pointOfInterest;
 	UPROPERTY()
-	AActor* targetActor;
+	TObjectPtr<AActor> targetActor;
 
 	void SetStateAsPassive();
 	void SetStateAsInvestigate();

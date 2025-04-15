@@ -95,31 +95,31 @@ void EmptyLinkFunctionForGeneratedCodeHAIController() {}
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_CrowdFollowingComponent_MetaData[];
 #endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_CrowdFollowingComponent;
+		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_CrowdFollowingComponent;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_HAIBaseComponent_MetaData[];
 #endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_HAIBaseComponent;
+		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_HAIBaseComponent;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_AIPerceptionComponent_MetaData[];
 #endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_AIPerceptionComponent;
+		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_AIPerceptionComponent;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_SightConfig_MetaData[];
 #endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_SightConfig;
+		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_SightConfig;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_HearingConfig_MetaData[];
 #endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_HearingConfig;
+		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_HearingConfig;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_DamageConfig_MetaData[];
 #endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_DamageConfig;
+		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_DamageConfig;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_targetActor_MetaData[];
 #endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_targetActor;
+		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_targetActor;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -145,45 +145,45 @@ void EmptyLinkFunctionForGeneratedCodeHAIController() {}
 		{ "ModuleRelativePath", "Public/HAIController.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AHAIController_Statics::NewProp_CrowdFollowingComponent = { "CrowdFollowingComponent", nullptr, (EPropertyFlags)0x0020080000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AHAIController, CrowdFollowingComponent), Z_Construct_UClass_UCrowdFollowingComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AHAIController_Statics::NewProp_CrowdFollowingComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AHAIController_Statics::NewProp_CrowdFollowingComponent_MetaData)) };
+	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_AHAIController_Statics::NewProp_CrowdFollowingComponent = { "CrowdFollowingComponent", nullptr, (EPropertyFlags)0x0024080000080008, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AHAIController, CrowdFollowingComponent), Z_Construct_UClass_UCrowdFollowingComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AHAIController_Statics::NewProp_CrowdFollowingComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AHAIController_Statics::NewProp_CrowdFollowingComponent_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AHAIController_Statics::NewProp_HAIBaseComponent_MetaData[] = {
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/HAIController.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AHAIController_Statics::NewProp_HAIBaseComponent = { "HAIBaseComponent", nullptr, (EPropertyFlags)0x0020080000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AHAIController, HAIBaseComponent), Z_Construct_UClass_UHAIBaseComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AHAIController_Statics::NewProp_HAIBaseComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AHAIController_Statics::NewProp_HAIBaseComponent_MetaData)) };
+	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_AHAIController_Statics::NewProp_HAIBaseComponent = { "HAIBaseComponent", nullptr, (EPropertyFlags)0x0024080000080008, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AHAIController, HAIBaseComponent), Z_Construct_UClass_UHAIBaseComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AHAIController_Statics::NewProp_HAIBaseComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AHAIController_Statics::NewProp_HAIBaseComponent_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AHAIController_Statics::NewProp_AIPerceptionComponent_MetaData[] = {
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/HAIController.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AHAIController_Statics::NewProp_AIPerceptionComponent = { "AIPerceptionComponent", nullptr, (EPropertyFlags)0x0010000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AHAIController, AIPerceptionComponent), Z_Construct_UClass_UAIPerceptionComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AHAIController_Statics::NewProp_AIPerceptionComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AHAIController_Statics::NewProp_AIPerceptionComponent_MetaData)) };
+	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_AHAIController_Statics::NewProp_AIPerceptionComponent = { "AIPerceptionComponent", nullptr, (EPropertyFlags)0x0014000000080008, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AHAIController, AIPerceptionComponent), Z_Construct_UClass_UAIPerceptionComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AHAIController_Statics::NewProp_AIPerceptionComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AHAIController_Statics::NewProp_AIPerceptionComponent_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AHAIController_Statics::NewProp_SightConfig_MetaData[] = {
 		{ "ModuleRelativePath", "Public/HAIController.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AHAIController_Statics::NewProp_SightConfig = { "SightConfig", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AHAIController, SightConfig), Z_Construct_UClass_UAISenseConfig_Sight_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AHAIController_Statics::NewProp_SightConfig_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AHAIController_Statics::NewProp_SightConfig_MetaData)) };
+	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_AHAIController_Statics::NewProp_SightConfig = { "SightConfig", nullptr, (EPropertyFlags)0x0014000000000000, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AHAIController, SightConfig), Z_Construct_UClass_UAISenseConfig_Sight_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AHAIController_Statics::NewProp_SightConfig_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AHAIController_Statics::NewProp_SightConfig_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AHAIController_Statics::NewProp_HearingConfig_MetaData[] = {
 		{ "ModuleRelativePath", "Public/HAIController.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AHAIController_Statics::NewProp_HearingConfig = { "HearingConfig", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AHAIController, HearingConfig), Z_Construct_UClass_UAISenseConfig_Hearing_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AHAIController_Statics::NewProp_HearingConfig_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AHAIController_Statics::NewProp_HearingConfig_MetaData)) };
+	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_AHAIController_Statics::NewProp_HearingConfig = { "HearingConfig", nullptr, (EPropertyFlags)0x0014000000000000, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AHAIController, HearingConfig), Z_Construct_UClass_UAISenseConfig_Hearing_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AHAIController_Statics::NewProp_HearingConfig_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AHAIController_Statics::NewProp_HearingConfig_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AHAIController_Statics::NewProp_DamageConfig_MetaData[] = {
 		{ "ModuleRelativePath", "Public/HAIController.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AHAIController_Statics::NewProp_DamageConfig = { "DamageConfig", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AHAIController, DamageConfig), Z_Construct_UClass_UAISenseConfig_Damage_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AHAIController_Statics::NewProp_DamageConfig_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AHAIController_Statics::NewProp_DamageConfig_MetaData)) };
+	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_AHAIController_Statics::NewProp_DamageConfig = { "DamageConfig", nullptr, (EPropertyFlags)0x0014000000000000, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AHAIController, DamageConfig), Z_Construct_UClass_UAISenseConfig_Damage_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AHAIController_Statics::NewProp_DamageConfig_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AHAIController_Statics::NewProp_DamageConfig_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AHAIController_Statics::NewProp_targetActor_MetaData[] = {
 		{ "ModuleRelativePath", "Public/HAIController.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AHAIController_Statics::NewProp_targetActor = { "targetActor", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AHAIController, targetActor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AHAIController_Statics::NewProp_targetActor_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AHAIController_Statics::NewProp_targetActor_MetaData)) };
+	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_AHAIController_Statics::NewProp_targetActor = { "targetActor", nullptr, (EPropertyFlags)0x0014000000000000, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AHAIController, targetActor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AHAIController_Statics::NewProp_targetActor_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AHAIController_Statics::NewProp_targetActor_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AHAIController_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AHAIController_Statics::NewProp_CrowdFollowingComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AHAIController_Statics::NewProp_HAIBaseComponent,
@@ -225,15 +225,15 @@ void EmptyLinkFunctionForGeneratedCodeHAIController() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AHAIController);
 	AHAIController::~AHAIController() {}
-	struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIController_h_Statics
+	struct Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_MyProject2_Plugins_HAIPro_Source_HAIPro_Public_HAIController_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIController_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AHAIController, AHAIController::StaticClass, TEXT("AHAIController"), &Z_Registration_Info_UClass_AHAIController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AHAIController), 309690438U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_MyProject2_Plugins_HAIPro_Source_HAIPro_Public_HAIController_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_AHAIController, AHAIController::StaticClass, TEXT("AHAIController"), &Z_Registration_Info_UClass_AHAIController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AHAIController), 3748714532U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIController_h_1461128055(TEXT("/Script/HAIPro"),
-		Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIController_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_MyProject2_Plugins_HAIPro_Source_HAIPro_Public_HAIController_h_573140361(TEXT("/Script/HAIPro"),
+		Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_MyProject2_Plugins_HAIPro_Source_HAIPro_Public_HAIController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_MyProject2_Plugins_HAIPro_Source_HAIPro_Public_HAIController_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

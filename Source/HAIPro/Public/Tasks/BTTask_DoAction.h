@@ -27,11 +27,11 @@ class HAIPRO_API UBTTask_DoAction : public UBTTaskNode
 	FBlackboardKeySelector CanDoActionBoolKey; //Blackboard key for checking if the AI character can do the action
 
 	UPROPERTY()
-	UBehaviorTreeComponent* MyOwnerComp;
+	TObjectPtr<UBehaviorTreeComponent> MyOwnerComp;
 	UPROPERTY()
-	class UHAIBaseComponent* HAIBaseComponent;
+	TObjectPtr<class UHAIBaseComponent> HAIBaseComponent;
 	UPROPERTY()
-	APawn* Pawn;
+	TObjectPtr<APawn> Pawn;
 	int TokenAmount;
 
 	UPROPERTY(EditAnywhere, Category = "Token")

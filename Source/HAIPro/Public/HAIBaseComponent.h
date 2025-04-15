@@ -14,11 +14,21 @@ UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class HAIPRO_API UHAIBaseComponent : public UActorComponent
 {
 	GENERATED_BODY()
-	class ACharacter* OwnerCharacter;
+
+	UPROPERTY()
+	ACharacter* OwnerCharacter;
 
 public:
 	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="HAI")
-	class UBehaviorTree* BehaviorTree;
+	TObjectPtr<class UBehaviorTree>BehaviorTree;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="HAI|BlackboardKeyValuesName")
+	FName TargetActorKeyName;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="HAI|BlackboardKeyValuesName")
+	FName LocationVectorKeyName;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="HAI|BlackboardKeyValuesName")
+	FName EnumOnPossessStateKeyName;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="HAI|BlackboardKeyValuesName")
+	FName BoolCanDoActionKeyName;
 
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category = "HAI")
 	TArray<FName> targetsTag;
@@ -32,7 +42,7 @@ public:
 	float FastFlySpeed;
 
 	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="HAI")
-	AHPatrolSpline* PatrolSpline;
+	TObjectPtr<AHPatrolSpline> PatrolSpline;
 
 	UPROPERTY(BlueprintAssignable, BlueprintCallable, Category="HAI")
 	FOnDoActionDelegate OnDoAction; 

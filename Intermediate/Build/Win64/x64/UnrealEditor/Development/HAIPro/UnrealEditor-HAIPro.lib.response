@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-HAIPro.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\Haktan\Documents\Unreal Projects\MyProject2\Intermediate\Build\Win64\x64\MyProject2Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.h.obj"
+"C:\Users\Haktan\Documents\Unreal Projects\MyProject2\Plugins\HAIPro\Intermediate\Build\Win64\x64\UnrealEditor\Development\HAIPro\Module.HAIPro.cpp.obj"
+"C:\Users\Haktan\Documents\Unreal Projects\MyProject2\Plugins\HAIPro\Intermediate\Build\Win64\x64\UnrealEditor\Development\HAIPro\Default.rc2.res"
+/OUT:"C:\Users\Haktan\Documents\Unreal Projects\MyProject2\Plugins\HAIPro\Intermediate\Build\Win64\x64\UnrealEditor\Development\HAIPro\UnrealEditor-HAIPro.lib"

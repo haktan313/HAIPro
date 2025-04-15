@@ -23,7 +23,7 @@ class HAIPRO_API UBTTask_SetStatePassive : public UBTTaskNode
 	float howManySecondsBeforePassive = 5.0f;
 
 	UPROPERTY()
-	UBehaviorTreeComponent* MyOwnerComp;
+	TObjectPtr<UBehaviorTreeComponent> MyOwnerComp;
 	UPROPERTY()
-	class AHAIController* AIController;
+	TObjectPtr<class AHAIController> AIController;
 };

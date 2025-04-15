@@ -6,30 +6,48 @@ AHPatrolSpline::AHPatrolSpline()
 {
 	SplineComponent = CreateDefaultSubobject<USplineComponent>(TEXT("SplineComponent"));
 	RootComponent = SplineComponent;
-
-	direction = 1;
-	currentPointIndex = 0;
 }
 
 
-void AHPatrolSpline::PatrolRouteIndex()
+void AHPatrolSpline::PatrolRouteIndex(AActor* RequestedBy)
 {
-	currentPointIndex += direction;
-	if(currentPointIndex == SplineComponent->GetNumberOfSplinePoints() -1)
+	if (!RequestedBy){return;}
+	
+	FS_PatrolData* data = PatrolDataMap.Find(RequestedBy);
+	if (!data)
 	{
-		direction = -1;
+		FS_PatrolData newData;
+		newData.currentPointIndex = 0;
+		newData.direction = 1;
+		PatrolDataMap.Add(RequestedBy, newData);
+		data = PatrolDataMap.Find(RequestedBy);
+	}
+	
+	data->currentPointIndex += data->direction;
+	if(data->currentPointIndex == SplineComponent->GetNumberOfSplinePoints() -1)
+	{
+		data->direction = -1;
 	}
 	else
 	{
-		if(currentPointIndex == 0)
+		if(data->currentPointIndex == 0)
 		{
-			direction = 1;
+			data->direction = 1;
 		}
 	}
 }
 
-FVector AHPatrolSpline::GetPatrolRouteLocation()
+FVector AHPatrolSpline::GetPatrolRouteLocation(AActor* RequestedBy)
 {
+	if (!RequestedBy){return FVector::ZeroVector;}
+	FS_PatrolData* data = PatrolDataMap.Find(RequestedBy);
+	int currentPointIndex = 0;
+	if (data)
+	{
+		currentPointIndex = data->currentPointIndex;
+	}
 	FVector splineLocalPoint = SplineComponent->GetLocationAtSplinePoint(currentPointIndex, ESplineCoordinateSpace::World);
 	return splineLocalPoint;
 }
+
+

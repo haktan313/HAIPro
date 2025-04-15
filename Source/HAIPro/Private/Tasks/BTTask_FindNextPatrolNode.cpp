@@ -24,12 +24,12 @@ EBTNodeResult::Type UBTTask_FindNextPatrolNode::ExecuteTask(UBehaviorTreeCompone
 				AHPatrolSpline* patrolSpline = HAIBaseComponent->GetPatrolSpline();
 				if(patrolSpline)
 				{
-					FVector patrolPointLocation = patrolSpline->GetPatrolRouteLocation();
+					FVector patrolPointLocation = patrolSpline->GetPatrolRouteLocation(pawn);
 					UBlackboardComponent* BlackboardComponent = OwnerComp.GetBlackboardComponent();
 					if(BlackboardComponent)
 					{
 						BlackboardComponent->SetValueAsVector(pointVector.SelectedKeyName, patrolPointLocation);
-						patrolSpline->PatrolRouteIndex();
+						patrolSpline->PatrolRouteIndex(pawn);
 						return EBTNodeResult::Succeeded;
 					}
 				}

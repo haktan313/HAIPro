@@ -211,13 +211,13 @@ void AHAIController::HandleSense(AActor* sensedTargetActor)
 
 E_OnPossessState AHAIController::GetCurrentState()
 {
-	return (E_OnPossessState)GetBlackboardComponent()->GetValueAsEnum("OnPossessState");
+	return (E_OnPossessState)GetBlackboardComponent()->GetValueAsEnum(HAIBaseComponent->EnumOnPossessStateKeyName);
 }
 
 
 void AHAIController::SetStateAsPassive()
 {
-	GetBlackboardComponent()->SetValueAsEnum("OnPossessState",(uint8)E_OnPossessState::passive);
+	GetBlackboardComponent()->SetValueAsEnum(HAIBaseComponent->EnumOnPossessStateKeyName,(uint8)E_OnPossessState::passive);
 	targetActor = nullptr;
 	pointOfInterest = FVector::ZeroVector;
 }
@@ -225,15 +225,15 @@ void AHAIController::SetStateAsPassive()
 
 void AHAIController::SetStateAsInvestigate()
 {
-	GetBlackboardComponent()->SetValueAsEnum("OnPossessState",(uint8)E_OnPossessState::investigate);
-	GetBlackboardComponent()->SetValueAsVector("pointOfInterest",pointOfInterest);
+	GetBlackboardComponent()->SetValueAsEnum(HAIBaseComponent->EnumOnPossessStateKeyName,(uint8)E_OnPossessState::investigate);
+	GetBlackboardComponent()->SetValueAsVector(HAIBaseComponent->LocationVectorKeyName,pointOfInterest);
 }
 
 
 void AHAIController::SetStateAsActive()
 {
-	GetBlackboardComponent()->SetValueAsEnum("OnPossessState",(uint8)E_OnPossessState::active);
-	GetBlackboardComponent()->SetValueAsObject("targetActor",targetActor);
+	GetBlackboardComponent()->SetValueAsEnum(HAIBaseComponent->EnumOnPossessStateKeyName,(uint8)E_OnPossessState::active);
+	GetBlackboardComponent()->SetValueAsObject(HAIBaseComponent->TargetActorKeyName,targetActor);
 }
 
 

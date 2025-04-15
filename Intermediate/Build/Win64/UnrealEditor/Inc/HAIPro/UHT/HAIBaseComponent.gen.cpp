@@ -10,6 +10,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeHAIBaseComponent() {}
 // Cross Module References
 	AIMODULE_API UClass* Z_Construct_UClass_UBehaviorTree_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_ACharacter_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
 	HAIPRO_API UClass* Z_Construct_UClass_AHPatrolSpline_NoRegister();
 	HAIPRO_API UClass* Z_Construct_UClass_UHAIBaseComponent();
@@ -435,9 +436,29 @@ void FOnActionEndDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnActi
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_OwnerCharacter_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_OwnerCharacter;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_BehaviorTree_MetaData[];
 #endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_BehaviorTree;
+		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_BehaviorTree;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_TargetActorKeyName_MetaData[];
+#endif
+		static const UECodeGen_Private::FNamePropertyParams NewProp_TargetActorKeyName;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_LocationVectorKeyName_MetaData[];
+#endif
+		static const UECodeGen_Private::FNamePropertyParams NewProp_LocationVectorKeyName;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_EnumOnPossessStateKeyName_MetaData[];
+#endif
+		static const UECodeGen_Private::FNamePropertyParams NewProp_EnumOnPossessStateKeyName;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_BoolCanDoActionKeyName_MetaData[];
+#endif
+		static const UECodeGen_Private::FNamePropertyParams NewProp_BoolCanDoActionKeyName;
 		static const UECodeGen_Private::FNamePropertyParams NewProp_targetsTag_Inner;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_targetsTag_MetaData[];
@@ -462,7 +483,7 @@ void FOnActionEndDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnActi
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_PatrolSpline_MetaData[];
 #endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_PatrolSpline;
+		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_PatrolSpline;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_OnDoAction_MetaData[];
 #endif
@@ -548,12 +569,46 @@ void FOnActionEndDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnActi
 	};
 #endif
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OwnerCharacter_MetaData[] = {
+		{ "ModuleRelativePath", "Public/HAIBaseComponent.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OwnerCharacter = { "OwnerCharacter", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHAIBaseComponent, OwnerCharacter), Z_Construct_UClass_ACharacter_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OwnerCharacter_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OwnerCharacter_MetaData)) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_BehaviorTree_MetaData[] = {
 		{ "Category", "HAI" },
 		{ "ModuleRelativePath", "Public/HAIBaseComponent.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_BehaviorTree = { "BehaviorTree", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHAIBaseComponent, BehaviorTree), Z_Construct_UClass_UBehaviorTree_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_BehaviorTree_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_BehaviorTree_MetaData)) };
+	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_BehaviorTree = { "BehaviorTree", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHAIBaseComponent, BehaviorTree), Z_Construct_UClass_UBehaviorTree_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_BehaviorTree_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_BehaviorTree_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_TargetActorKeyName_MetaData[] = {
+		{ "Category", "HAI|BlackboardKeyValuesName" },
+		{ "ModuleRelativePath", "Public/HAIBaseComponent.h" },
+	};
+#endif
+	const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_TargetActorKeyName = { "TargetActorKeyName", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHAIBaseComponent, TargetActorKeyName), METADATA_PARAMS(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_TargetActorKeyName_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_TargetActorKeyName_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_LocationVectorKeyName_MetaData[] = {
+		{ "Category", "HAI|BlackboardKeyValuesName" },
+		{ "ModuleRelativePath", "Public/HAIBaseComponent.h" },
+	};
+#endif
+	const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_LocationVectorKeyName = { "LocationVectorKeyName", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHAIBaseComponent, LocationVectorKeyName), METADATA_PARAMS(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_LocationVectorKeyName_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_LocationVectorKeyName_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_EnumOnPossessStateKeyName_MetaData[] = {
+		{ "Category", "HAI|BlackboardKeyValuesName" },
+		{ "ModuleRelativePath", "Public/HAIBaseComponent.h" },
+	};
+#endif
+	const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_EnumOnPossessStateKeyName = { "EnumOnPossessStateKeyName", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHAIBaseComponent, EnumOnPossessStateKeyName), METADATA_PARAMS(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_EnumOnPossessStateKeyName_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_EnumOnPossessStateKeyName_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_BoolCanDoActionKeyName_MetaData[] = {
+		{ "Category", "HAI|BlackboardKeyValuesName" },
+		{ "ModuleRelativePath", "Public/HAIBaseComponent.h" },
+	};
+#endif
+	const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_BoolCanDoActionKeyName = { "BoolCanDoActionKeyName", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHAIBaseComponent, BoolCanDoActionKeyName), METADATA_PARAMS(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_BoolCanDoActionKeyName_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_BoolCanDoActionKeyName_MetaData)) };
 	const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_targetsTag_Inner = { "targetsTag", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_targetsTag_MetaData[] = {
@@ -596,7 +651,7 @@ void FOnActionEndDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnActi
 		{ "ModuleRelativePath", "Public/HAIBaseComponent.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_PatrolSpline = { "PatrolSpline", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHAIBaseComponent, PatrolSpline), Z_Construct_UClass_AHPatrolSpline_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_PatrolSpline_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_PatrolSpline_MetaData)) };
+	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_PatrolSpline = { "PatrolSpline", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHAIBaseComponent, PatrolSpline), Z_Construct_UClass_AHPatrolSpline_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_PatrolSpline_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_PatrolSpline_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OnDoAction_MetaData[] = {
 		{ "Category", "HAI" },
@@ -702,7 +757,12 @@ void FOnActionEndDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnActi
 #endif
 	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_DominantSense = { "DominantSense", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UHAIBaseComponent, DominantSense), Z_Construct_UEnum_HAIPro_E_DominantSense, METADATA_PARAMS(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_DominantSense_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_DominantSense_MetaData)) }; // 1998315785
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UHAIBaseComponent_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_OwnerCharacter,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_BehaviorTree,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_TargetActorKeyName,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_LocationVectorKeyName,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_EnumOnPossessStateKeyName,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_BoolCanDoActionKeyName,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_targetsTag_Inner,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_targetsTag,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHAIBaseComponent_Statics::NewProp_WalkSpeed,
@@ -757,15 +817,15 @@ void FOnActionEndDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnActi
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UHAIBaseComponent);
 	UHAIBaseComponent::~UHAIBaseComponent() {}
-	struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_Statics
+	struct Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_MyProject2_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UHAIBaseComponent, UHAIBaseComponent::StaticClass, TEXT("UHAIBaseComponent"), &Z_Registration_Info_UClass_UHAIBaseComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHAIBaseComponent), 303244806U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_MyProject2_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_UHAIBaseComponent, UHAIBaseComponent::StaticClass, TEXT("UHAIBaseComponent"), &Z_Registration_Info_UClass_UHAIBaseComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHAIBaseComponent), 4173333856U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_495612748(TEXT("/Script/HAIPro"),
-		Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_MyProject2_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_3682234754(TEXT("/Script/HAIPro"),
+		Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_MyProject2_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Documents_Unreal_Projects_MyProject2_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
