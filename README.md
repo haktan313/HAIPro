@@ -105,6 +105,18 @@ To use the HAI AIController for your NPCs:
 
 2. Toggle specific senses using:
    - `Open Sight`, `Open Hear`, `Open Damage` (enable/disable sight, hearing, and damage detection).
+  
+3. ⚠️ Important Note About Blackboard Key Names
+   - When filling out the BlackboardKeyValuesName section in the HAI Base Component:
+   -The following fields must exactly match the names of the keys created in your Blackboard asset:
+          - Target Actor Key Name → e.g., targetActor
+          - Location Vector Key Name → e.g., pointOfInterest
+          - Enum on Possess State Key Name → e.g., OnPossessState
+          - Bool Can Do Action Key Name → e.g., canDoAction
+
+❗️These names are case-sensitive and must be identical to ensure correct blackboard communication.
+
+✅ It's highly recommended to copy-paste the key names from the Blackboard into the component to avoid typos.
 
 ---
 
@@ -133,8 +145,9 @@ To use the HAI AIController for your NPCs:
    - `OnPossessState`: Current state (e.g., Passive, Active, Investigating).
    - `pointOfInterest`: Location of interest.
    - `canDoAction`: Boolean indicating if an action can be performed.
-🔒 Important Note:
-The key names entered here (e.g., targetActor, OnPossessState, pointOfInterest, canDoAction) must exactly match the names assigned in the HAIBaseComponent settings (e.g., Target Actor Key Name, Enum on Possess State Key Name, etc.).
+     
+🔒 **Important Note**:
+- The key names entered here (e.g., targetActor, OnPossessState, pointOfInterest, canDoAction) must exactly match the names assigned in the HAIBaseComponent settings (e.g., Target Actor Key Name, Enum on Possess State Key Name, etc.).
 Even a small mismatch (such as case sensitivity) will cause the AI logic to fail. ✅
 
 📌 Tip: To avoid mistakes, copy the key names directly from the Blackboard when assigning them in the component.
