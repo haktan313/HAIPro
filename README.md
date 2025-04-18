@@ -107,8 +107,8 @@ To use the HAI AIController for your NPCs:
    - `Open Sight`, `Open Hear`, `Open Damage` (enable/disable sight, hearing, and damage detection).
   
 3. ⚠️ Important Note About Blackboard Key Names
-   - When filling out the BlackboardKeyValuesName section in the HAI Base Component:
-   -The following fields must exactly match the names of the keys created in your Blackboard asset:
+   - When filling out the BlackboardKeyValuesName section in the HAI Base Component, the following fields must exactly match the names of the keys created in your Blackboard asset:
+     
           - Target Actor Key Name → e.g., targetActor
           - Location Vector Key Name → e.g., pointOfInterest
           - Enum on Possess State Key Name → e.g., OnPossessState
