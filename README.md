@@ -2,6 +2,10 @@
 # HAIPro Plugin Documentation
 ![plugin](https://github.com/user-attachments/assets/740a6c0b-39e3-4314-9375-934a9759ca05)
 
+**Unreal Engine 5.2: [https://www.mediafire.com/file/3infrscv27foclx/H3DPathAIPro_5.2.zip/file](https://www.mediafire.com/file/zf0ytorey3ga4u4/HAIPro_5.2.zip/file)**
+
+**Unreal Engine 5.5: [https://www.mediafire.com/file/rfigf7uvqrrlpz9/H3DPathAIPro_5.5.zip/file](https://www.mediafire.com/file/4quj9t4fe3nmdu4/HAIPro_5.5.zip/file)**
+
 ## Introduction 
 This plugin offers an Advanced AI management model with features like token-based task prioritization for NPCs, integration with an Advanced AIController using the CrowdFollowing component, and flexible multi-action support through the DoAction task within the Behavior Tree.
 
