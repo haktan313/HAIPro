@@ -133,7 +133,11 @@ To use the HAI AIController for your NPCs:
    - `OnPossessState`: Current state (e.g., Passive, Active, Investigating).
    - `pointOfInterest`: Location of interest.
    - `canDoAction`: Boolean indicating if an action can be performed.
-2. Assign default values to avoid errors.
+🔒 Important Note:
+The key names entered here (e.g., targetActor, OnPossessState, pointOfInterest, canDoAction) must exactly match the names assigned in the HAIBaseComponent settings (e.g., Target Actor Key Name, Enum on Possess State Key Name, etc.).
+Even a small mismatch (such as case sensitivity) will cause the AI logic to fail. ✅
+
+📌 Tip: To avoid mistakes, copy the key names directly from the Blackboard when assigning them in the component.
 
   ### **EQS Queries**
 
