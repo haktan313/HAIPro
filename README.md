@@ -95,7 +95,7 @@ To use the HAI AIController for your NPCs:
 
    ### **Configuring Perception**
 
-   ![Ekran görüntüsü 2024-11-22 143711](https://github.com/user-attachments/assets/e82b4c4c-18e7-4ae2-b331-804618117a48)
+   ![Image](https://github.com/user-attachments/assets/a01c12d4-c875-433c-9617-c89da2b8988e)
    
 1. Adjust detection variables in the **HAI Base Component**, such as:
    - `Sight Radius`: Maximum range for sight detection.
@@ -229,7 +229,7 @@ By following this guide, you can set up intelligent NPC behaviors, patrols, and 
           
     - ## HAI Varaibles
       
-      ![haivaraibles](https://github.com/user-attachments/assets/349713fc-7aa2-471b-92e6-35906efa0cf6)
+      ![Image](https://github.com/user-attachments/assets/a01c12d4-c875-433c-9617-c89da2b8988e)
       
          - **1.Behavior Tree**: The behavior tree asset assigned to the NPC.
 
