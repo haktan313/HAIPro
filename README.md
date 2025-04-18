@@ -108,10 +108,10 @@ To use the HAI AIController for your NPCs:
   
 3. ⚠️ Important Note About Blackboard Key Names
    - When filling out the BlackboardKeyValuesName section in the HAI Base Component, the following fields must exactly match the names of the keys created in your Blackboard asset:
-          - Target Actor Key Name → e.g., targetActor
-          - Location Vector Key Name → e.g., pointOfInterest
-          - Enum on Possess State Key Name → e.g., OnPossessState
-          - Bool Can Do Action Key Name → e.g., canDoAction
+          - **Target Actor Key Name → e.g., targetActor**
+          - **Location Vector Key Name → e.g., pointOfInterest**
+          - **Enum on Possess State Key Name → e.g., OnPossessState**
+          - **Bool Can Do Action Key Name → e.g., canDoAction**
 
 ❗️These names are case-sensitive and must be identical to ensure correct blackboard communication.
 
