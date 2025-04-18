@@ -50,7 +50,7 @@ This plugin is compatible with Unreal Engine 5.2 and later and is designed to wo
 
 2. **Move the Plugin Folder**  
    Move the extracted plugin folder to the `Engine/Plugins/Marketplace` directory of your Unreal Engine installation. The path is usually:  
-   `C:\Program Files\Epic Games\UE_5.2\Engine\Plugins\Marketplace`
+   `C:\Program Files\Epic Games\UE_5.5\Engine\Plugins\Marketplace`
 
 3. **Activate the Plugin**  
    Open Unreal Engine, go to `Edit > Plugins`, and enable the plugin.
