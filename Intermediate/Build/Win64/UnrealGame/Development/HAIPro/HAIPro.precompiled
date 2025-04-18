@@ -1,5 +1,21 @@
 {
 	"OutputFiles": [
-		"..\\..\\..\\x64\\UnrealGame\\Development\\HAIPro\\Module.HAIPro.cpp.obj"
+		"..\\..\\..\\x64\\UnrealGame\\Development\\HAIPro\\Module.HAIPro.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\HAIPro\\HAIBaseComponent.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\HAIPro\\HAIController.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\HAIPro\\HAIPro.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\HAIPro\\HEnvQueryContext_TargetActor.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\HAIPro\\HPatrolSpline.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\HAIPro\\HTokenSystemComponent.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\HAIPro\\BTDecorator_HasPatrolRoute.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\HAIPro\\BTDecorator_IsInTheRange.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\HAIPro\\BTService_CanTookToken.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\HAIPro\\BTTask_ClearFocus.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\HAIPro\\BTTask_DoAction.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\HAIPro\\BTTask_FindNextPatrolNode.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\HAIPro\\BTTask_FindRandomPointOnNavMesh.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\HAIPro\\BTTask_SetFocus.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\HAIPro\\BTTask_SetMovementState.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\HAIPro\\BTTask_SetStatePassive.cpp.obj"
 	]
 }

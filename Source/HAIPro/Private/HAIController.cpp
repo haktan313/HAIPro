@@ -67,58 +67,9 @@ void AHAIController::OnPossess(APawn* InPawn)
 	HAIBaseComponent = Cast<UHAIBaseComponent>(InPawn->GetComponentByClass(UHAIBaseComponent::StaticClass()));
 	if(HAIBaseComponent)
 	{
-		if(HAIBaseComponent->OpenSight)
-		{
-			SightConfig->SightRadius = HAIBaseComponent->SightRadius;
-			SightConfig->LoseSightRadius = HAIBaseComponent->LoseSightRadius;
-			SightConfig->PeripheralVisionAngleDegrees = HAIBaseComponent->PeripheralVisionAngleDegrees;
-			SightConfig->DetectionByAffiliation.bDetectEnemies = true;
-			SightConfig->DetectionByAffiliation.bDetectNeutrals = true;
-			SightConfig->DetectionByAffiliation.bDetectFriendlies = true;
-			SightConfig->SetMaxAge(HAIBaseComponent->MaxAgeForSight);
-			
-			AIPerceptionComponent->ConfigureSense(*SightConfig);
-		}
-		else
-		{
-			SightConfig->SightRadius = 0.f;
-			SightConfig->LoseSightRadius = 0.f;
-			SightConfig->PeripheralVisionAngleDegrees = 0.f;
-			SightConfig->DetectionByAffiliation.bDetectEnemies = false;
-			SightConfig->DetectionByAffiliation.bDetectNeutrals = false;
-			SightConfig->DetectionByAffiliation.bDetectFriendlies = false;
-			SightConfig->SetMaxAge(0.f);
-
-			AIPerceptionComponent->ConfigureSense(*SightConfig);
-		}
-		if(HAIBaseComponent->OpenHear)
-		{
-			HearingConfig->HearingRange = HAIBaseComponent->HearingRange;
-			HearingConfig->SetMaxAge(HAIBaseComponent->MaxAgeHear);
-			HearingConfig->DetectionByAffiliation.bDetectEnemies = true;
-			HearingConfig->DetectionByAffiliation.bDetectNeutrals = true;
-			HearingConfig->DetectionByAffiliation.bDetectFriendlies = true;
-			AIPerceptionComponent->ConfigureSense(*HearingConfig);
-		}
-		else
-		{
-			HearingConfig->HearingRange = 0.f;
-			HearingConfig->SetMaxAge(0.f);
-			HearingConfig->DetectionByAffiliation.bDetectEnemies = false;
-			HearingConfig->DetectionByAffiliation.bDetectNeutrals = false;
-			HearingConfig->DetectionByAffiliation.bDetectFriendlies = false;
-			AIPerceptionComponent->ConfigureSense(*HearingConfig);
-		}
-		if(HAIBaseComponent->OpenDamage)
-		{
-			DamageConfig->SetMaxAge(HAIBaseComponent->MaxAgeDamage);
-			AIPerceptionComponent->ConfigureSense(*DamageConfig);
-		}
-		else
-		{
-			DamageConfig->SetMaxAge(0.f);
-			AIPerceptionComponent->ConfigureSense(*DamageConfig);
-		}
+		CreateOnSightSense();
+		CreateOnHearSense();
+		CreateOnDamageSense();
 		switch (HAIBaseComponent->DominantSense)
 		{
 			case E_DominantSense::Sight:
@@ -138,6 +89,44 @@ void AHAIController::OnPossess(APawn* InPawn)
 		targetsTag = HAIBaseComponent->targetsTag;
 		SetStateAsPassive();
 	}
+}
+
+void AHAIController::CreateOnSightSense()
+{
+	bool bCreateSense = HAIBaseComponent->OpenSight;
+	float maxAge = bCreateSense ? HAIBaseComponent->MaxAgeForSight : 0.f;
+	
+	SightConfig->SightRadius = bCreateSense ? HAIBaseComponent->SightRadius : 0.f;
+	SightConfig->LoseSightRadius = bCreateSense ? HAIBaseComponent->LoseSightRadius : 0.f;
+	SightConfig->PeripheralVisionAngleDegrees = bCreateSense ? HAIBaseComponent->PeripheralVisionAngleDegrees : 0.f;
+	SightConfig->DetectionByAffiliation.bDetectEnemies = bCreateSense;
+	SightConfig->DetectionByAffiliation.bDetectNeutrals = bCreateSense;
+	SightConfig->DetectionByAffiliation.bDetectFriendlies = bCreateSense;
+	SightConfig->SetMaxAge(HAIBaseComponent->MaxAgeForSight);
+	SightConfig->SetMaxAge(maxAge);
+	AIPerceptionComponent->ConfigureSense(*SightConfig);
+}
+
+void AHAIController::CreateOnHearSense()
+{
+	bool bCreateSense = HAIBaseComponent->OpenHear;
+	float maxAge = bCreateSense ? HAIBaseComponent->MaxAgeHear : 0.f;
+	
+	HearingConfig->HearingRange = bCreateSense ? HAIBaseComponent->HearingRange : 0.f;
+	HearingConfig->SetMaxAge(maxAge);
+	HearingConfig->DetectionByAffiliation.bDetectEnemies = bCreateSense;
+	HearingConfig->DetectionByAffiliation.bDetectNeutrals = bCreateSense;
+	HearingConfig->DetectionByAffiliation.bDetectFriendlies = bCreateSense;
+	AIPerceptionComponent->ConfigureSense(*HearingConfig);
+}
+
+void AHAIController::CreateOnDamageSense()
+{
+	bool bCreateSense = HAIBaseComponent->OpenDamage;
+	float maxAge = bCreateSense ? HAIBaseComponent->MaxAgeDamage : 0.f;
+	
+	DamageConfig->SetMaxAge(maxAge);
+	AIPerceptionComponent->ConfigureSense(*DamageConfig);
 }
 
 void AHAIController::OnPerceptionUpdated(const TArray<AActor*>& UpdatedActors)

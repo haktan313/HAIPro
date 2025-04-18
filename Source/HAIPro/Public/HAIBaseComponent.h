@@ -4,6 +4,7 @@
 #include "CoreMinimal.h"
 #include "Enums_HAISystem.h"
 #include "HPatrolSpline.h"
+#include "GameFramework/Character.h"
 #include "Components/ActorComponent.h"
 #include "HAIBaseComponent.generated.h"
 
@@ -16,7 +17,7 @@ class HAIPRO_API UHAIBaseComponent : public UActorComponent
 	GENERATED_BODY()
 
 	UPROPERTY()
-	ACharacter* OwnerCharacter;
+	TObjectPtr<ACharacter> OwnerCharacter;
 
 public:
 	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="HAI")

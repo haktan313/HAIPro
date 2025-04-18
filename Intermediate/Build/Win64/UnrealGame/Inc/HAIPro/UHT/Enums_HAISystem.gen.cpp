@@ -8,43 +8,35 @@
 #include "HAIPro/Public/Enums_HAISystem.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeEnums_HAISystem() {}
-// Cross Module References
-	HAIPRO_API UEnum* Z_Construct_UEnum_HAIPro_E_DoActionResult();
-	HAIPRO_API UEnum* Z_Construct_UEnum_HAIPro_E_DominantSense();
-	HAIPRO_API UEnum* Z_Construct_UEnum_HAIPro_E_MovementState();
-	HAIPRO_API UEnum* Z_Construct_UEnum_HAIPro_E_MovementType();
-	HAIPRO_API UEnum* Z_Construct_UEnum_HAIPro_E_OnPossessState();
-	HAIPRO_API UEnum* Z_Construct_UEnum_HAIPro_E_SenseType();
-	UPackage* Z_Construct_UPackage__Script_HAIPro();
+
+// Begin Cross Module References
+HAIPRO_API UEnum* Z_Construct_UEnum_HAIPro_E_DoActionResult();
+HAIPRO_API UEnum* Z_Construct_UEnum_HAIPro_E_DominantSense();
+HAIPRO_API UEnum* Z_Construct_UEnum_HAIPro_E_MovementState();
+HAIPRO_API UEnum* Z_Construct_UEnum_HAIPro_E_MovementType();
+HAIPRO_API UEnum* Z_Construct_UEnum_HAIPro_E_OnPossessState();
+HAIPRO_API UEnum* Z_Construct_UEnum_HAIPro_E_SenseType();
+UPackage* Z_Construct_UPackage__Script_HAIPro();
 // End Cross Module References
-	static FEnumRegistrationInfo Z_Registration_Info_UEnum_E_SenseType;
-	static UEnum* E_SenseType_StaticEnum()
+
+// Begin Enum E_SenseType
+static FEnumRegistrationInfo Z_Registration_Info_UEnum_E_SenseType;
+static UEnum* E_SenseType_StaticEnum()
+{
+	if (!Z_Registration_Info_UEnum_E_SenseType.OuterSingleton)
 	{
-		if (!Z_Registration_Info_UEnum_E_SenseType.OuterSingleton)
-		{
-			Z_Registration_Info_UEnum_E_SenseType.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_HAIPro_E_SenseType, (UObject*)Z_Construct_UPackage__Script_HAIPro(), TEXT("E_SenseType"));
-		}
-		return Z_Registration_Info_UEnum_E_SenseType.OuterSingleton;
+		Z_Registration_Info_UEnum_E_SenseType.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_HAIPro_E_SenseType, (UObject*)Z_Construct_UPackage__Script_HAIPro(), TEXT("E_SenseType"));
 	}
-	template<> HAIPRO_API UEnum* StaticEnum<E_SenseType>()
-	{
-		return E_SenseType_StaticEnum();
-	}
-	struct Z_Construct_UEnum_HAIPro_E_SenseType_Statics
-	{
-		static const UECodeGen_Private::FEnumeratorParam Enumerators[];
+	return Z_Registration_Info_UEnum_E_SenseType.OuterSingleton;
+}
+template<> HAIPRO_API UEnum* StaticEnum<E_SenseType>()
+{
+	return E_SenseType_StaticEnum();
+}
+struct Z_Construct_UEnum_HAIPro_E_SenseType_Statics
+{
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[];
-#endif
-		static const UECodeGen_Private::FEnumParams EnumParams;
-	};
-	const UECodeGen_Private::FEnumeratorParam Z_Construct_UEnum_HAIPro_E_SenseType_Statics::Enumerators[] = {
-		{ "E_SenseType::see", (int64)E_SenseType::see },
-		{ "E_SenseType::hear", (int64)E_SenseType::hear },
-		{ "E_SenseType::damage", (int64)E_SenseType::damage },
-	};
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UEnum_HAIPro_E_SenseType_Statics::Enum_MetaDataParams[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
 		{ "damage.DisplayName", "Damage" },
 		{ "damage.Name", "E_SenseType::damage" },
@@ -54,55 +46,54 @@ void EmptyLinkFunctionForGeneratedCodeEnums_HAISystem() {}
 		{ "see.DisplayName", "See" },
 		{ "see.Name", "E_SenseType::see" },
 	};
-#endif
-	const UECodeGen_Private::FEnumParams Z_Construct_UEnum_HAIPro_E_SenseType_Statics::EnumParams = {
-		(UObject*(*)())Z_Construct_UPackage__Script_HAIPro,
-		nullptr,
-		"E_SenseType",
-		"E_SenseType",
-		Z_Construct_UEnum_HAIPro_E_SenseType_Statics::Enumerators,
-		UE_ARRAY_COUNT(Z_Construct_UEnum_HAIPro_E_SenseType_Statics::Enumerators),
-		RF_Public|RF_Transient|RF_MarkAsNative,
-		EEnumFlags::None,
-		(uint8)UEnum::ECppForm::EnumClass,
-		METADATA_PARAMS(Z_Construct_UEnum_HAIPro_E_SenseType_Statics::Enum_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UEnum_HAIPro_E_SenseType_Statics::Enum_MetaDataParams))
+#endif // WITH_METADATA
+	static constexpr UECodeGen_Private::FEnumeratorParam Enumerators[] = {
+		{ "E_SenseType::see", (int64)E_SenseType::see },
+		{ "E_SenseType::hear", (int64)E_SenseType::hear },
+		{ "E_SenseType::damage", (int64)E_SenseType::damage },
 	};
-	UEnum* Z_Construct_UEnum_HAIPro_E_SenseType()
+	static const UECodeGen_Private::FEnumParams EnumParams;
+};
+const UECodeGen_Private::FEnumParams Z_Construct_UEnum_HAIPro_E_SenseType_Statics::EnumParams = {
+	(UObject*(*)())Z_Construct_UPackage__Script_HAIPro,
+	nullptr,
+	"E_SenseType",
+	"E_SenseType",
+	Z_Construct_UEnum_HAIPro_E_SenseType_Statics::Enumerators,
+	RF_Public|RF_Transient|RF_MarkAsNative,
+	UE_ARRAY_COUNT(Z_Construct_UEnum_HAIPro_E_SenseType_Statics::Enumerators),
+	EEnumFlags::None,
+	(uint8)UEnum::ECppForm::EnumClass,
+	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UEnum_HAIPro_E_SenseType_Statics::Enum_MetaDataParams), Z_Construct_UEnum_HAIPro_E_SenseType_Statics::Enum_MetaDataParams)
+};
+UEnum* Z_Construct_UEnum_HAIPro_E_SenseType()
+{
+	if (!Z_Registration_Info_UEnum_E_SenseType.InnerSingleton)
 	{
-		if (!Z_Registration_Info_UEnum_E_SenseType.InnerSingleton)
-		{
-			UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_E_SenseType.InnerSingleton, Z_Construct_UEnum_HAIPro_E_SenseType_Statics::EnumParams);
-		}
-		return Z_Registration_Info_UEnum_E_SenseType.InnerSingleton;
+		UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_E_SenseType.InnerSingleton, Z_Construct_UEnum_HAIPro_E_SenseType_Statics::EnumParams);
 	}
-	static FEnumRegistrationInfo Z_Registration_Info_UEnum_E_OnPossessState;
-	static UEnum* E_OnPossessState_StaticEnum()
+	return Z_Registration_Info_UEnum_E_SenseType.InnerSingleton;
+}
+// End Enum E_SenseType
+
+// Begin Enum E_OnPossessState
+static FEnumRegistrationInfo Z_Registration_Info_UEnum_E_OnPossessState;
+static UEnum* E_OnPossessState_StaticEnum()
+{
+	if (!Z_Registration_Info_UEnum_E_OnPossessState.OuterSingleton)
 	{
-		if (!Z_Registration_Info_UEnum_E_OnPossessState.OuterSingleton)
-		{
-			Z_Registration_Info_UEnum_E_OnPossessState.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_HAIPro_E_OnPossessState, (UObject*)Z_Construct_UPackage__Script_HAIPro(), TEXT("E_OnPossessState"));
-		}
-		return Z_Registration_Info_UEnum_E_OnPossessState.OuterSingleton;
+		Z_Registration_Info_UEnum_E_OnPossessState.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_HAIPro_E_OnPossessState, (UObject*)Z_Construct_UPackage__Script_HAIPro(), TEXT("E_OnPossessState"));
 	}
-	template<> HAIPRO_API UEnum* StaticEnum<E_OnPossessState>()
-	{
-		return E_OnPossessState_StaticEnum();
-	}
-	struct Z_Construct_UEnum_HAIPro_E_OnPossessState_Statics
-	{
-		static const UECodeGen_Private::FEnumeratorParam Enumerators[];
+	return Z_Registration_Info_UEnum_E_OnPossessState.OuterSingleton;
+}
+template<> HAIPRO_API UEnum* StaticEnum<E_OnPossessState>()
+{
+	return E_OnPossessState_StaticEnum();
+}
+struct Z_Construct_UEnum_HAIPro_E_OnPossessState_Statics
+{
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[];
-#endif
-		static const UECodeGen_Private::FEnumParams EnumParams;
-	};
-	const UECodeGen_Private::FEnumeratorParam Z_Construct_UEnum_HAIPro_E_OnPossessState_Statics::Enumerators[] = {
-		{ "E_OnPossessState::passive", (int64)E_OnPossessState::passive },
-		{ "E_OnPossessState::investigate", (int64)E_OnPossessState::investigate },
-		{ "E_OnPossessState::active", (int64)E_OnPossessState::active },
-	};
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UEnum_HAIPro_E_OnPossessState_Statics::Enum_MetaDataParams[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
 		{ "active.DisplayName", "Active" },
 		{ "active.Name", "E_OnPossessState::active" },
 		{ "BlueprintType", "true" },
@@ -112,54 +103,54 @@ void EmptyLinkFunctionForGeneratedCodeEnums_HAISystem() {}
 		{ "passive.DisplayName", "Passive" },
 		{ "passive.Name", "E_OnPossessState::passive" },
 	};
-#endif
-	const UECodeGen_Private::FEnumParams Z_Construct_UEnum_HAIPro_E_OnPossessState_Statics::EnumParams = {
-		(UObject*(*)())Z_Construct_UPackage__Script_HAIPro,
-		nullptr,
-		"E_OnPossessState",
-		"E_OnPossessState",
-		Z_Construct_UEnum_HAIPro_E_OnPossessState_Statics::Enumerators,
-		UE_ARRAY_COUNT(Z_Construct_UEnum_HAIPro_E_OnPossessState_Statics::Enumerators),
-		RF_Public|RF_Transient|RF_MarkAsNative,
-		EEnumFlags::None,
-		(uint8)UEnum::ECppForm::EnumClass,
-		METADATA_PARAMS(Z_Construct_UEnum_HAIPro_E_OnPossessState_Statics::Enum_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UEnum_HAIPro_E_OnPossessState_Statics::Enum_MetaDataParams))
+#endif // WITH_METADATA
+	static constexpr UECodeGen_Private::FEnumeratorParam Enumerators[] = {
+		{ "E_OnPossessState::passive", (int64)E_OnPossessState::passive },
+		{ "E_OnPossessState::investigate", (int64)E_OnPossessState::investigate },
+		{ "E_OnPossessState::active", (int64)E_OnPossessState::active },
 	};
-	UEnum* Z_Construct_UEnum_HAIPro_E_OnPossessState()
+	static const UECodeGen_Private::FEnumParams EnumParams;
+};
+const UECodeGen_Private::FEnumParams Z_Construct_UEnum_HAIPro_E_OnPossessState_Statics::EnumParams = {
+	(UObject*(*)())Z_Construct_UPackage__Script_HAIPro,
+	nullptr,
+	"E_OnPossessState",
+	"E_OnPossessState",
+	Z_Construct_UEnum_HAIPro_E_OnPossessState_Statics::Enumerators,
+	RF_Public|RF_Transient|RF_MarkAsNative,
+	UE_ARRAY_COUNT(Z_Construct_UEnum_HAIPro_E_OnPossessState_Statics::Enumerators),
+	EEnumFlags::None,
+	(uint8)UEnum::ECppForm::EnumClass,
+	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UEnum_HAIPro_E_OnPossessState_Statics::Enum_MetaDataParams), Z_Construct_UEnum_HAIPro_E_OnPossessState_Statics::Enum_MetaDataParams)
+};
+UEnum* Z_Construct_UEnum_HAIPro_E_OnPossessState()
+{
+	if (!Z_Registration_Info_UEnum_E_OnPossessState.InnerSingleton)
 	{
-		if (!Z_Registration_Info_UEnum_E_OnPossessState.InnerSingleton)
-		{
-			UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_E_OnPossessState.InnerSingleton, Z_Construct_UEnum_HAIPro_E_OnPossessState_Statics::EnumParams);
-		}
-		return Z_Registration_Info_UEnum_E_OnPossessState.InnerSingleton;
+		UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_E_OnPossessState.InnerSingleton, Z_Construct_UEnum_HAIPro_E_OnPossessState_Statics::EnumParams);
 	}
-	static FEnumRegistrationInfo Z_Registration_Info_UEnum_E_MovementType;
-	static UEnum* E_MovementType_StaticEnum()
+	return Z_Registration_Info_UEnum_E_OnPossessState.InnerSingleton;
+}
+// End Enum E_OnPossessState
+
+// Begin Enum E_MovementType
+static FEnumRegistrationInfo Z_Registration_Info_UEnum_E_MovementType;
+static UEnum* E_MovementType_StaticEnum()
+{
+	if (!Z_Registration_Info_UEnum_E_MovementType.OuterSingleton)
 	{
-		if (!Z_Registration_Info_UEnum_E_MovementType.OuterSingleton)
-		{
-			Z_Registration_Info_UEnum_E_MovementType.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_HAIPro_E_MovementType, (UObject*)Z_Construct_UPackage__Script_HAIPro(), TEXT("E_MovementType"));
-		}
-		return Z_Registration_Info_UEnum_E_MovementType.OuterSingleton;
+		Z_Registration_Info_UEnum_E_MovementType.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_HAIPro_E_MovementType, (UObject*)Z_Construct_UPackage__Script_HAIPro(), TEXT("E_MovementType"));
 	}
-	template<> HAIPRO_API UEnum* StaticEnum<E_MovementType>()
-	{
-		return E_MovementType_StaticEnum();
-	}
-	struct Z_Construct_UEnum_HAIPro_E_MovementType_Statics
-	{
-		static const UECodeGen_Private::FEnumeratorParam Enumerators[];
+	return Z_Registration_Info_UEnum_E_MovementType.OuterSingleton;
+}
+template<> HAIPRO_API UEnum* StaticEnum<E_MovementType>()
+{
+	return E_MovementType_StaticEnum();
+}
+struct Z_Construct_UEnum_HAIPro_E_MovementType_Statics
+{
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[];
-#endif
-		static const UECodeGen_Private::FEnumParams EnumParams;
-	};
-	const UECodeGen_Private::FEnumeratorParam Z_Construct_UEnum_HAIPro_E_MovementType_Statics::Enumerators[] = {
-		{ "E_MovementType::walk", (int64)E_MovementType::walk },
-		{ "E_MovementType::fly", (int64)E_MovementType::fly },
-	};
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UEnum_HAIPro_E_MovementType_Statics::Enum_MetaDataParams[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
 		{ "fly.DisplayName", "Fly" },
 		{ "fly.Name", "E_MovementType::fly" },
@@ -167,57 +158,53 @@ void EmptyLinkFunctionForGeneratedCodeEnums_HAISystem() {}
 		{ "walk.DisplayName", "Walk" },
 		{ "walk.Name", "E_MovementType::walk" },
 	};
-#endif
-	const UECodeGen_Private::FEnumParams Z_Construct_UEnum_HAIPro_E_MovementType_Statics::EnumParams = {
-		(UObject*(*)())Z_Construct_UPackage__Script_HAIPro,
-		nullptr,
-		"E_MovementType",
-		"E_MovementType",
-		Z_Construct_UEnum_HAIPro_E_MovementType_Statics::Enumerators,
-		UE_ARRAY_COUNT(Z_Construct_UEnum_HAIPro_E_MovementType_Statics::Enumerators),
-		RF_Public|RF_Transient|RF_MarkAsNative,
-		EEnumFlags::None,
-		(uint8)UEnum::ECppForm::EnumClass,
-		METADATA_PARAMS(Z_Construct_UEnum_HAIPro_E_MovementType_Statics::Enum_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UEnum_HAIPro_E_MovementType_Statics::Enum_MetaDataParams))
+#endif // WITH_METADATA
+	static constexpr UECodeGen_Private::FEnumeratorParam Enumerators[] = {
+		{ "E_MovementType::walk", (int64)E_MovementType::walk },
+		{ "E_MovementType::fly", (int64)E_MovementType::fly },
 	};
-	UEnum* Z_Construct_UEnum_HAIPro_E_MovementType()
+	static const UECodeGen_Private::FEnumParams EnumParams;
+};
+const UECodeGen_Private::FEnumParams Z_Construct_UEnum_HAIPro_E_MovementType_Statics::EnumParams = {
+	(UObject*(*)())Z_Construct_UPackage__Script_HAIPro,
+	nullptr,
+	"E_MovementType",
+	"E_MovementType",
+	Z_Construct_UEnum_HAIPro_E_MovementType_Statics::Enumerators,
+	RF_Public|RF_Transient|RF_MarkAsNative,
+	UE_ARRAY_COUNT(Z_Construct_UEnum_HAIPro_E_MovementType_Statics::Enumerators),
+	EEnumFlags::None,
+	(uint8)UEnum::ECppForm::EnumClass,
+	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UEnum_HAIPro_E_MovementType_Statics::Enum_MetaDataParams), Z_Construct_UEnum_HAIPro_E_MovementType_Statics::Enum_MetaDataParams)
+};
+UEnum* Z_Construct_UEnum_HAIPro_E_MovementType()
+{
+	if (!Z_Registration_Info_UEnum_E_MovementType.InnerSingleton)
 	{
-		if (!Z_Registration_Info_UEnum_E_MovementType.InnerSingleton)
-		{
-			UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_E_MovementType.InnerSingleton, Z_Construct_UEnum_HAIPro_E_MovementType_Statics::EnumParams);
-		}
-		return Z_Registration_Info_UEnum_E_MovementType.InnerSingleton;
+		UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_E_MovementType.InnerSingleton, Z_Construct_UEnum_HAIPro_E_MovementType_Statics::EnumParams);
 	}
-	static FEnumRegistrationInfo Z_Registration_Info_UEnum_E_MovementState;
-	static UEnum* E_MovementState_StaticEnum()
+	return Z_Registration_Info_UEnum_E_MovementType.InnerSingleton;
+}
+// End Enum E_MovementType
+
+// Begin Enum E_MovementState
+static FEnumRegistrationInfo Z_Registration_Info_UEnum_E_MovementState;
+static UEnum* E_MovementState_StaticEnum()
+{
+	if (!Z_Registration_Info_UEnum_E_MovementState.OuterSingleton)
 	{
-		if (!Z_Registration_Info_UEnum_E_MovementState.OuterSingleton)
-		{
-			Z_Registration_Info_UEnum_E_MovementState.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_HAIPro_E_MovementState, (UObject*)Z_Construct_UPackage__Script_HAIPro(), TEXT("E_MovementState"));
-		}
-		return Z_Registration_Info_UEnum_E_MovementState.OuterSingleton;
+		Z_Registration_Info_UEnum_E_MovementState.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_HAIPro_E_MovementState, (UObject*)Z_Construct_UPackage__Script_HAIPro(), TEXT("E_MovementState"));
 	}
-	template<> HAIPRO_API UEnum* StaticEnum<E_MovementState>()
-	{
-		return E_MovementState_StaticEnum();
-	}
-	struct Z_Construct_UEnum_HAIPro_E_MovementState_Statics
-	{
-		static const UECodeGen_Private::FEnumeratorParam Enumerators[];
+	return Z_Registration_Info_UEnum_E_MovementState.OuterSingleton;
+}
+template<> HAIPRO_API UEnum* StaticEnum<E_MovementState>()
+{
+	return E_MovementState_StaticEnum();
+}
+struct Z_Construct_UEnum_HAIPro_E_MovementState_Statics
+{
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[];
-#endif
-		static const UECodeGen_Private::FEnumParams EnumParams;
-	};
-	const UECodeGen_Private::FEnumeratorParam Z_Construct_UEnum_HAIPro_E_MovementState_Statics::Enumerators[] = {
-		{ "E_MovementState::idle", (int64)E_MovementState::idle },
-		{ "E_MovementState::walking", (int64)E_MovementState::walking },
-		{ "E_MovementState::running", (int64)E_MovementState::running },
-		{ "E_MovementState::normalFlying", (int64)E_MovementState::normalFlying },
-		{ "E_MovementState::fastFlying", (int64)E_MovementState::fastFlying },
-	};
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UEnum_HAIPro_E_MovementState_Statics::Enum_MetaDataParams[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
 		{ "fastFlying.DisplayName", "FastFlying" },
 		{ "fastFlying.Name", "E_MovementState::fastFlying" },
@@ -231,55 +218,56 @@ void EmptyLinkFunctionForGeneratedCodeEnums_HAISystem() {}
 		{ "walking.DisplayName", "Walking" },
 		{ "walking.Name", "E_MovementState::walking" },
 	};
-#endif
-	const UECodeGen_Private::FEnumParams Z_Construct_UEnum_HAIPro_E_MovementState_Statics::EnumParams = {
-		(UObject*(*)())Z_Construct_UPackage__Script_HAIPro,
-		nullptr,
-		"E_MovementState",
-		"E_MovementState",
-		Z_Construct_UEnum_HAIPro_E_MovementState_Statics::Enumerators,
-		UE_ARRAY_COUNT(Z_Construct_UEnum_HAIPro_E_MovementState_Statics::Enumerators),
-		RF_Public|RF_Transient|RF_MarkAsNative,
-		EEnumFlags::None,
-		(uint8)UEnum::ECppForm::EnumClass,
-		METADATA_PARAMS(Z_Construct_UEnum_HAIPro_E_MovementState_Statics::Enum_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UEnum_HAIPro_E_MovementState_Statics::Enum_MetaDataParams))
+#endif // WITH_METADATA
+	static constexpr UECodeGen_Private::FEnumeratorParam Enumerators[] = {
+		{ "E_MovementState::idle", (int64)E_MovementState::idle },
+		{ "E_MovementState::walking", (int64)E_MovementState::walking },
+		{ "E_MovementState::running", (int64)E_MovementState::running },
+		{ "E_MovementState::normalFlying", (int64)E_MovementState::normalFlying },
+		{ "E_MovementState::fastFlying", (int64)E_MovementState::fastFlying },
 	};
-	UEnum* Z_Construct_UEnum_HAIPro_E_MovementState()
+	static const UECodeGen_Private::FEnumParams EnumParams;
+};
+const UECodeGen_Private::FEnumParams Z_Construct_UEnum_HAIPro_E_MovementState_Statics::EnumParams = {
+	(UObject*(*)())Z_Construct_UPackage__Script_HAIPro,
+	nullptr,
+	"E_MovementState",
+	"E_MovementState",
+	Z_Construct_UEnum_HAIPro_E_MovementState_Statics::Enumerators,
+	RF_Public|RF_Transient|RF_MarkAsNative,
+	UE_ARRAY_COUNT(Z_Construct_UEnum_HAIPro_E_MovementState_Statics::Enumerators),
+	EEnumFlags::None,
+	(uint8)UEnum::ECppForm::EnumClass,
+	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UEnum_HAIPro_E_MovementState_Statics::Enum_MetaDataParams), Z_Construct_UEnum_HAIPro_E_MovementState_Statics::Enum_MetaDataParams)
+};
+UEnum* Z_Construct_UEnum_HAIPro_E_MovementState()
+{
+	if (!Z_Registration_Info_UEnum_E_MovementState.InnerSingleton)
 	{
-		if (!Z_Registration_Info_UEnum_E_MovementState.InnerSingleton)
-		{
-			UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_E_MovementState.InnerSingleton, Z_Construct_UEnum_HAIPro_E_MovementState_Statics::EnumParams);
-		}
-		return Z_Registration_Info_UEnum_E_MovementState.InnerSingleton;
+		UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_E_MovementState.InnerSingleton, Z_Construct_UEnum_HAIPro_E_MovementState_Statics::EnumParams);
 	}
-	static FEnumRegistrationInfo Z_Registration_Info_UEnum_E_DominantSense;
-	static UEnum* E_DominantSense_StaticEnum()
+	return Z_Registration_Info_UEnum_E_MovementState.InnerSingleton;
+}
+// End Enum E_MovementState
+
+// Begin Enum E_DominantSense
+static FEnumRegistrationInfo Z_Registration_Info_UEnum_E_DominantSense;
+static UEnum* E_DominantSense_StaticEnum()
+{
+	if (!Z_Registration_Info_UEnum_E_DominantSense.OuterSingleton)
 	{
-		if (!Z_Registration_Info_UEnum_E_DominantSense.OuterSingleton)
-		{
-			Z_Registration_Info_UEnum_E_DominantSense.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_HAIPro_E_DominantSense, (UObject*)Z_Construct_UPackage__Script_HAIPro(), TEXT("E_DominantSense"));
-		}
-		return Z_Registration_Info_UEnum_E_DominantSense.OuterSingleton;
+		Z_Registration_Info_UEnum_E_DominantSense.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_HAIPro_E_DominantSense, (UObject*)Z_Construct_UPackage__Script_HAIPro(), TEXT("E_DominantSense"));
 	}
-	template<> HAIPRO_API UEnum* StaticEnum<E_DominantSense>()
-	{
-		return E_DominantSense_StaticEnum();
-	}
-	struct Z_Construct_UEnum_HAIPro_E_DominantSense_Statics
-	{
-		static const UECodeGen_Private::FEnumeratorParam Enumerators[];
+	return Z_Registration_Info_UEnum_E_DominantSense.OuterSingleton;
+}
+template<> HAIPRO_API UEnum* StaticEnum<E_DominantSense>()
+{
+	return E_DominantSense_StaticEnum();
+}
+struct Z_Construct_UEnum_HAIPro_E_DominantSense_Statics
+{
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[];
-#endif
-		static const UECodeGen_Private::FEnumParams EnumParams;
-	};
-	const UECodeGen_Private::FEnumeratorParam Z_Construct_UEnum_HAIPro_E_DominantSense_Statics::Enumerators[] = {
-		{ "E_DominantSense::Sight", (int64)E_DominantSense::Sight },
-		{ "E_DominantSense::Hearing", (int64)E_DominantSense::Hearing },
-		{ "E_DominantSense::Damage", (int64)E_DominantSense::Damage },
-	};
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UEnum_HAIPro_E_DominantSense_Statics::Enum_MetaDataParams[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
 		{ "Damage.DisplayName", "Damage" },
 		{ "Damage.Name", "E_DominantSense::Damage" },
@@ -289,56 +277,54 @@ void EmptyLinkFunctionForGeneratedCodeEnums_HAISystem() {}
 		{ "Sight.DisplayName", "Sight" },
 		{ "Sight.Name", "E_DominantSense::Sight" },
 	};
-#endif
-	const UECodeGen_Private::FEnumParams Z_Construct_UEnum_HAIPro_E_DominantSense_Statics::EnumParams = {
-		(UObject*(*)())Z_Construct_UPackage__Script_HAIPro,
-		nullptr,
-		"E_DominantSense",
-		"E_DominantSense",
-		Z_Construct_UEnum_HAIPro_E_DominantSense_Statics::Enumerators,
-		UE_ARRAY_COUNT(Z_Construct_UEnum_HAIPro_E_DominantSense_Statics::Enumerators),
-		RF_Public|RF_Transient|RF_MarkAsNative,
-		EEnumFlags::None,
-		(uint8)UEnum::ECppForm::EnumClass,
-		METADATA_PARAMS(Z_Construct_UEnum_HAIPro_E_DominantSense_Statics::Enum_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UEnum_HAIPro_E_DominantSense_Statics::Enum_MetaDataParams))
+#endif // WITH_METADATA
+	static constexpr UECodeGen_Private::FEnumeratorParam Enumerators[] = {
+		{ "E_DominantSense::Sight", (int64)E_DominantSense::Sight },
+		{ "E_DominantSense::Hearing", (int64)E_DominantSense::Hearing },
+		{ "E_DominantSense::Damage", (int64)E_DominantSense::Damage },
 	};
-	UEnum* Z_Construct_UEnum_HAIPro_E_DominantSense()
+	static const UECodeGen_Private::FEnumParams EnumParams;
+};
+const UECodeGen_Private::FEnumParams Z_Construct_UEnum_HAIPro_E_DominantSense_Statics::EnumParams = {
+	(UObject*(*)())Z_Construct_UPackage__Script_HAIPro,
+	nullptr,
+	"E_DominantSense",
+	"E_DominantSense",
+	Z_Construct_UEnum_HAIPro_E_DominantSense_Statics::Enumerators,
+	RF_Public|RF_Transient|RF_MarkAsNative,
+	UE_ARRAY_COUNT(Z_Construct_UEnum_HAIPro_E_DominantSense_Statics::Enumerators),
+	EEnumFlags::None,
+	(uint8)UEnum::ECppForm::EnumClass,
+	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UEnum_HAIPro_E_DominantSense_Statics::Enum_MetaDataParams), Z_Construct_UEnum_HAIPro_E_DominantSense_Statics::Enum_MetaDataParams)
+};
+UEnum* Z_Construct_UEnum_HAIPro_E_DominantSense()
+{
+	if (!Z_Registration_Info_UEnum_E_DominantSense.InnerSingleton)
 	{
-		if (!Z_Registration_Info_UEnum_E_DominantSense.InnerSingleton)
-		{
-			UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_E_DominantSense.InnerSingleton, Z_Construct_UEnum_HAIPro_E_DominantSense_Statics::EnumParams);
-		}
-		return Z_Registration_Info_UEnum_E_DominantSense.InnerSingleton;
+		UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_E_DominantSense.InnerSingleton, Z_Construct_UEnum_HAIPro_E_DominantSense_Statics::EnumParams);
 	}
-	static FEnumRegistrationInfo Z_Registration_Info_UEnum_E_DoActionResult;
-	static UEnum* E_DoActionResult_StaticEnum()
+	return Z_Registration_Info_UEnum_E_DominantSense.InnerSingleton;
+}
+// End Enum E_DominantSense
+
+// Begin Enum E_DoActionResult
+static FEnumRegistrationInfo Z_Registration_Info_UEnum_E_DoActionResult;
+static UEnum* E_DoActionResult_StaticEnum()
+{
+	if (!Z_Registration_Info_UEnum_E_DoActionResult.OuterSingleton)
 	{
-		if (!Z_Registration_Info_UEnum_E_DoActionResult.OuterSingleton)
-		{
-			Z_Registration_Info_UEnum_E_DoActionResult.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_HAIPro_E_DoActionResult, (UObject*)Z_Construct_UPackage__Script_HAIPro(), TEXT("E_DoActionResult"));
-		}
-		return Z_Registration_Info_UEnum_E_DoActionResult.OuterSingleton;
+		Z_Registration_Info_UEnum_E_DoActionResult.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_HAIPro_E_DoActionResult, (UObject*)Z_Construct_UPackage__Script_HAIPro(), TEXT("E_DoActionResult"));
 	}
-	template<> HAIPRO_API UEnum* StaticEnum<E_DoActionResult>()
-	{
-		return E_DoActionResult_StaticEnum();
-	}
-	struct Z_Construct_UEnum_HAIPro_E_DoActionResult_Statics
-	{
-		static const UECodeGen_Private::FEnumeratorParam Enumerators[];
+	return Z_Registration_Info_UEnum_E_DoActionResult.OuterSingleton;
+}
+template<> HAIPRO_API UEnum* StaticEnum<E_DoActionResult>()
+{
+	return E_DoActionResult_StaticEnum();
+}
+struct Z_Construct_UEnum_HAIPro_E_DoActionResult_Statics
+{
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[];
-#endif
-		static const UECodeGen_Private::FEnumParams EnumParams;
-	};
-	const UECodeGen_Private::FEnumeratorParam Z_Construct_UEnum_HAIPro_E_DoActionResult_Statics::Enumerators[] = {
-		{ "E_DoActionResult::success", (int64)E_DoActionResult::success },
-		{ "E_DoActionResult::failed", (int64)E_DoActionResult::failed },
-		{ "E_DoActionResult::inProgress", (int64)E_DoActionResult::inProgress },
-		{ "E_DoActionResult::aborted", (int64)E_DoActionResult::aborted },
-	};
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UEnum_HAIPro_E_DoActionResult_Statics::Enum_MetaDataParams[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
 		{ "aborted.DisplayName", "Aborted" },
 		{ "aborted.Name", "E_DoActionResult::aborted" },
 		{ "BlueprintType", "true" },
@@ -350,41 +336,52 @@ void EmptyLinkFunctionForGeneratedCodeEnums_HAISystem() {}
 		{ "success.DisplayName", "Success" },
 		{ "success.Name", "E_DoActionResult::success" },
 	};
-#endif
-	const UECodeGen_Private::FEnumParams Z_Construct_UEnum_HAIPro_E_DoActionResult_Statics::EnumParams = {
-		(UObject*(*)())Z_Construct_UPackage__Script_HAIPro,
-		nullptr,
-		"E_DoActionResult",
-		"E_DoActionResult",
-		Z_Construct_UEnum_HAIPro_E_DoActionResult_Statics::Enumerators,
-		UE_ARRAY_COUNT(Z_Construct_UEnum_HAIPro_E_DoActionResult_Statics::Enumerators),
-		RF_Public|RF_Transient|RF_MarkAsNative,
-		EEnumFlags::None,
-		(uint8)UEnum::ECppForm::EnumClass,
-		METADATA_PARAMS(Z_Construct_UEnum_HAIPro_E_DoActionResult_Statics::Enum_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UEnum_HAIPro_E_DoActionResult_Statics::Enum_MetaDataParams))
+#endif // WITH_METADATA
+	static constexpr UECodeGen_Private::FEnumeratorParam Enumerators[] = {
+		{ "E_DoActionResult::success", (int64)E_DoActionResult::success },
+		{ "E_DoActionResult::failed", (int64)E_DoActionResult::failed },
+		{ "E_DoActionResult::inProgress", (int64)E_DoActionResult::inProgress },
+		{ "E_DoActionResult::aborted", (int64)E_DoActionResult::aborted },
 	};
-	UEnum* Z_Construct_UEnum_HAIPro_E_DoActionResult()
+	static const UECodeGen_Private::FEnumParams EnumParams;
+};
+const UECodeGen_Private::FEnumParams Z_Construct_UEnum_HAIPro_E_DoActionResult_Statics::EnumParams = {
+	(UObject*(*)())Z_Construct_UPackage__Script_HAIPro,
+	nullptr,
+	"E_DoActionResult",
+	"E_DoActionResult",
+	Z_Construct_UEnum_HAIPro_E_DoActionResult_Statics::Enumerators,
+	RF_Public|RF_Transient|RF_MarkAsNative,
+	UE_ARRAY_COUNT(Z_Construct_UEnum_HAIPro_E_DoActionResult_Statics::Enumerators),
+	EEnumFlags::None,
+	(uint8)UEnum::ECppForm::EnumClass,
+	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UEnum_HAIPro_E_DoActionResult_Statics::Enum_MetaDataParams), Z_Construct_UEnum_HAIPro_E_DoActionResult_Statics::Enum_MetaDataParams)
+};
+UEnum* Z_Construct_UEnum_HAIPro_E_DoActionResult()
+{
+	if (!Z_Registration_Info_UEnum_E_DoActionResult.InnerSingleton)
 	{
-		if (!Z_Registration_Info_UEnum_E_DoActionResult.InnerSingleton)
-		{
-			UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_E_DoActionResult.InnerSingleton, Z_Construct_UEnum_HAIPro_E_DoActionResult_Statics::EnumParams);
-		}
-		return Z_Registration_Info_UEnum_E_DoActionResult.InnerSingleton;
+		UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_E_DoActionResult.InnerSingleton, Z_Construct_UEnum_HAIPro_E_DoActionResult_Statics::EnumParams);
 	}
-	struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Enums_HAISystem_h_Statics
-	{
-		static const FEnumRegisterCompiledInInfo EnumInfo[];
+	return Z_Registration_Info_UEnum_E_DoActionResult.InnerSingleton;
+}
+// End Enum E_DoActionResult
+
+// Begin Registration
+struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_build_5_5_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Enums_HAISystem_h_Statics
+{
+	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
+		{ E_SenseType_StaticEnum, TEXT("E_SenseType"), &Z_Registration_Info_UEnum_E_SenseType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 1993367856U) },
+		{ E_OnPossessState_StaticEnum, TEXT("E_OnPossessState"), &Z_Registration_Info_UEnum_E_OnPossessState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2849919211U) },
+		{ E_MovementType_StaticEnum, TEXT("E_MovementType"), &Z_Registration_Info_UEnum_E_MovementType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2879759713U) },
+		{ E_MovementState_StaticEnum, TEXT("E_MovementState"), &Z_Registration_Info_UEnum_E_MovementState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3466283706U) },
+		{ E_DominantSense_StaticEnum, TEXT("E_DominantSense"), &Z_Registration_Info_UEnum_E_DominantSense, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2619697425U) },
+		{ E_DoActionResult_StaticEnum, TEXT("E_DoActionResult"), &Z_Registration_Info_UEnum_E_DoActionResult, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2522280987U) },
 	};
-	const FEnumRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Enums_HAISystem_h_Statics::EnumInfo[] = {
-		{ E_SenseType_StaticEnum, TEXT("E_SenseType"), &Z_Registration_Info_UEnum_E_SenseType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3253828798U) },
-		{ E_OnPossessState_StaticEnum, TEXT("E_OnPossessState"), &Z_Registration_Info_UEnum_E_OnPossessState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 20370668U) },
-		{ E_MovementType_StaticEnum, TEXT("E_MovementType"), &Z_Registration_Info_UEnum_E_MovementType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3926520521U) },
-		{ E_MovementState_StaticEnum, TEXT("E_MovementState"), &Z_Registration_Info_UEnum_E_MovementState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 731240949U) },
-		{ E_DominantSense_StaticEnum, TEXT("E_DominantSense"), &Z_Registration_Info_UEnum_E_DominantSense, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 1998315785U) },
-		{ E_DoActionResult_StaticEnum, TEXT("E_DoActionResult"), &Z_Registration_Info_UEnum_E_DoActionResult, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 357980464U) },
-	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Enums_HAISystem_h_1298917132(TEXT("/Script/HAIPro"),
-		nullptr, 0,
-		nullptr, 0,
-		Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Enums_HAISystem_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Enums_HAISystem_h_Statics::EnumInfo));
+};
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_build_5_5_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Enums_HAISystem_h_1820442383(TEXT("/Script/HAIPro"),
+	nullptr, 0,
+	nullptr, 0,
+	Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_build_5_5_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Enums_HAISystem_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_build_5_5_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Enums_HAISystem_h_Statics::EnumInfo));
+// End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

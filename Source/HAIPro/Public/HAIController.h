@@ -19,6 +19,10 @@ public:
 protected:
 
 	virtual void OnPossess(APawn* InPawn) override;
+private:
+	void CreateOnSightSense();
+	void CreateOnHearSense();
+	void CreateOnDamageSense();
 
 	UFUNCTION()
 	void OnPerceptionUpdated(const TArray<AActor*>& UpdatedActors);

@@ -10,7 +10,7 @@
 	"DocsURL": "https://github.com/haktan313/HAIPro",
 	"MarketplaceURL": "",
 	"SupportURL": "",
-	"EngineVersion": "5.2.0",
+	"EngineVersion": "5.5.0",
 	"CanContainContent": true,
 	"Installed": true,
 	"Modules": [
@@ -19,7 +19,5 @@
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
 		}
-	],
-	"IsBetaVersion": false,
-	"IsExperimentalVersion": false
+	]
 }

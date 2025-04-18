@@ -5,8 +5,9 @@
 ===========================================================================*/
 
 // IWYU pragma: private, include "Enums_HAISystem.h"
+#include "Templates/IsUEnumClass.h"
 #include "UObject/ObjectMacros.h"
-#include "UObject/ScriptMacros.h"
+#include "UObject/ReflectedTypeAccessors.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #ifdef HAIPRO_Enums_HAISystem_generated_h
@@ -15,7 +16,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define HAIPRO_Enums_HAISystem_generated_h
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_Haktan_Documents_Unreal_Projects_MyProject2_Plugins_HAIPro_Source_HAIPro_Public_Enums_HAISystem_h
+#define CURRENT_FILE_ID FID_Users_Haktan_Desktop_build_5_5_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_Enums_HAISystem_h
 
 
 #define FOREACH_ENUM_E_SENSETYPE(op) \
