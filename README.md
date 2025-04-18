@@ -244,28 +244,36 @@ By following this guide, you can set up intelligent NPC behaviors, patrols, and 
          - **6.Fast Fly Speed**: The NPC's fast flying speed for high-speed aerial movement.
 
          - **7.Patrol Spline**: A spline component used to define the NPC's patrol path.
+     
+         - **8.Target Actor Key Name**: The blackboard key name used to store the current target actor detected by the AI.
+     
+         - **9.Location Vector Key Name**: The blackboard key name used to store a point of interest (vector), such as where a noise was heard or damage was taken, or where the player was last seen.
+     
+         - **10.Enum on Possess State Key Name**: The blackboard key name that represents the AI’s current behavior state (passive, investigate, active).
+     
+         - **11.Bool Can Do Action Key Name**: The blackboard key name used to check whether the AI is currently allowed to perform an action (e.g., attack or interact).
 
-         - **8.Open Sight**: Enables or disables the sight sense in the AI Perception component.
+         - **12.Open Sight**: Enables or disables the sight sense in the AI Perception component.
 
-         - **9.Open Hear**: Enables or disables the hearing sense in the AI Perception component.
+         - **13.Open Hear**: Enables or disables the hearing sense in the AI Perception component.
 
-         - **10.Open Damage**: Enables or disables the damage sense in the AI Perception component.
+         - **14.Open Damage**: Enables or disables the damage sense in the AI Perception component.
 
-         - **11.Dominant Sense**: The primary sense of the AI Perception component, typically used for prioritizing detection (e.g., sight).
+         - **15.Dominant Sense**: The primary sense of the AI Perception component, typically used for prioritizing detection (e.g., sight).
 
-         - **12.Sight Radius**: The maximum range within which the AI Perception's sight sense can detect targets.
+         - **16.Sight Radius**: The maximum range within which the AI Perception's sight sense can detect targets.
 
-         - **13.Lose Sight Radius**: The range at which the AI Perception's sight sense loses track of a target.
+         - **17.Lose Sight Radius**: The range at which the AI Perception's sight sense loses track of a target.
 
-         - **14.Peripheral Vision Angle Degrees**: The AI Perception's field of view angle for detecting targets with sight.
+         - **18.Peripheral Vision Angle Degrees**: The AI Perception's field of view angle for detecting targets with sight.
 
-         - **15.Max Age for Sight**: The maximum duration the AI Perception retains sight information about a target.
+         - **19.Max Age for Sight**: The maximum duration the AI Perception retains sight information about a target.
 
-         - **16.Hearing Range**: The maximum range within which the AI Perception's hearing sense can detect sounds.
+         - **20.Hearing Range**: The maximum range within which the AI Perception's hearing sense can detect sounds.
 
-         - **17.Max Age Hear**: The maximum duration the AI Perception retains hearing information.
+         - **21.Max Age Hear**: The maximum duration the AI Perception retains hearing information.
 
-         - **18.Max Age Damage**: The maximum duration the AI Perception retains damage information.
+         - **22.Max Age Damage**: The maximum duration the AI Perception retains damage information.
 
 ----------------------------------------------------------------------------------------------------------
 
