@@ -245,13 +245,15 @@ By following this guide, you can set up intelligent NPC behaviors, patrols, and 
 
          - **7.Patrol Spline**: A spline component used to define the NPC's patrol path.
      
-         - **8.Target Actor Key Name**: The blackboard key name used to store the current target actor detected by the AI.
+         - **8.Target Actor Key Name**: The blackboard key name used to store the current target actor detected by the AI. ⚠️ This key name must exactly match the name used in the Blackboard asset.
      
-         - **9.Location Vector Key Name**: The blackboard key name used to store a point of interest (vector), such as where a noise was heard or damage was taken, or where the player was last seen.
+         - **9.Location Vector Key Name**: The blackboard key name used to store a point of interest (vector), such as where a noise was heard or damage was taken, or where the player was last seen. ⚠️ This key name must exactly match the name used in the Blackboard asset.
      
-         - **10.Enum on Possess State Key Name**: The blackboard key name that represents the AI’s current behavior state (passive, investigate, active).
+         - **10.Enum on Possess State Key Name**: The blackboard key name that represents the AI’s current behavior state (passive, investigate, active). ⚠️ This key name must exactly match the name used in the Blackboard asset.
      
-         - **11.Bool Can Do Action Key Name**: The blackboard key name used to check whether the AI is currently allowed to perform an action (e.g., attack or interact).
+         - **11.Bool Can Do Action Key Name**: The blackboard key name used to check whether the AI is currently allowed to perform an action (e.g., attack or interact). ⚠️ This key name must exactly match the name used in the Blackboard asset.
+     
+           ![blackboard](https://github.com/user-attachments/assets/dcf9ed70-e6dc-401c-8f28-71a12e456339)
 
          - **12.Open Sight**: Enables or disables the sight sense in the AI Perception component.
 
