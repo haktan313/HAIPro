@@ -13,6 +13,15 @@ UHAIBaseComponent::UHAIBaseComponent()
 	OwnerCharacter = Cast<ACharacter>(GetOwner());
 }
 
+void UHAIBaseComponent::BeginPlay()
+{
+	Super::BeginPlay();
+	if (!OwnerCharacter)
+	{
+		OwnerCharacter = Cast<ACharacter>(GetOwner());
+	}
+}
+
 void UHAIBaseComponent::SetMovementStateWalk(E_MovementState movementState)
 {
 	float newSpeed;

@@ -67,27 +67,26 @@ void AHAIController::OnPossess(APawn* InPawn)
 	HAIBaseComponent = Cast<UHAIBaseComponent>(InPawn->GetComponentByClass(UHAIBaseComponent::StaticClass()));
 	if(HAIBaseComponent)
 	{
+		if (HAIBaseComponent->BehaviorTree == nullptr){return;}
+		RunBehaviorTree(HAIBaseComponent->BehaviorTree);
+		targetsTag = HAIBaseComponent->targetsTag;
+		SetStateAsPassive();
+		
 		CreateOnSightSense();
 		CreateOnHearSense();
 		CreateOnDamageSense();
 		switch (HAIBaseComponent->DominantSense)
 		{
-			case E_DominantSense::Sight:
-				AIPerceptionComponent->SetDominantSense(SightConfig->GetSenseImplementation());
-				break;
-			case E_DominantSense::Hearing:
-				AIPerceptionComponent->SetDominantSense(HearingConfig->GetSenseImplementation());
-				break;
-			case E_DominantSense::Damage:
-				AIPerceptionComponent->SetDominantSense(DamageConfig->GetSenseImplementation());
-				break;
+		case E_DominantSense::Sight:
+			AIPerceptionComponent->SetDominantSense(SightConfig->GetSenseImplementation());
+			break;
+		case E_DominantSense::Hearing:
+			AIPerceptionComponent->SetDominantSense(HearingConfig->GetSenseImplementation());
+			break;
+		case E_DominantSense::Damage:
+			AIPerceptionComponent->SetDominantSense(DamageConfig->GetSenseImplementation());
+			break;
 		}
-	}
-	if(HAIBaseComponent && HAIBaseComponent->BehaviorTree)
-	{
-		RunBehaviorTree(HAIBaseComponent->BehaviorTree);
-		targetsTag = HAIBaseComponent->targetsTag;
-		SetStateAsPassive();
 	}
 }
 

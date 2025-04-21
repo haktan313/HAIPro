@@ -76,6 +76,7 @@ public:
 private:
 
 	UHAIBaseComponent();
+	virtual void BeginPlay() override;
 
 public:
 	UFUNCTION(BlueprintCallable, Category = "HAI")
