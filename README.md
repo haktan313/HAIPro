@@ -4,6 +4,8 @@
 
 **Unreal Engine 5.2: https://www.mediafire.com/file/y07ew64b1nfdf43/HAIPro_5.2.zip/file**
 
+Unreal Engine 5.3: https://www.mediafire.com/file/ghgolvzrpiehrnd/HAIPro_5.3.zip/file**
+
 **Unreal Engine 5.4: https://www.mediafire.com/file/ndzm09t7o9fg3f8/HAIPro_5.4.zip/file**
 
 **Unreal Engine 5.5: https://www.mediafire.com/file/les1j16hqy0vqwe/HAIPro_5.5.zip/file**
