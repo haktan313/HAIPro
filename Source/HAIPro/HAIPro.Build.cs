@@ -28,7 +28,11 @@ public class HAIPro : ModuleRules
 				"Core",
 				"GameplayTasks",
 				"NavigationSystem",
-				"AIModule"
+				"AIModule",
+				"GameplayTags",  
+				"StateTreeModule",
+				"GameplayStateTreeModule",
+				"GameplayAbilities"
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);

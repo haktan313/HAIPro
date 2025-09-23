@@ -2,100 +2,146 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Enums_HAISystem.h"
+#include "GameplayTagContainer.h"	
+#include "HAIController.h"
 #include "HPatrolSpline.h"
-#include "GameFramework/Character.h"
 #include "Components/ActorComponent.h"
 #include "HAIBaseComponent.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnDoActionDelegate, int , ActionID);//Delegate for starting an action
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnActionEndDelegate, E_DoActionResult, DoActionResult);//Delegate for ending an action
+UENUM(BlueprintType)
+enum class E_DominantSense : uint8
+{
+	Sight UMETA(DisplayName = "Sight"),
+	Hearing UMETA(DisplayName = "Hearing"),
+	Damage UMETA(DisplayName = "Damage")
+};
+
+UENUM(BlueprintType)
+enum class E_BehaviorTreeActionEndResult : uint8
+{
+	Success UMETA(DisplayName = "Success"),
+	Failed UMETA(DisplayName = "Failed"),
+	Aborted UMETA(DisplayName = "Aborted"),
+	InProgress UMETA(DisplayName = "InProgress")
+};
+
+UENUM(BlueprintType)
+enum class E_StateTreeActionEndResult : uint8
+{
+	Running UMETA(DisplayName = "Running"),
+	Stopped UMETA(DisplayName = "Stopped"),
+	Succeeded UMETA(DisplayName = "Succeeded"),
+	Failed UMETA(DisplayName = "Failed"),
+	Unset UMETA(DisplayName = "Unset")
+};
+
+/** Delegate for ending DoAction behavior tree task */
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnActionEndBehaviorTree, FGameplayTag, ActionTag, E_BehaviorTreeActionEndResult, Result);
+/** Delegate for ending DoAction state tree task */
+DECLARE_MULTICAST_DELEGATE_TwoParams(FOnActionEndStateTree, FGameplayTag, E_StateTreeActionEndResult);
+
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class HAIPRO_API UHAIBaseComponent : public UActorComponent
 {
 	GENERATED_BODY()
+public:
+	UPROPERTY(EditAnywhere, Category="HAI|BehaviorTree")
+	TObjectPtr<UBehaviorTree> BehaviorTree;
+	UPROPERTY(EditAnywhere, Category="HAI|BehaviorTree")
+	bool bStartBehaviorTreeOnBeginPlay = false;
+	
+	UPROPERTY(EditAnywhere, Category="HAI|StateTree")
+	TObjectPtr<UStateTree> StateTree;
+	UPROPERTY(EditAnywhere, Category="HAI|StateTree")
+	bool bStartStateTreeOnBeginPlay = false;
+
+	UPROPERTY(EditAnywhere, Category="HAI")
+	TObjectPtr<AHPatrolSpline> PatrolSpline;
+	/** Getting data from PatrolSpline class */
+	UFUNCTION(BlueprintPure, Category = "HAI|HPatrolSpline")
+	FORCEINLINE F_PatrolData& GetPatrolData(const AActor* RequestedBy) const
+	{
+		if (RequestedBy)
+		{
+			if (F_PatrolData* Data = PatrolSpline->PatrolDataMap.Find(RequestedBy))
+			{
+				return *Data;
+			}
+		}
+		static F_PatrolData DefaultData;
+		return DefaultData;
+	}
+	UFUNCTION(BlueprintPure, Category = "HAI|HPatrolSpline")
+	FORCEINLINE USplineComponent* GetSplineComponent() const { return PatrolSpline->SplineComponent; }
+	UFUNCTION(BlueprintPure, Category = "HAI|HPatrolSpline")
+	FORCEINLINE AHPatrolSpline* GetPatrolSpline() const { return PatrolSpline; }
+	UFUNCTION(BlueprintPure, Category = "HAI|HPatrolSpline")
+	FORCEINLINE int GetCurrentPointIndexOfPatrolData(const AActor* RequestedBy) const{ return RequestedBy ? PatrolSpline->PatrolDataMap.Find(RequestedBy)->currentPointIndex : 0; }
+	UFUNCTION(BlueprintPure, Category = "HAI|HPatrolSpline")
+	FORCEINLINE int GetPreviousPointIndexOfPatrolData(const AActor* RequestedBy) const{ return RequestedBy ? PatrolSpline->PatrolDataMap.Find(RequestedBy)->previousPointIndex : 0; }
+	UFUNCTION(BlueprintPure, Category = "HAI|HPatrolSpline")
+	FORCEINLINE int GetDirectionOfPatrolData(const AActor* RequestedBy) const{return RequestedBy ? PatrolSpline->PatrolDataMap.Find(RequestedBy)->direction : 0;}
+	UFUNCTION(BlueprintCallable, Category = "HAI|HPatrolSpline")
+	FORCEINLINE int GetPatrolPointCountOfPatrolData(const AActor* RequestedBy) const{return RequestedBy ? PatrolSpline->PatrolDataMap.Find(RequestedBy)->patrolPointCount : 0;}
+
+	/** Sight Config Settings */
+	UPROPERTY(EditAnywhere, Category="HAI|Perception")
+	bool bEnableSight = true;
+	UPROPERTY(EditAnywhere, Category="HAI|Perception|Sight")
+	float SightRadius = 2000.f;
+	UPROPERTY(EditAnywhere, Category="HAI|Perception|Sight")
+	float LoseSightRadius = 2500.f;
+	UPROPERTY(EditAnywhere, Category="HAI|Perception|Sight")
+	float SightAge = 5.f;
+	UPROPERTY(EditAnywhere, Category="HAI|Perception|Sight")
+	bool bDetectEnemies = true;
+	UPROPERTY(EditAnywhere, Category="HAI|Perception|Sight")
+	bool bDetectNeutrals = true;
+	UPROPERTY(EditAnywhere, Category="HAI|Perception|Sight")
+	bool bDetectFriendlies = true;
+
+	/** Hearing Config Settings */
+	UPROPERTY(EditAnywhere, Category="HAI|Perception")
+	bool bEnableHearing = true;
+	UPROPERTY(EditAnywhere, Category="HAI|Perception|Hearing")
+	float HearingRange = 2000.f;
+	UPROPERTY(EditAnywhere, Category="HAI|Perception|Hearing")
+	float HearingAge = 5.f;
+	UPROPERTY(EditAnywhere, Category="HAI|Perception|Hearing")
+	bool bDetectHearingEnemies = true;
+	UPROPERTY(EditAnywhere, Category="HAI|Perception|Hearing")
+	bool bDetectHearingNeutrals = true;
+	UPROPERTY(EditAnywhere, Category="HAI|Perception|Hearing")
+	bool bDetectHearingFriendlies = true;
+
+	/** Damage Config Settings */
+	UPROPERTY(EditAnywhere, Category="HAI|Perception")
+	bool bEnableDamage = true;
+	UPROPERTY(EditAnywhere, Category="HAI|Perception|Damage")
+	float DamageAge = 5.f;
+
+	UPROPERTY(EditAnywhere, Category="HAI|Perception")
+	E_DominantSense DominantSense = E_DominantSense::Sight;
 
 	UPROPERTY()
+	TObjectPtr<AHAIController> OwnerAIController;
+	UPROPERTY()
 	TObjectPtr<ACharacter> OwnerCharacter;
-
-public:
-	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="HAI")
-	TObjectPtr<class UBehaviorTree>BehaviorTree;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="HAI|BlackboardKeyValuesName")
-	FName TargetActorKeyName;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="HAI|BlackboardKeyValuesName")
-	FName LocationVectorKeyName;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="HAI|BlackboardKeyValuesName")
-	FName EnumOnPossessStateKeyName;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="HAI|BlackboardKeyValuesName")
-	FName BoolCanDoActionKeyName;
-
-	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category = "HAI")
-	TArray<FName> targetsTag;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite ,Category="HAI")
-	float WalkSpeed;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="HAI")
-	float RunSpeed;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="HAI")
-	float NormalFlySpeed;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="HAI")
-	float FastFlySpeed;
-
-	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category="HAI")
-	TObjectPtr<AHPatrolSpline> PatrolSpline;
-
-	UPROPERTY(BlueprintAssignable, BlueprintCallable, Category="HAI")
-	FOnDoActionDelegate OnDoAction; 
-	UPROPERTY(BlueprintAssignable,BlueprintCallable, Category="HAI")
-	FOnActionEndDelegate OnActionEnd;
-
-	UPROPERTY(EditAnywhere, Category="HAI|Sense")
-	bool OpenSight;
-	UPROPERTY(EditAnywhere, Category="HAI|Sense|Sight")
-	float SightRadius = 1200.0f;
-	UPROPERTY(EditAnywhere, Category="HAI|Sense|Sight")
-	float LoseSightRadius = 1500.0f;
-	UPROPERTY(EditAnywhere, Category="HAI|Sense|Sight")
-	float PeripheralVisionAngleDegrees = 90.0f;
-	UPROPERTY(EditAnywhere, Category="HAI|Sense|Sight")
-	float MaxAgeForSight = 3.0f;
-	UPROPERTY(EditAnywhere, Category="HAI|Sense")
-	bool OpenHear;
-	UPROPERTY(EditAnywhere, Category="HAI|Sense|Hear")
-	float HearingRange = 1000.0f;
-	UPROPERTY(EditAnywhere, Category="HAI|Sense|Hear")
-	float MaxAgeHear = 2.0f;
-	UPROPERTY(EditAnywhere, Category="HAI|Sense")
-	bool OpenDamage;
-	UPROPERTY(EditAnywhere, Category="HAI|Sense|Damage")
-	float MaxAgeDamage = 2.0f;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HAI|Sense")
-	E_DominantSense DominantSense = E_DominantSense::Sight; //The dominant sense of the AI character (Sight, Hear, Damage) default is Sight
-
 private:
-
+	
 	UHAIBaseComponent();
 	virtual void BeginPlay() override;
 
 public:
-	UFUNCTION(BlueprintCallable, Category = "HAI")
-	void SetMovementStateWalk(E_MovementState movementState);
-	UFUNCTION(BlueprintCallable, Category = "HAI")
-	void SetMovementStateFly(E_MovementState movementState);
-	UFUNCTION(BlueprintCallable, Category = "HAI")
-	void Dead();
-	UFUNCTION(BlueprintCallable, Category = "HAI")
-	bool StopBehaviorTree();
-	UFUNCTION(BlueprintCallable, Category = "HAI")
-	void SetStatePassive();
-	UFUNCTION(BlueprintCallable, Category = "HAI")
-	void SetStateInvestigate();
-	UFUNCTION(BlueprintCallable, Category = "HAI")
-	void SetStateActive();
-	UFUNCTION(BlueprintCallable, Category = "HAI")
-	E_OnPossessState GetPossessState();
-	
-	AHPatrolSpline* GetPatrolSpline();
+
+	/** Percaption Events */
+	UPROPERTY(BlueprintAssignable, BlueprintCallable, Category="HAI|Perception")
+	FOnPeraptionConfigUpdated OnPerceptionConfigUpdated;
+	UPROPERTY(BlueprintAssignable, BlueprintCallable, Category ="HAI|Perception")
+	FOnSenseActorForgotten OnSenseActorForgotten;
+
+	UFUNCTION(BlueprintPure, Category="HAI")
+	FORCEINLINE AHAIController* GetHAIController() const {return OwnerAIController;}
 		
 };

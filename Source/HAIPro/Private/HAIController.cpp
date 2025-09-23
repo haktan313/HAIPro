@@ -1,232 +1,286 @@
 
-
-
 #include "HAIController.h"
-#include "BehaviorTree/BlackboardComponent.h"
-#include "HAIBaseComponent.h"
-#include "Navigation/CrowdFollowingComponent.h"
 #include "Perception/AIPerceptionComponent.h"
-#include "Perception/AISenseConfig_Damage.h"
-#include "Perception/AISenseConfig_Hearing.h"
-#include "Perception/AISenseConfig_Sight.h"
+#include "HAIBaseComponent.h"
+#include "Components/StateTreeAIComponent.h"
 
 AHAIController::AHAIController(const FObjectInitializer& ObjectInitializer)
-	:Super(ObjectInitializer.SetDefaultSubobjectClass<UCrowdFollowingComponent>(TEXT("PathFollowingComponent")))//Setting CrowdFollowingComponent as the default path following component
+	: Super(ObjectInitializer.SetDefaultSubobjectClass<UCrowdFollowingComponent>(TEXT("CrowdFollowingComponent")))
 {
+	CrowdFollowing = CreateDefaultSubobject<UCrowdFollowingComponent>(TEXT("CrowdManager"));
+	
 	AIPerceptionComponent = CreateDefaultSubobject<UAIPerceptionComponent>(TEXT("PerceptionComponent"));
 	SetPerceptionComponent(*AIPerceptionComponent);
-	
-	SightConfig = CreateDefaultSubobject<UAISenseConfig_Sight>(TEXT("SightConfig"));
-	SightConfig->SightRadius = 0.f;
-	SightConfig->LoseSightRadius = 0.f;
-	SightConfig->PeripheralVisionAngleDegrees = 0.f;
-	SightConfig->DetectionByAffiliation.bDetectEnemies = false;
-	SightConfig->DetectionByAffiliation.bDetectNeutrals = false;
-	SightConfig->DetectionByAffiliation.bDetectFriendlies = false;
-	SightConfig->SetMaxAge(0.f);
-	
-	HearingConfig = CreateDefaultSubobject<UAISenseConfig_Hearing>(TEXT("HearingConfig"));
-	HearingConfig->HearingRange = 0.f;
-	HearingConfig->DetectionByAffiliation.bDetectEnemies = false;
-	HearingConfig->DetectionByAffiliation.bDetectNeutrals = false;
-	HearingConfig->DetectionByAffiliation.bDetectFriendlies = false;
-	HearingConfig->SetMaxAge(0.f);
-	
-	DamageConfig = CreateDefaultSubobject<UAISenseConfig_Damage>(TEXT("DamageConfig"));
-	DamageConfig->SetMaxAge(0.f);
-	
-	AIPerceptionComponent->ConfigureSense(*SightConfig);
-	AIPerceptionComponent->ConfigureSense(*HearingConfig);
-	AIPerceptionComponent->ConfigureSense(*DamageConfig);
 
-	AIPerceptionComponent->SetDominantSense(SightConfig->GetSenseImplementation());
-	
-	AIPerceptionComponent->OnPerceptionUpdated.AddDynamic(this, &AHAIController::OnPerceptionUpdated);
-
-	CrowdFollowingComponent = Cast<UCrowdFollowingComponent>(GetPathFollowingComponent());//Casting the path following component to the CrowdFollowingComponent
-	CrowdFollowingComponent->SetCrowdAnticipateTurns(true); //default false
-	CrowdFollowingComponent->SetCrowdObstacleAvoidance(true);
-	CrowdFollowingComponent->SetCrowdSeparation(true); //default false
-	CrowdFollowingComponent->SetCrowdOptimizeVisibility(true);
-	CrowdFollowingComponent->SetCrowdOptimizeTopology(true);
-	CrowdFollowingComponent->SetCrowdPathOffset(true);
-	CrowdFollowingComponent->SetCrowdSlowdownAtGoal(false); //default true
-	CrowdFollowingComponent->SetCrowdSeparationWeight(2.0f);
-	CrowdFollowingComponent->SetCrowdCollisionQueryRange(400.0f);
-	CrowdFollowingComponent->SetCrowdPathOptimizationRange(2000.0f);
-	CrowdFollowingComponent->SetCrowdAvoidanceQuality(ECrowdAvoidanceQuality::High);
-	CrowdFollowingComponent->SetCrowdAvoidanceRangeMultiplier(1.0f);
-	CrowdFollowingComponent->SetCrowdAffectFallingVelocity(false);
-	CrowdFollowingComponent->SetCrowdRotateToVelocity(true);
+	BehaviorTreeComponent = CreateDefaultSubobject<UBehaviorTreeComponent>(TEXT("BehaviorTreeComponent"));
+	StateTreeAIComponent = CreateDefaultSubobject<UHStateTreeAIComponent>(TEXT("StateTreeAIComponent"));
 }
-
 
 void AHAIController::OnPossess(APawn* InPawn)
 {
 	Super::OnPossess(InPawn);
+	
 	HAIBaseComponent = Cast<UHAIBaseComponent>(InPawn->GetComponentByClass(UHAIBaseComponent::StaticClass()));
-	if(HAIBaseComponent)
-	{
-		if (HAIBaseComponent->BehaviorTree == nullptr){return;}
-		RunBehaviorTree(HAIBaseComponent->BehaviorTree);
-		targetsTag = HAIBaseComponent->targetsTag;
-		SetStateAsPassive();
-		
-		CreateOnSightSense();
-		CreateOnHearSense();
-		CreateOnDamageSense();
-		switch (HAIBaseComponent->DominantSense)
-		{
-		case E_DominantSense::Sight:
-			AIPerceptionComponent->SetDominantSense(SightConfig->GetSenseImplementation());
-			break;
-		case E_DominantSense::Hearing:
-			AIPerceptionComponent->SetDominantSense(HearingConfig->GetSenseImplementation());
-			break;
-		case E_DominantSense::Damage:
-			AIPerceptionComponent->SetDominantSense(DamageConfig->GetSenseImplementation());
-			break;
-		}
-	}
+	if (!HAIBaseComponent)
+		return;
+	
+	AIPerceptionComponent->OnTargetPerceptionForgotten.AddDynamic(this, &AHAIController::OnTargetPerceptionForgotten);
+	AIPerceptionComponent->OnTargetPerceptionInfoUpdated.AddDynamic(this, &AHAIController::OnTargetPerceptionInfoUpdated);
+	
+	if (HAIBaseComponent->bEnableSight)
+		OpenSightConfig();
+	if (HAIBaseComponent->bEnableHearing)
+		OpenHearingConfig();
+	if (HAIBaseComponent->bEnableDamage)
+		OpenDamageConfig();
+	
+	AIPerceptionComponent->RequestStimuliListenerUpdate(); 
+	SetDominantSense();
+	if (HAIBaseComponent->bStartBehaviorTreeOnBeginPlay)
+		StartBehaviorTree();
+
+	if (HAIBaseComponent->bStartStateTreeOnBeginPlay)
+		StartStateTree();
 }
 
-void AHAIController::CreateOnSightSense()
+void AHAIController::OpenSightConfig()
 {
-	bool bCreateSense = HAIBaseComponent->OpenSight;
-	float maxAge = bCreateSense ? HAIBaseComponent->MaxAgeForSight : 0.f;
+	SightConfig = NewObject<UAISenseConfig_Sight>(AIPerceptionComponent, TEXT("SightConfig"));
+	if (!SightConfig)
+		return;
 	
-	SightConfig->SightRadius = bCreateSense ? HAIBaseComponent->SightRadius : 0.f;
-	SightConfig->LoseSightRadius = bCreateSense ? HAIBaseComponent->LoseSightRadius : 0.f;
-	SightConfig->PeripheralVisionAngleDegrees = bCreateSense ? HAIBaseComponent->PeripheralVisionAngleDegrees : 0.f;
-	SightConfig->DetectionByAffiliation.bDetectEnemies = bCreateSense;
-	SightConfig->DetectionByAffiliation.bDetectNeutrals = bCreateSense;
-	SightConfig->DetectionByAffiliation.bDetectFriendlies = bCreateSense;
-	SightConfig->SetMaxAge(HAIBaseComponent->MaxAgeForSight);
-	SightConfig->SetMaxAge(maxAge);
+	SightConfig->SightRadius = HAIBaseComponent->SightRadius;
+	SightConfig->LoseSightRadius = HAIBaseComponent->LoseSightRadius;
+	SightConfig->SetMaxAge(HAIBaseComponent->SightAge);
+	SightConfig->DetectionByAffiliation.bDetectEnemies = HAIBaseComponent->bDetectEnemies;
+	SightConfig->DetectionByAffiliation.bDetectNeutrals = HAIBaseComponent->bDetectNeutrals;
+	SightConfig->DetectionByAffiliation.bDetectFriendlies = HAIBaseComponent->bDetectFriendlies;
 	AIPerceptionComponent->ConfigureSense(*SightConfig);
 }
 
-void AHAIController::CreateOnHearSense()
+void AHAIController::OpenHearingConfig()
 {
-	bool bCreateSense = HAIBaseComponent->OpenHear;
-	float maxAge = bCreateSense ? HAIBaseComponent->MaxAgeHear : 0.f;
+	HearingConfig = NewObject<UAISenseConfig_Hearing>(AIPerceptionComponent, TEXT("HearingConfig"));
+	if (!HearingConfig)
+		return;
 	
-	HearingConfig->HearingRange = bCreateSense ? HAIBaseComponent->HearingRange : 0.f;
-	HearingConfig->SetMaxAge(maxAge);
-	HearingConfig->DetectionByAffiliation.bDetectEnemies = bCreateSense;
-	HearingConfig->DetectionByAffiliation.bDetectNeutrals = bCreateSense;
-	HearingConfig->DetectionByAffiliation.bDetectFriendlies = bCreateSense;
+	HearingConfig->HearingRange = HAIBaseComponent->HearingRange;
+	HearingConfig->SetMaxAge(HAIBaseComponent->HearingAge);
+	HearingConfig->DetectionByAffiliation.bDetectEnemies = HAIBaseComponent->bDetectHearingEnemies;
+	HearingConfig->DetectionByAffiliation.bDetectNeutrals = HAIBaseComponent->bDetectHearingNeutrals;
+	HearingConfig->DetectionByAffiliation.bDetectFriendlies = HAIBaseComponent->bDetectHearingFriendlies;
 	AIPerceptionComponent->ConfigureSense(*HearingConfig);
 }
 
-void AHAIController::CreateOnDamageSense()
+void AHAIController::OpenDamageConfig()
 {
-	bool bCreateSense = HAIBaseComponent->OpenDamage;
-	float maxAge = bCreateSense ? HAIBaseComponent->MaxAgeDamage : 0.f;
+	DamageConfig = NewObject<UAISenseConfig_Damage>(AIPerceptionComponent, TEXT("DamageConfig"));
+	if (!DamageConfig)
+		return;
 	
-	DamageConfig->SetMaxAge(maxAge);
+	DamageConfig->SetMaxAge(HAIBaseComponent->DamageAge);
 	AIPerceptionComponent->ConfigureSense(*DamageConfig);
 }
 
-void AHAIController::OnPerceptionUpdated(const TArray<AActor*>& UpdatedActors)
+void AHAIController::SetDominantSense()
 {
-	for(AActor* sensedActor : UpdatedActors)
+	switch (HAIBaseComponent->DominantSense)
 	{
-		if(targetsTag.Num() == 0)
-		{
-			HandleSense(sensedActor);
-			targetActor = sensedActor;
-		}
-		for(FName tag : targetsTag)
-		{
-			if(sensedActor->ActorHasTag(tag))
-			{
-				HandleSense(sensedActor);
-				targetActor = sensedActor;
-			}
-		}
+	case E_DominantSense::Sight:
+		if (SightConfig)
+			AIPerceptionComponent->SetDominantSense(SightConfig->GetSenseImplementation());
+		break;
+	case E_DominantSense::Hearing:
+		if (HearingConfig)
+			AIPerceptionComponent->SetDominantSense(HearingConfig->GetSenseImplementation());
+		break;
+	case E_DominantSense::Damage:
+		if (DamageConfig)
+			AIPerceptionComponent->SetDominantSense(DamageConfig->GetSenseImplementation());
+		break;
+	default:
+		if (SightConfig)
+			AIPerceptionComponent->SetDominantSense(SightConfig->GetSenseImplementation());
+		break;
 	}
 }
 
-bool AHAIController::PlayerSensed(AActor* sensedActor, E_SenseType senseType)
+void AHAIController::OnUnPossess()
 {
-	FActorPerceptionBlueprintInfo perceptionInfo;
-	AIPerceptionComponent->GetActorsPerception(sensedActor, perceptionInfo);
-	FAISenseID senseID;
-
-	switch (senseType)
-	{
-		case E_SenseType::see:senseID = UAISense::GetSenseID<UAISenseConfig_Sight>(); break;
-		case E_SenseType::hear:senseID = UAISense::GetSenseID<UAISenseConfig_Hearing>(); break;
-		case E_SenseType::damage:senseID = UAISense::GetSenseID<UAISenseConfig_Damage>(); break;
-	}
-
-	for(const auto& stimulus : perceptionInfo.LastSensedStimuli)//Loop for each stimulus sensed by the AI character
-	{
-		if(stimulus.Type == senseID)//Check if the AI character sensed the player
-		{
-			pointOfInterest = stimulus.StimulusLocation;
-			return stimulus.WasSuccessfullySensed();
-		}
-	}
-	return false;
+	Super::OnUnPossess();
+	AIPerceptionComponent->OnTargetPerceptionForgotten.RemoveDynamic(this, &AHAIController::OnTargetPerceptionForgotten);
+	AIPerceptionComponent->OnTargetPerceptionInfoUpdated.RemoveDynamic(this, &AHAIController::OnTargetPerceptionInfoUpdated);
 }
 
-void AHAIController::HandleSense(AActor* sensedTargetActor)
+//-------------------------------------------------
+
+void AHAIController::OnTargetPerceptionForgotten(AActor* Actor)
 {
-	E_OnPossessState currentState = GetCurrentState();
+	HAIBaseComponent->OnSenseActorForgotten.Broadcast(Actor);
+}
+
+void AHAIController::OnTargetPerceptionInfoUpdated(const FActorPerceptionUpdateInfo& UpdateInfo)
+{
+	F_SenseData SenseData;
+	SenseData.sensedActor = UpdateInfo.Target;
+	SenseData.stimulus = UpdateInfo.Stimulus;
+	FAISenseID SenseID = UpdateInfo.Stimulus.Type;
+		
+	if (SenseID == UAISense::GetSenseID<UAISense_Sight>())
+		SenseData.senseType = E_SenseType::SightConfig;
+	else if (SenseID == UAISense::GetSenseID<UAISense_Hearing>())
+		SenseData.senseType = E_SenseType::HearingConfig;
+	else if (SenseID == UAISense::GetSenseID<UAISense_Damage>())
+		SenseData.senseType = E_SenseType::DamageConfig;
 	
-	if(PlayerSensed(sensedTargetActor,E_SenseType::see))
+	HAIBaseComponent->OnPerceptionConfigUpdated.Broadcast(SenseData);
+}
+
+//-------------------------------------------------
+
+void AHAIController::SetTargetActor(AActor* newTarget, E_SenseType newSenseType, FAIStimulus newStimulus)
+{
+	if (!newTarget)
+		return;
+	TargetActor = newTarget;
+	TargetStimulus = newStimulus;
+	if (newSenseType == E_SenseType::NoneType)
+		newSenseType = newStimulus.Type == UAISense::GetSenseID<UAISense_Sight>() ? E_SenseType::SightConfig :
+			newStimulus.Type == UAISense::GetSenseID<UAISense_Hearing>() ? E_SenseType::HearingConfig :
+			newStimulus.Type == UAISense::GetSenseID<UAISense_Damage>() ? E_SenseType::DamageConfig : E_SenseType::NoneType;
+	
+	TargetSenseType = newSenseType;
+	if (TargetActor.Get())
+		TargetActor->OnDestroyed.AddDynamic(this, &AHAIController::OnTargetActorDestroyed);
+}
+
+void AHAIController::OnTargetActorDestroyed(AActor* DestroyedActor)
+{
+	if (DestroyedActor == TargetActor.Get())
 	{
-		if(currentState != E_OnPossessState::active)
-		{
-			targetActor = sensedTargetActor;
-			SetStateAsActive();
-		}
-	}
-	else if(PlayerSensed(sensedTargetActor,E_SenseType::hear) || PlayerSensed(sensedTargetActor,E_SenseType::damage))
-	{
-		if(currentState != E_OnPossessState::active)
-		{
-			SetStateAsInvestigate();
-		}
-	}
-	else
-	{
-		SetStateAsInvestigate();
+		TargetStimulus = FAIStimulus();
+		TargetLocation = FVector::ZeroVector;
+		TargetSenseType = E_SenseType::NoneType;
 	}
 }
 
-E_OnPossessState AHAIController::GetCurrentState()
+void AHAIController::SetTargetLocation(const FVector& newLocation, E_SenseType newSenseType, FAIStimulus newStimulus)
 {
-	return (E_OnPossessState)GetBlackboardComponent()->GetValueAsEnum(HAIBaseComponent->EnumOnPossessStateKeyName);
+	TargetLocation = newLocation;
+	TargetStimulus = newStimulus;
+	if (newSenseType == E_SenseType::NoneType)
+		newSenseType = newStimulus.Type == UAISense::GetSenseID<UAISense_Sight>() ? E_SenseType::SightConfig :
+			newStimulus.Type == UAISense::GetSenseID<UAISense_Hearing>() ? E_SenseType::HearingConfig :
+			newStimulus.Type == UAISense::GetSenseID<UAISense_Damage>() ? E_SenseType::DamageConfig : E_SenseType::NoneType;
+	
+	TargetSenseType = newSenseType;
+}
+
+void AHAIController::SetNullTargetLocation()
+{
+	TargetLocation = FVector::ZeroVector;
+	TargetStimulus = FAIStimulus();
+	TargetSenseType = E_SenseType::NoneType;
+}
+
+void AHAIController::SetNullTargetActor()
+{
+	TargetActor = nullptr;
+	TargetStimulus = FAIStimulus();
+	TargetSenseType = E_SenseType::NoneType;
 }
 
 
-void AHAIController::SetStateAsPassive()
+
+void AHAIController::StartBehaviorTree()
 {
-	GetBlackboardComponent()->SetValueAsEnum(HAIBaseComponent->EnumOnPossessStateKeyName,(uint8)E_OnPossessState::passive);
-	targetActor = nullptr;
-	pointOfInterest = FVector::ZeroVector;
+	if (!HAIBaseComponent || !HAIBaseComponent->BehaviorTree || !BehaviorTreeComponent)
+		return;
+	RunBehaviorTree(HAIBaseComponent->BehaviorTree);
 }
-
-
-void AHAIController::SetStateAsInvestigate()
-{
-	GetBlackboardComponent()->SetValueAsEnum(HAIBaseComponent->EnumOnPossessStateKeyName,(uint8)E_OnPossessState::investigate);
-	GetBlackboardComponent()->SetValueAsVector(HAIBaseComponent->LocationVectorKeyName,pointOfInterest);
-}
-
-
-void AHAIController::SetStateAsActive()
-{
-	GetBlackboardComponent()->SetValueAsEnum(HAIBaseComponent->EnumOnPossessStateKeyName,(uint8)E_OnPossessState::active);
-	GetBlackboardComponent()->SetValueAsObject(HAIBaseComponent->TargetActorKeyName,targetActor);
-}
-
-
 
 void AHAIController::StopBehaviorTree()
 {
-	CleanupBrainComponent();
+	if (!HAIBaseComponent || !HAIBaseComponent->BehaviorTree || !BehaviorTreeComponent)
+		return;
+	BehaviorTreeComponent->StopLogic(TEXT("Stopped by AHAIController"));
+}
+
+void AHAIController::PauseBehaviorTree()
+{
+	if (!HAIBaseComponent || !HAIBaseComponent->BehaviorTree || !BehaviorTreeComponent)
+		return;
+	BehaviorTreeComponent->PauseLogic(TEXT("Paused by AHAIController"));
+}
+
+void AHAIController::ResumeBehaviorTree()
+{
+	if (!HAIBaseComponent || !HAIBaseComponent->BehaviorTree || !BehaviorTreeComponent)
+		return;
+	BehaviorTreeComponent->ResumeLogic(TEXT("Resumed by AHAIController"));
+}
+
+void AHAIController::RestartBehaviorTree()
+{
+	if (!HAIBaseComponent || !HAIBaseComponent->BehaviorTree || !BehaviorTreeComponent)
+		return;
+	BehaviorTreeComponent->RestartLogic();
+}
+
+void AHAIController::DestroyBehaviorTree()
+{
+	if (!HAIBaseComponent || !HAIBaseComponent->BehaviorTree || !BehaviorTreeComponent)
+		return;
+	BehaviorTreeComponent->Cleanup();
+}
+
+
+void AHAIController::StartStateTree()
+{
+	if (!HAIBaseComponent || !HAIBaseComponent->StateTree || !StateTreeAIComponent)
+		return;
+	FStateTreeReference* StateTree = StateTreeAIComponent->GetStateTree();
+	
+	StateTree->SetStateTree(HAIBaseComponent->StateTree);
+	StateTreeAIComponent->StartLogic();
+}
+
+void AHAIController::StopStateTree()
+{
+	if (!HAIBaseComponent || !HAIBaseComponent->StateTree || !StateTreeAIComponent)
+		return;
+	FStateTreeReference* StateTree = StateTreeAIComponent->GetStateTree();
+	StateTreeAIComponent->StopLogic(TEXT("Stopped by AHAIController"));
+}
+
+void AHAIController::PauseStateTree()
+{
+	if (!HAIBaseComponent || !HAIBaseComponent->StateTree || !StateTreeAIComponent)
+		return;
+	FStateTreeReference* StateTree = StateTreeAIComponent->GetStateTree();
+	StateTreeAIComponent->PauseLogic(TEXT("Paused by AHAIController"));
+}
+
+void AHAIController::ResumeStateTree()
+{
+	if (!HAIBaseComponent || !HAIBaseComponent->StateTree || !StateTreeAIComponent)
+		return;
+	FStateTreeReference* StateTree = StateTreeAIComponent->GetStateTree();
+	StateTreeAIComponent->ResumeLogic(TEXT("Resumed by AHAIController"));
+}
+
+void AHAIController::RestartStateTree()
+{
+	if (!HAIBaseComponent || !HAIBaseComponent->StateTree || !StateTreeAIComponent)
+		return;
+	FStateTreeReference* StateTree = StateTreeAIComponent->GetStateTree();
+	StateTreeAIComponent->RestartLogic();
+}
+
+void AHAIController::DestroyStateTree()
+{
+	if (!HAIBaseComponent || !HAIBaseComponent->StateTree || !StateTreeAIComponent)
+		return;
+	FStateTreeReference* StateTree = StateTreeAIComponent->GetStateTree();
+	StateTreeAIComponent->Cleanup();
 }
