@@ -20,19 +20,10 @@ class AActor;
 class AHAIController;
 class AHPatrolSpline;
 class USplineComponent;
-enum class E_BehaviorTreeActionEndResult : uint8;
 struct F_PatrolData;
-struct FGameplayTag;
-
-// ********** Begin Delegate FOnActionEndBehaviorTree **********************************************
-#define FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_39_DELEGATE \
-HAIPRO_API void FOnActionEndBehaviorTree_DelegateWrapper(const FMulticastScriptDelegate& OnActionEndBehaviorTree, FGameplayTag ActionTag, E_BehaviorTreeActionEndResult Result);
-
-
-// ********** End Delegate FOnActionEndBehaviorTree ************************************************
 
 // ********** Begin Class UHAIBaseComponent ********************************************************
-#define FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_47_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Users_Haktan_Desktop_HAIPro_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_40_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execGetHAIController); \
 	DECLARE_FUNCTION(execGetPatrolPointCountOfPatrolData); \
 	DECLARE_FUNCTION(execGetDirectionOfPatrolData); \
@@ -45,7 +36,7 @@ HAIPRO_API void FOnActionEndBehaviorTree_DelegateWrapper(const FMulticastScriptD
 
 HAIPRO_API UClass* Z_Construct_UClass_UHAIBaseComponent_NoRegister();
 
-#define FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_47_INCLASS_NO_PURE_DECLS \
+#define FID_Users_Haktan_Desktop_HAIPro_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_40_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUHAIBaseComponent(); \
 	friend struct Z_Construct_UClass_UHAIBaseComponent_Statics; \
@@ -56,7 +47,7 @@ public: \
 	DECLARE_SERIALIZER(UHAIBaseComponent)
 
 
-#define FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_47_ENHANCED_CONSTRUCTORS \
+#define FID_Users_Haktan_Desktop_HAIPro_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_40_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	UHAIBaseComponent(UHAIBaseComponent&&) = delete; \
 	UHAIBaseComponent(const UHAIBaseComponent&) = delete; \
@@ -66,13 +57,13 @@ public: \
 	NO_API virtual ~UHAIBaseComponent();
 
 
-#define FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_44_PROLOG
-#define FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_47_GENERATED_BODY \
+#define FID_Users_Haktan_Desktop_HAIPro_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_37_PROLOG
+#define FID_Users_Haktan_Desktop_HAIPro_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_40_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_47_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_47_INCLASS_NO_PURE_DECLS \
-	FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_47_ENHANCED_CONSTRUCTORS \
+	FID_Users_Haktan_Desktop_HAIPro_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_40_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_Haktan_Desktop_HAIPro_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_40_INCLASS_NO_PURE_DECLS \
+	FID_Users_Haktan_Desktop_HAIPro_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h_40_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -82,7 +73,7 @@ class UHAIBaseComponent;
 // ********** End Class UHAIBaseComponent **********************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h
+#define CURRENT_FILE_ID FID_Users_Haktan_Desktop_HAIPro_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h
 
 // ********** Begin Enum E_DominantSense ***********************************************************
 #define FOREACH_ENUM_E_DOMINANTSENSE(op) \

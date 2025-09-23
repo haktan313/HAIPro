@@ -148,16 +148,16 @@ public:
 	UFUNCTION(BlueprintCallable, Category="HAI|BehaviorTree")
 	void DestroyBehaviorTree();
 
-	UFUNCTION(BlueprintCallable, Category="HAI|BehaviorTree")
+	UFUNCTION(BlueprintCallable, Category="HAI|StateTree")
 	void StartStateTree();
-	UFUNCTION(BlueprintCallable, Category="HAI|BehaviorTree")
+	UFUNCTION(BlueprintCallable, Category="HAI|StateTree")
 	void StopStateTree();
-	UFUNCTION(BlueprintCallable, Category="HAI|BehaviorTree")
+	UFUNCTION(BlueprintCallable, Category="HAI|StateTree")
 	void PauseStateTree();
-	UFUNCTION(BlueprintCallable, Category="HAI|BehaviorTree")
+	UFUNCTION(BlueprintCallable, Category="HAI|StateTree")
 	void ResumeStateTree();
-	UFUNCTION(BlueprintCallable, Category="HAI|BehaviorTree")
+	UFUNCTION(BlueprintCallable, Category="HAI|StateTree")
 	void RestartStateTree();
-	UFUNCTION(BlueprintCallable, Category="HAI|BehaviorTree")
+	UFUNCTION(BlueprintCallable, Category="HAI|StateTree")
 	void DestroyStateTree();
 };

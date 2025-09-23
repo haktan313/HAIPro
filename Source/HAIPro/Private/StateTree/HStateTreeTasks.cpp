@@ -1,9 +1,7 @@
 
 #include "StateTree/HStateTreeTasks.h"
-#include "AbilitySystemComponent.h"
 #include "StateTreeExecutionContext.h"
 #include "HAIBaseComponent.h"
-#include "HTokenSystemComponent.h"
 
 // SetFocus Task
 EStateTreeRunStatus FTask_SetFocus::EnterState(FStateTreeExecutionContext& Context,const FStateTreeTransitionResult& Transition) const

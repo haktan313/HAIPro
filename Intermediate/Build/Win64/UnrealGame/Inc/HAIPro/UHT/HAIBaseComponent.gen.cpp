@@ -6,7 +6,6 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "HAIBaseComponent.h"
-#include "GameplayTagContainer.h"
 #include "HPatrolSpline.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
@@ -19,7 +18,6 @@ ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_ACharacter_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
 ENGINE_API UClass* Z_Construct_UClass_USplineComponent_NoRegister();
-GAMEPLAYTAGS_API UScriptStruct* Z_Construct_UScriptStruct_FGameplayTag();
 HAIPRO_API UClass* Z_Construct_UClass_AHAIController_NoRegister();
 HAIPRO_API UClass* Z_Construct_UClass_AHPatrolSpline_NoRegister();
 HAIPRO_API UClass* Z_Construct_UClass_UHAIBaseComponent();
@@ -27,7 +25,6 @@ HAIPRO_API UClass* Z_Construct_UClass_UHAIBaseComponent_NoRegister();
 HAIPRO_API UEnum* Z_Construct_UEnum_HAIPro_E_BehaviorTreeActionEndResult();
 HAIPRO_API UEnum* Z_Construct_UEnum_HAIPro_E_DominantSense();
 HAIPRO_API UEnum* Z_Construct_UEnum_HAIPro_E_StateTreeActionEndResult();
-HAIPRO_API UFunction* Z_Construct_UDelegateFunction_HAIPro_OnActionEndBehaviorTree__DelegateSignature();
 HAIPRO_API UFunction* Z_Construct_UDelegateFunction_HAIPro_OnPeraptionConfigUpdated__DelegateSignature();
 HAIPRO_API UFunction* Z_Construct_UDelegateFunction_HAIPro_OnSenseActorForgotten__DelegateSignature();
 HAIPRO_API UScriptStruct* Z_Construct_UScriptStruct_F_PatrolData();
@@ -214,61 +211,6 @@ UEnum* Z_Construct_UEnum_HAIPro_E_StateTreeActionEndResult()
 	return Z_Registration_Info_UEnum_E_StateTreeActionEndResult.InnerSingleton;
 }
 // ********** End Enum E_StateTreeActionEndResult **************************************************
-
-// ********** Begin Delegate FOnActionEndBehaviorTree **********************************************
-struct Z_Construct_UDelegateFunction_HAIPro_OnActionEndBehaviorTree__DelegateSignature_Statics
-{
-	struct _Script_HAIPro_eventOnActionEndBehaviorTree_Parms
-	{
-		FGameplayTag ActionTag;
-		E_BehaviorTreeActionEndResult Result;
-	};
-#if WITH_METADATA
-	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "Comment", "/** Delegate for ending DoAction behavior tree task */" },
-		{ "ModuleRelativePath", "Public/HAIBaseComponent.h" },
-		{ "ToolTip", "Delegate for ending DoAction behavior tree task" },
-	};
-#endif // WITH_METADATA
-	static const UECodeGen_Private::FStructPropertyParams NewProp_ActionTag;
-	static const UECodeGen_Private::FBytePropertyParams NewProp_Result_Underlying;
-	static const UECodeGen_Private::FEnumPropertyParams NewProp_Result;
-	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
-	static const UECodeGen_Private::FDelegateFunctionParams FuncParams;
-};
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UDelegateFunction_HAIPro_OnActionEndBehaviorTree__DelegateSignature_Statics::NewProp_ActionTag = { "ActionTag", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(_Script_HAIPro_eventOnActionEndBehaviorTree_Parms, ActionTag), Z_Construct_UScriptStruct_FGameplayTag, METADATA_PARAMS(0, nullptr) }; // 133831994
-const UECodeGen_Private::FBytePropertyParams Z_Construct_UDelegateFunction_HAIPro_OnActionEndBehaviorTree__DelegateSignature_Statics::NewProp_Result_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UDelegateFunction_HAIPro_OnActionEndBehaviorTree__DelegateSignature_Statics::NewProp_Result = { "Result", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(_Script_HAIPro_eventOnActionEndBehaviorTree_Parms, Result), Z_Construct_UEnum_HAIPro_E_BehaviorTreeActionEndResult, METADATA_PARAMS(0, nullptr) }; // 993410039
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_HAIPro_OnActionEndBehaviorTree__DelegateSignature_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_HAIPro_OnActionEndBehaviorTree__DelegateSignature_Statics::NewProp_ActionTag,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_HAIPro_OnActionEndBehaviorTree__DelegateSignature_Statics::NewProp_Result_Underlying,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_HAIPro_OnActionEndBehaviorTree__DelegateSignature_Statics::NewProp_Result,
-};
-static_assert(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_HAIPro_OnActionEndBehaviorTree__DelegateSignature_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FDelegateFunctionParams Z_Construct_UDelegateFunction_HAIPro_OnActionEndBehaviorTree__DelegateSignature_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UPackage__Script_HAIPro, nullptr, "OnActionEndBehaviorTree__DelegateSignature", Z_Construct_UDelegateFunction_HAIPro_OnActionEndBehaviorTree__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_HAIPro_OnActionEndBehaviorTree__DelegateSignature_Statics::PropPointers), sizeof(Z_Construct_UDelegateFunction_HAIPro_OnActionEndBehaviorTree__DelegateSignature_Statics::_Script_HAIPro_eventOnActionEndBehaviorTree_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_HAIPro_OnActionEndBehaviorTree__DelegateSignature_Statics::Function_MetaDataParams), Z_Construct_UDelegateFunction_HAIPro_OnActionEndBehaviorTree__DelegateSignature_Statics::Function_MetaDataParams)},  };
-static_assert(sizeof(Z_Construct_UDelegateFunction_HAIPro_OnActionEndBehaviorTree__DelegateSignature_Statics::_Script_HAIPro_eventOnActionEndBehaviorTree_Parms) < MAX_uint16);
-UFunction* Z_Construct_UDelegateFunction_HAIPro_OnActionEndBehaviorTree__DelegateSignature()
-{
-	static UFunction* ReturnFunction = nullptr;
-	if (!ReturnFunction)
-	{
-		UECodeGen_Private::ConstructUDelegateFunction(&ReturnFunction, Z_Construct_UDelegateFunction_HAIPro_OnActionEndBehaviorTree__DelegateSignature_Statics::FuncParams);
-	}
-	return ReturnFunction;
-}
-void FOnActionEndBehaviorTree_DelegateWrapper(const FMulticastScriptDelegate& OnActionEndBehaviorTree, FGameplayTag ActionTag, E_BehaviorTreeActionEndResult Result)
-{
-	struct _Script_HAIPro_eventOnActionEndBehaviorTree_Parms
-	{
-		FGameplayTag ActionTag;
-		E_BehaviorTreeActionEndResult Result;
-	};
-	_Script_HAIPro_eventOnActionEndBehaviorTree_Parms Parms;
-	Parms.ActionTag=ActionTag;
-	Parms.Result=Result;
-	OnActionEndBehaviorTree.ProcessMulticastDelegate<UObject>(&Parms);
-}
-// ********** End Delegate FOnActionEndBehaviorTree ************************************************
 
 // ********** Begin Class UHAIBaseComponent Function GetCurrentPointIndexOfPatrolData **************
 struct Z_Construct_UFunction_UHAIBaseComponent_GetCurrentPointIndexOfPatrolData_Statics
@@ -999,7 +941,7 @@ UHAIBaseComponent::~UHAIBaseComponent() {}
 // ********** End Class UHAIBaseComponent **********************************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h__Script_HAIPro_Statics
+struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h__Script_HAIPro_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
 		{ E_DominantSense_StaticEnum, TEXT("E_DominantSense"), &Z_Registration_Info_UEnum_E_DominantSense, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 1376275546U) },
@@ -1010,10 +952,10 @@ struct Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins
 		{ Z_Construct_UClass_UHAIBaseComponent, UHAIBaseComponent::StaticClass, TEXT("UHAIBaseComponent"), &Z_Registration_Info_UClass_UHAIBaseComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHAIBaseComponent), 3607972461U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h__Script_HAIPro_3745567888(TEXT("/Script/HAIPro"),
-	Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h__Script_HAIPro_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h__Script_HAIPro_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h__Script_HAIPro_3745567888(TEXT("/Script/HAIPro"),
+	Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h__Script_HAIPro_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h__Script_HAIPro_Statics::ClassInfo),
 	nullptr, 0,
-	Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h__Script_HAIPro_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h__Script_HAIPro_Statics::EnumInfo));
+	Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h__Script_HAIPro_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Haktan_Desktop_HAIPro_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HAIBaseComponent_h__Script_HAIPro_Statics::EnumInfo));
 // ********** End Registration *********************************************************************
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

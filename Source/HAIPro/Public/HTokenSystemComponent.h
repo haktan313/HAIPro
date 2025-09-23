@@ -72,13 +72,5 @@ public:
 	UPROPERTY()
 	TMap<TWeakObjectPtr<AActor>, int> TokenCountMap;
 	UFUNCTION(BlueprintPure, Category="HTokenSystem")
-	FORCEINLINE int GetTargetsCurrentTokenCount(AActor* TargetActor) const
-	{
-		if (!TargetActor){return 0;}
-		if (const int* Count = TokenCountMap.Find(TargetActor))
-		{
-			return *Count;
-		}
-		return 0; 
-	}
+	FORCEINLINE int GetTargetsCurrentTokenCount(AActor* TargetActor) const;
 };

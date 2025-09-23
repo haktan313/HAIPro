@@ -3,7 +3,7 @@
 	"Version": 2,
 	"VersionName": "2.0",
 	"FriendlyName": "HAIPro",
-	"Description": "This plugin offers an Advanced AI management model with features like token-based task prioritization for NPCs, integration with an Advanced AIController using the CrowdFollowing component, and flexible multi-action support through the DoAction task within the Behavior Tree.",
+	"Description": "Advanced AI plugin with a ready to use perception system, runtime control of Behavior Trees and State Trees from a single component, token based NPC task prioritization, and example tasks for both Behavior Tree and State Tree.",
 	"Category": "AI",
 	"CreatedBy": "Haktan Cagri Kodat",
 	"CreatedByURL": "https://www.linkedin.com/in/haktan-%C3%A7a%C4%9Fr%C4%B1-kodat-3b01b7297/",
@@ -27,10 +27,6 @@
 		},
 		{
 			"Name": "GameplayStateTree",
-			"Enabled": true
-		},
-		{
-			"Name": "GameplayAbilities",
 			"Enabled": true
 		}
 	]

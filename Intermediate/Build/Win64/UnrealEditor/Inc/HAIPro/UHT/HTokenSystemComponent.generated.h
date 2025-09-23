@@ -22,7 +22,7 @@ enum class E_TokenManagmentFailReason : uint8;
 enum class E_TookTokenFailReason : uint8;
 
 // ********** Begin Class UHTokenSystemComponent ***************************************************
-#define FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_40_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Users_Haktan_Desktop_HAIPro_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_40_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execGetTargetsCurrentTokenCount); \
 	DECLARE_FUNCTION(execDecraeseMaxTokenCountToGivenActor); \
 	DECLARE_FUNCTION(execDecraeseCurrentTokenToGivenActor); \
@@ -35,7 +35,7 @@ enum class E_TookTokenFailReason : uint8;
 
 HAIPRO_API UClass* Z_Construct_UClass_UHTokenSystemComponent_NoRegister();
 
-#define FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_40_INCLASS_NO_PURE_DECLS \
+#define FID_Users_Haktan_Desktop_HAIPro_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_40_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUHTokenSystemComponent(); \
 	friend struct Z_Construct_UClass_UHTokenSystemComponent_Statics; \
@@ -46,7 +46,7 @@ public: \
 	DECLARE_SERIALIZER(UHTokenSystemComponent)
 
 
-#define FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_40_ENHANCED_CONSTRUCTORS \
+#define FID_Users_Haktan_Desktop_HAIPro_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_40_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	UHTokenSystemComponent(UHTokenSystemComponent&&) = delete; \
 	UHTokenSystemComponent(const UHTokenSystemComponent&) = delete; \
@@ -56,13 +56,13 @@ public: \
 	NO_API virtual ~UHTokenSystemComponent();
 
 
-#define FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_37_PROLOG
-#define FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_40_GENERATED_BODY \
+#define FID_Users_Haktan_Desktop_HAIPro_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_37_PROLOG
+#define FID_Users_Haktan_Desktop_HAIPro_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_40_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_40_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_40_INCLASS_NO_PURE_DECLS \
-	FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_40_ENHANCED_CONSTRUCTORS \
+	FID_Users_Haktan_Desktop_HAIPro_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_40_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_Haktan_Desktop_HAIPro_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_40_INCLASS_NO_PURE_DECLS \
+	FID_Users_Haktan_Desktop_HAIPro_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h_40_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -72,7 +72,7 @@ class UHTokenSystemComponent;
 // ********** End Class UHTokenSystemComponent *****************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_Haktan_Desktop_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h
+#define CURRENT_FILE_ID FID_Users_Haktan_Desktop_HAIPro_HAIPro_HostProject_Plugins_HAIPro_Source_HAIPro_Public_HTokenSystemComponent_h
 
 // ********** Begin Enum E_TookTokenFailReason *****************************************************
 #define FOREACH_ENUM_E_TOOKTOKENFAILREASON(op) \

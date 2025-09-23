@@ -249,7 +249,6 @@ void AHAIController::StopStateTree()
 {
 	if (!HAIBaseComponent || !HAIBaseComponent->StateTree || !StateTreeAIComponent)
 		return;
-	FStateTreeReference* StateTree = StateTreeAIComponent->GetStateTree();
 	StateTreeAIComponent->StopLogic(TEXT("Stopped by AHAIController"));
 }
 
@@ -257,7 +256,6 @@ void AHAIController::PauseStateTree()
 {
 	if (!HAIBaseComponent || !HAIBaseComponent->StateTree || !StateTreeAIComponent)
 		return;
-	FStateTreeReference* StateTree = StateTreeAIComponent->GetStateTree();
 	StateTreeAIComponent->PauseLogic(TEXT("Paused by AHAIController"));
 }
 
@@ -265,15 +263,13 @@ void AHAIController::ResumeStateTree()
 {
 	if (!HAIBaseComponent || !HAIBaseComponent->StateTree || !StateTreeAIComponent)
 		return;
-	FStateTreeReference* StateTree = StateTreeAIComponent->GetStateTree();
 	StateTreeAIComponent->ResumeLogic(TEXT("Resumed by AHAIController"));
 }
 
 void AHAIController::RestartStateTree()
 {
 	if (!HAIBaseComponent || !HAIBaseComponent->StateTree || !StateTreeAIComponent)
-		return;
-	FStateTreeReference* StateTree = StateTreeAIComponent->GetStateTree();
+		return;;
 	StateTreeAIComponent->RestartLogic();
 }
 
@@ -281,6 +277,5 @@ void AHAIController::DestroyStateTree()
 {
 	if (!HAIBaseComponent || !HAIBaseComponent->StateTree || !StateTreeAIComponent)
 		return;
-	FStateTreeReference* StateTree = StateTreeAIComponent->GetStateTree();
 	StateTreeAIComponent->Cleanup();
 }

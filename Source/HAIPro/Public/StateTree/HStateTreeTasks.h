@@ -1,7 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AIController.h"
-#include "HAIBaseComponent.h"
 #include "StateTreeTaskBase.h"
 #include "HStateTreeTasks.generated.h"
 

@@ -2,7 +2,6 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameplayTagContainer.h"	
 #include "HAIController.h"
 #include "HPatrolSpline.h"
 #include "Components/ActorComponent.h"
@@ -35,12 +34,6 @@ enum class E_StateTreeActionEndResult : uint8
 	Unset UMETA(DisplayName = "Unset")
 };
 
-/** Delegate for ending DoAction behavior tree task */
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnActionEndBehaviorTree, FGameplayTag, ActionTag, E_BehaviorTreeActionEndResult, Result);
-/** Delegate for ending DoAction state tree task */
-DECLARE_MULTICAST_DELEGATE_TwoParams(FOnActionEndStateTree, FGameplayTag, E_StateTreeActionEndResult);
-
-
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class HAIPRO_API UHAIBaseComponent : public UActorComponent
 {
@@ -60,30 +53,19 @@ public:
 	TObjectPtr<AHPatrolSpline> PatrolSpline;
 	/** Getting data from PatrolSpline class */
 	UFUNCTION(BlueprintPure, Category = "HAI|HPatrolSpline")
-	FORCEINLINE F_PatrolData& GetPatrolData(const AActor* RequestedBy) const
-	{
-		if (RequestedBy)
-		{
-			if (F_PatrolData* Data = PatrolSpline->PatrolDataMap.Find(RequestedBy))
-			{
-				return *Data;
-			}
-		}
-		static F_PatrolData DefaultData;
-		return DefaultData;
-	}
+	FORCEINLINE F_PatrolData& GetPatrolData(const AActor* RequestedBy) const;
 	UFUNCTION(BlueprintPure, Category = "HAI|HPatrolSpline")
 	FORCEINLINE USplineComponent* GetSplineComponent() const { return PatrolSpline->SplineComponent; }
 	UFUNCTION(BlueprintPure, Category = "HAI|HPatrolSpline")
 	FORCEINLINE AHPatrolSpline* GetPatrolSpline() const { return PatrolSpline; }
 	UFUNCTION(BlueprintPure, Category = "HAI|HPatrolSpline")
-	FORCEINLINE int GetCurrentPointIndexOfPatrolData(const AActor* RequestedBy) const{ return RequestedBy ? PatrolSpline->PatrolDataMap.Find(RequestedBy)->currentPointIndex : 0; }
+	FORCEINLINE int GetCurrentPointIndexOfPatrolData(const AActor* RequestedBy) const { return RequestedBy ? PatrolSpline->PatrolDataMap.Find(RequestedBy)->currentPointIndex : 0; }
 	UFUNCTION(BlueprintPure, Category = "HAI|HPatrolSpline")
-	FORCEINLINE int GetPreviousPointIndexOfPatrolData(const AActor* RequestedBy) const{ return RequestedBy ? PatrolSpline->PatrolDataMap.Find(RequestedBy)->previousPointIndex : 0; }
+	FORCEINLINE int GetPreviousPointIndexOfPatrolData(const AActor* RequestedBy) const { return RequestedBy ? PatrolSpline->PatrolDataMap.Find(RequestedBy)->previousPointIndex : 0; }
 	UFUNCTION(BlueprintPure, Category = "HAI|HPatrolSpline")
-	FORCEINLINE int GetDirectionOfPatrolData(const AActor* RequestedBy) const{return RequestedBy ? PatrolSpline->PatrolDataMap.Find(RequestedBy)->direction : 0;}
+	FORCEINLINE int GetDirectionOfPatrolData(const AActor* RequestedBy) const {return RequestedBy ? PatrolSpline->PatrolDataMap.Find(RequestedBy)->direction : 0;}
 	UFUNCTION(BlueprintCallable, Category = "HAI|HPatrolSpline")
-	FORCEINLINE int GetPatrolPointCountOfPatrolData(const AActor* RequestedBy) const{return RequestedBy ? PatrolSpline->PatrolDataMap.Find(RequestedBy)->patrolPointCount : 0;}
+	FORCEINLINE int GetPatrolPointCountOfPatrolData(const AActor* RequestedBy) const {return RequestedBy ? PatrolSpline->PatrolDataMap.Find(RequestedBy)->patrolPointCount : 0;}
 
 	/** Sight Config Settings */
 	UPROPERTY(EditAnywhere, Category="HAI|Perception")

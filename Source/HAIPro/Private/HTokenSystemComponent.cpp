@@ -198,4 +198,14 @@ void UHTokenSystemComponent::DecraeseMaxTokenCountToGivenActor(AActor* GivenActo
 	}
 }
 
+int UHTokenSystemComponent::GetTargetsCurrentTokenCount(AActor* TargetActor) const
+{
+	if (!TargetActor){return 0;}
+	if (const int* Count = TokenCountMap.Find(TargetActor))
+	{
+		return *Count;
+	}
+	return 0; 
+}
+
 
